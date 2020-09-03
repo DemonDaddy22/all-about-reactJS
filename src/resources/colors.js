@@ -108,6 +108,14 @@ export const YELLOW_700 = '#fbc02d';
 export const YELLOW_800 = '#f9a825';
 export const YELLOW_900 = '#f57f17';
 
+export const WHITE = '#FFFFFF';
+export const WHITE_TRANSPARENT = '#FFFFFF59';
+export const WHITE_TRANSPARENT_20 = '#FFFFFF33';
+export const WHITE_TRANSPARENT_30 = '#FFFFFF4D';
+export const WHITE_TRANSPARENT_50 = '#FFFFFF80';
+export const WHITE_TRANSPARENT_70 = '#FFFFFFB3';
+export const WHITE_TRANSPARENT_90 = '#FFFFFFE6'; 
+
 export const BLACK = '#000000';
 export const BLACK_5 = '#0000000D';
 export const BLACK_10 = '#0000001A';
@@ -142,25 +150,7 @@ export const ACCENT_LIGHTER = '#bbdefb';
 export const ACCENT_LIGHTEST = '#e8f0fe';
 export const ACCENT_DARK = '#0d47a1';
 
-export const ACCENT1 = '#00796b';
-export const ACCENT1_LIGHT = '#26a69a';
-export const ACCENT1_LIGHTER = '#b2dfdb';
-export const ACCENT1_DARK = '#004d40';
-
 export const TRANSPARENT = '#00000000';
-
-export const WHITE = '#FFFFFF';
-export const WHITE_TRANSPARENT = '#FFFFFF59';
-export const WHITE_TRANSPARENT_20 = '#FFFFFF33';
-export const WHITE_TRANSPARENT_30 = '#FFFFFF4D';
-export const WHITE_TRANSPARENT_50 = '#FFFFFF80';
-export const WHITE_TRANSPARENT_70 = '#FFFFFFB3';
-export const WHITE_TRANSPARENT_90 = '#FFFFFFE6'; 
-
-
-
-export const GREY = '#666666';
-
 export const TEXT_COLOR = '#202124';
 export const TEXT_COLOR_DARK = '#e6e6e6';
 

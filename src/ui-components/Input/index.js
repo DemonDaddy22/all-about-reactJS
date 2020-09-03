@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField'
 import { withStyles } from '@material-ui/core';
 
 const styles = {
-    root: {
+    root: props => ({
         '& .MuiOutlinedInput-notchedOutline': {
             boxShadow: 'var(--shadow)',
             transition: 'border-color 0.25s ease-in-out'
@@ -12,15 +12,14 @@ const styles = {
         '&:hover .MuiOutlinedInput-notchedOutline': {
             borderColor: 'var(--text-obscure)',
         },
-
         '& .Mui-focused .MuiOutlinedInput-notchedOutline': {
             borderColor: 'var(--theme-color)',
         },
-
         '& .Mui-focused:before': {
             borderColor: 'var(--theme-color)',
         },
-    }
+        ...props.rootInputStyles,
+    })
 };
 
 class Input extends React.Component {
