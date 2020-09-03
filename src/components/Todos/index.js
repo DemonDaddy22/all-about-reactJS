@@ -4,6 +4,7 @@ import Input from '../../ui-components/Input';
 import Button from '../../ui-components/Button';
 import CheckBox from '../../ui-components/CheckBox';
 import Radio from '../../ui-components/Radio';
+import SnackBar from '../../ui-components/SnackBar';
 
 export default class Todos extends React.Component {
 
@@ -12,16 +13,19 @@ export default class Todos extends React.Component {
         value: '',
         checkedBox: false,
         checkedRadio: false,
+        snackOpen: false,
     }
 
     handleValueChange = e => {
         this.setState({ value: e.target.value });
     }
 
-    handleBtnClick = () => alert('Button clicked!');
+    handleBtnClick = () => this.setState({ snackOpen: true }, () => setTimeout(this.handleSnackClose, 6000));
+
+    handleSnackClose = () => this.setState({ snackOpen: false });
 
     toggleCheckBox = () => this.setState({ checkedBox: !this.state.checkedBox });
-    
+
     checkRadio = () => this.setState({ checkedRadio: true });
 
     render = () => {
@@ -34,6 +38,7 @@ export default class Todos extends React.Component {
             <Button className='btn' onClick={this.handleBtnClick}>Test</Button>
             <CheckBox labelProps={{ style: { display: 'block', marginTop: 20 } }} label='Test' checked={this.state.checkedBox} onChange={this.toggleCheckBox}></CheckBox>
             <Radio labelProps={{ style: { display: 'block', marginTop: 20 } }} label='Test' checked={this.state.checkedRadio} onChange={this.checkRadio}></Radio>
+            <SnackBar handleClose={this.handleSnackClose} open={this.state.snackOpen} />
         </div>;
     }
 }
