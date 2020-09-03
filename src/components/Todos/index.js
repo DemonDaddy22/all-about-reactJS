@@ -18,7 +18,8 @@ export default class Todos extends React.Component {
         const { containerStyle } = this.props;
 
         return <div className='todosContainer' style={containerStyle}>
-            <Input id='input-test' label='test' onChange={this.handleValueChange} value={this.state.value} placeholder='test' style={{ width: 'inherit', margin: 6 }} />
+            <Input id='input-test' label='test' onChange={this.handleValueChange} value={this.state.value}
+                placeholder='test' variant='outlined' />
         </div>;
     }
 }
