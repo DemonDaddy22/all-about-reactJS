@@ -1,12 +1,17 @@
 .todosContainer {
     background-color: #fff;
     padding: 16px;
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
     border-radius: 6px;
     border: 1px solid rgba(0, 0, 0, 0.75);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     height: 600px;
+}
+
+.btn {
+    margin-top: 16px !important;
+    min-width: 100px !important;
 }
 
 @media (min-width: 900px) {
