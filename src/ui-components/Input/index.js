@@ -5,6 +5,9 @@ import { withStyles } from '@material-ui/core';
 
 const styles = {
     root: props => ({
+        '& .MuiOutlinedInput-input': {
+            ...props.rootInputStyles
+        },
         '& .MuiOutlinedInput-notchedOutline': {
             boxShadow: 'var(--shadow)',
             transition: 'border-color 0.25s ease-in-out'
@@ -18,7 +21,6 @@ const styles = {
         '& .Mui-focused:before': {
             borderColor: 'var(--theme-color)',
         },
-        ...props.rootInputStyles,
     })
 };
 

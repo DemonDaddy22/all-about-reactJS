@@ -42,7 +42,7 @@ export default class Todos extends React.Component {
             <div className={classes.todosHeader}>ToDos Manager</div>
             <div className={classes.todosContainer} style={containerStyle}>
                 <div className={classes.addTodoWrapper}>
-                    <Input id='add-todo' label='Add ToDo' onChange={this.handleValueChange} value={this.state.value} variant='outlined' />
+                    <Input id='add-todo' label='Add ToDo' onChange={this.handleValueChange} value={this.state.value} variant='outlined' rootInputStyles={{ backgroundColor: 'var(--text-light)', borderRadius: 'inherit' }} />
                     <Button className={classes.desktopBtn} onClick={this.handleAddTodo} labelStyles={{ display: 'inline-flex', padding: 0 }} endIcon={<NoteAddIcon />}>Add ToDo</Button>
                     <Iconbutton className={classes.mobileBtn} onClick={this.handleAddTodo} size='2rem' icon={<NoteAddIcon fontSize='large' />}></Iconbutton>
                 </div>
