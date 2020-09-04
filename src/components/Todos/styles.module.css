@@ -1,3 +1,12 @@
+.todosHeader {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-light);
+    text-shadow: 6px 4px rgba(0, 0, 0, 0.2);
+}
+
 .todosContainer {
     background-color: #fff;
     padding: 16px;
@@ -6,7 +15,7 @@
     border-radius: 6px;
     border: 1px solid rgba(0, 0, 0, 0.75);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    height: 600px;
+    margin-top: 24px;
 }
 
 .addTodoWrapper {
@@ -24,6 +33,10 @@
 }
 
 @media (min-width: 900px) {
+    .todosHeader {
+        font-size: 3rem;
+    }
+
     .todosContainer {
         max-width: 800px;
     }

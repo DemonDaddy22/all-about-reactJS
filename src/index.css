@@ -5,6 +5,7 @@
     --dialog-bg: #fff;
     --overlay-bg: #ffffffb3;
     --text-prominent: #000;
+    --text-light: #fff;
     --text: #202124;
     --text-obscure: #666;
     --text-obscurer: #888;
@@ -26,7 +27,7 @@
 
 body {
     margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Nunito', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-image: linear-gradient(180deg, #0093E9 8%, #80D0C7 46%, #f3fffe 91%);

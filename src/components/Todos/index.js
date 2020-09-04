@@ -1,6 +1,6 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react';
-import './index.css';
+import classes from './styles.module.css';
 import Input from '../../ui-components/Input';
 import Button from '../../ui-components/Button';
 import CheckBox from '../../ui-components/CheckBox';
@@ -23,6 +23,7 @@ export default class Todos extends React.Component {
     handleValueChange = e => this.setState({ value: e.target.value });
 
     handleAddTodo = () => {
+        // check if todo is empty
         const todo = { value: this.state.value, isEditable: false };
         this.setState({ todos: [...this.state.todos, todo], value: '', snackOpen: true, snackMessage: 'ToDo added successfully!' });
     };
@@ -37,15 +38,19 @@ export default class Todos extends React.Component {
         const { todos, snackMessage } = this.state;
         const { containerStyle } = this.props;
 
-        return <div className='todosContainer' style={containerStyle}>
-            <div className='addTodoWrapper'>
-                <Input id='add-todo' label='Add ToDo' onChange={this.handleValueChange} value={this.state.value} variant='outlined' />
-                <Button className='desktopBtn' onClick={this.handleAddTodo} labelStyles={{ display: 'inline-flex', padding: 0 }} endIcon={<NoteAddIcon />}>Add ToDo</Button>
-                <Iconbutton className='mobileBtn' onClick={this.handleAddTodo} size='2rem' icon={<NoteAddIcon fontSize='large' />}></Iconbutton>
+        return <>
+            <div className={classes.todosHeader}>ToDos Manager</div>
+            <div className={classes.todosContainer} style={containerStyle}>
+                <div className={classes.addTodoWrapper}>
+                    <Input id='add-todo' label='Add ToDo' onChange={this.handleValueChange} value={this.state.value} variant='outlined' />
+                    <Button className={classes.desktopBtn} onClick={this.handleAddTodo} labelStyles={{ display: 'inline-flex', padding: 0 }} endIcon={<NoteAddIcon />}>Add ToDo</Button>
+                    <Iconbutton className={classes.mobileBtn} onClick={this.handleAddTodo} size='2rem' icon={<NoteAddIcon fontSize='large' />}></Iconbutton>
+                </div>
             </div>
-            <CheckBox labelProps={{ style: { display: 'block', marginTop: 20 } }} label='Test' checked={this.state.checkedBox} onChange={this.toggleCheckBox}></CheckBox>
-            <Radio labelProps={{ style: { display: 'block', marginTop: 20 } }} label='Test' checked={this.state.checkedRadio} onChange={this.checkRadio}></Radio>
             <SnackBar message={snackMessage} severity='success' handleClose={this.handleSnackClose} open={this.state.snackOpen} />
-        </div>;
+        </>;
     }
 }
+
+{/* <CheckBox labelProps={{ style: { display: 'block', marginTop: 20 } }} label='Test' checked={this.state.checkedBox} onChange={this.toggleCheckBox}></CheckBox>
+                <Radio labelProps={{ style: { display: 'block', marginTop: 20 } }} label='Test' checked={this.state.checkedRadio} onChange={this.checkRadio}></Radio> */}
