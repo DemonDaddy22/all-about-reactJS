@@ -20,7 +20,7 @@ const styles = {
             color: props.variant === 'outlined' ? props.disabled ? 'rgba(0,0,0,.26)' : getPathValue(props, 'labelColor', 'var(--text-obscure)') : `${WHITE} !important`,
             padding: '0px 8px 0px 8px',
             fontWeight: 600,
-            ...props.textStyles,
+            ...props.labelStyles,
         },
         '& > .MuiTouchRipple-root': {
             width: `calc(100% + ${props.variant === 'outlined' ? 2 : 0}px)`,

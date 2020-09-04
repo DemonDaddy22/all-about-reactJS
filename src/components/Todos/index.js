@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import React from 'react';
 import './index.css';
 import Input from '../../ui-components/Input';
@@ -5,6 +6,8 @@ import Button from '../../ui-components/Button';
 import CheckBox from '../../ui-components/CheckBox';
 import Radio from '../../ui-components/Radio';
 import SnackBar from '../../ui-components/SnackBar';
+import NoteAddIcon from '@material-ui/icons/NoteAdd';
+import Iconbutton from '../../ui-components/Button/Iconbutton';
 
 export default class Todos extends React.Component {
 
@@ -14,13 +17,15 @@ export default class Todos extends React.Component {
         checkedBox: false,
         checkedRadio: false,
         snackOpen: false,
+        snackMessage: ''
     }
 
-    handleValueChange = e => {
-        this.setState({ value: e.target.value });
-    }
+    handleValueChange = e => this.setState({ value: e.target.value });
 
-    handleBtnClick = () => this.setState({ snackOpen: true });
+    handleAddTodo = () => {
+        const todo = { value: this.state.value, isEditable: false };
+        this.setState({ todos: [...this.state.todos, todo], value: '', snackOpen: true, snackMessage: 'ToDo added successfully!' });
+    };
 
     handleSnackClose = () => this.setState({ snackOpen: false });
 
@@ -29,16 +34,18 @@ export default class Todos extends React.Component {
     checkRadio = () => this.setState({ checkedRadio: true });
 
     render = () => {
-        const { todos } = this.state;
+        const { todos, snackMessage } = this.state;
         const { containerStyle } = this.props;
 
         return <div className='todosContainer' style={containerStyle}>
-            <Input id='input-test' label='test' onChange={this.handleValueChange} value={this.state.value}
-                placeholder='test' variant='outlined' />
-            <Button className='btn' onClick={this.handleBtnClick}>Test</Button>
+            <div className='addTodoWrapper'>
+                <Input id='add-todo' label='Add ToDo' onChange={this.handleValueChange} value={this.state.value} variant='outlined' />
+                <Button className='desktopBtn' onClick={this.handleAddTodo} labelStyles={{ display: 'inline-flex', padding: 0 }} endIcon={<NoteAddIcon />}>Add ToDo</Button>
+                <Iconbutton className='mobileBtn' onClick={this.handleAddTodo} size='2rem' icon={<NoteAddIcon fontSize='large' />}></Iconbutton>
+            </div>
             <CheckBox labelProps={{ style: { display: 'block', marginTop: 20 } }} label='Test' checked={this.state.checkedBox} onChange={this.toggleCheckBox}></CheckBox>
             <Radio labelProps={{ style: { display: 'block', marginTop: 20 } }} label='Test' checked={this.state.checkedRadio} onChange={this.checkRadio}></Radio>
-            <SnackBar message='Testing snackbar' severity='warning' handleClose={this.handleSnackClose} open={this.state.snackOpen} />
+            <SnackBar message={snackMessage} severity='success' handleClose={this.handleSnackClose} open={this.state.snackOpen} />
         </div>;
     }
 }
