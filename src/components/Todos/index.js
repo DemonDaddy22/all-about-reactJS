@@ -20,7 +20,7 @@ export default class Todos extends React.Component {
         this.setState({ value: e.target.value });
     }
 
-    handleBtnClick = () => this.setState({ snackOpen: true }, () => setTimeout(this.handleSnackClose, 6000));
+    handleBtnClick = () => this.setState({ snackOpen: true });
 
     handleSnackClose = () => this.setState({ snackOpen: false });
 
@@ -38,7 +38,7 @@ export default class Todos extends React.Component {
             <Button className='btn' onClick={this.handleBtnClick}>Test</Button>
             <CheckBox labelProps={{ style: { display: 'block', marginTop: 20 } }} label='Test' checked={this.state.checkedBox} onChange={this.toggleCheckBox}></CheckBox>
             <Radio labelProps={{ style: { display: 'block', marginTop: 20 } }} label='Test' checked={this.state.checkedRadio} onChange={this.checkRadio}></Radio>
-            <SnackBar handleClose={this.handleSnackClose} open={this.state.snackOpen} />
+            <SnackBar message='Testing snackbar' severity='warning' handleClose={this.handleSnackClose} open={this.state.snackOpen} />
         </div>;
     }
 }
