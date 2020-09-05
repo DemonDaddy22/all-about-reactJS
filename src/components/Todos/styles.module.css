@@ -7,15 +7,28 @@
     text-shadow: 6px 4px rgba(0, 0, 0, 0.2);
 }
 
-.todosContainer {
+.addTodosContainer {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 16px;
     width: 85%;
-    margin: 0 auto;
+    margin: 24px auto 0;
     border-radius: 6px;
-    border: 1px solid rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-top: 24px;
+    transition: all 0.2s ease-in-out;
+}
+
+.addTodosContainer:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    transform: scale(1.02);
+}
+
+.todosContainer {
+    margin: 16px auto 0;
+    width: 85%;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .addTodoWrapper {
@@ -36,18 +49,19 @@
     .todosHeader {
         font-size: 3rem;
     }
-
-    .todosContainer {
+    .addTodosContainer {
         max-width: 800px;
     }
-
+    .todosContainer {
+        max-height: 400px;
+        overflow: hidden auto;
+    }
     .desktopBtn {
         display: block !important;
         margin-left: 8px !important;
         min-width: 150px !important;
         padding: 16px 0 !important;
     }
-
     .mobileBtn {
         margin-left: 0 !important;
         display: none !important;

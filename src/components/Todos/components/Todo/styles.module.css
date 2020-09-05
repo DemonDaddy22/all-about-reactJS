@@ -1,0 +1,11 @@
+.todo {
+    display: flex;
+    padding: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg);
+    composes: animateFadeUp from global;
+}
+
+.todo:last-child {
+    border-bottom: none;
+}

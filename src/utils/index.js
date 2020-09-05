@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const isEmptyString = obj => obj == null || obj == undefined || (typeof obj == "string" && obj.trim() == '');
 
 export const isValidNumber = obj => obj != null && !isNaN(parseFloat(obj)) && !isNaN(Number(obj));
