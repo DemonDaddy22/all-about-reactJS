@@ -54,6 +54,7 @@
     }
     .todosContainer {
         max-height: 400px;
+        max-width: 800px;
         overflow: hidden auto;
     }
     .desktopBtn {

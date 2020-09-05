@@ -1,11 +1,32 @@
 .todo {
     display: flex;
     padding: 8px;
+    color: #212121;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     background-color: var(--card-bg);
     composes: animateFadeUp from global;
 }
 
+.todo:first-child {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
 .todo:last-child {
     border-bottom: none;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.label {
+    flex: 1;
+    margin-left: 4px;
+    display: inline-flex;
+    align-items: center;
+}
+
+@media (min-width: 900px) {
+    .label {
+        margin-left: 8px;
+    }
 }

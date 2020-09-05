@@ -14,8 +14,6 @@ export default class Todos extends React.Component {
     state = {
         todos: [],
         value: '',
-        checkedBox: false,
-        checkedRadio: false,
         snackOpen: false,
         snackMessage: '',
         snackSeverity: ''
@@ -27,14 +25,14 @@ export default class Todos extends React.Component {
         if (isEmptyString(this.state.value)) {
             this.setState({ snackOpen: true, snackMessage: 'You need to add something first!', snackSeverity: 'warning' });
         } else {
-            const todo = { value: this.state.value, isEditable: false };
+            const todo = { value: this.state.value, checked: false, isEditable: false };
             this.setState({ todos: [...this.state.todos, todo], value: '', snackOpen: true, snackMessage: 'ToDo added successfully!', snackSeverity: 'success' });
         }
     };
 
     handleSnackClose = () => this.setState({ snackOpen: false });
 
-    toggleCheckBox = () => this.setState({ checkedBox: !this.state.checkedBox });
+    toggleCheckBox = index => this.setState({ todos: this.state.todos.map((todo, i) => i === index ? { ...todo, checked: !todo.checked } : todo) });
 
     checkRadio = () => this.setState({ checkedRadio: true });
 
@@ -53,7 +51,7 @@ export default class Todos extends React.Component {
             </div>
             {!isEmptyList(todos) && <div className={classes.todosContainer}>
                 {todos.map((todo, index) => {
-                    return <Todo key={`todo-${index}`} index={index} todo={todo} />
+                    return <Todo key={`todo-${index}`} index={index} todo={todo} toggleCheckBox={this.toggleCheckBox} />
                 })}
             </div>}
             <SnackBar message={snackMessage} severity={snackSeverity} handleClose={this.handleSnackClose} open={snackOpen} />
