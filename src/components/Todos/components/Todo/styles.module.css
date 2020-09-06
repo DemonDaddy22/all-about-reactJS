@@ -1,5 +1,6 @@
 .todo {
     display: flex;
+    align-items: center;
     padding: 8px;
     color: #212121;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -21,8 +22,12 @@
 .label {
     flex: 1;
     margin-left: 4px;
-    display: inline-flex;
-    align-items: center;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.iconBtn {
+    display: inline !important;
 }
 
 @media (min-width: 900px) {
