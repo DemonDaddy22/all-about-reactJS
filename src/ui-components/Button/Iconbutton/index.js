@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core';
 
 const styles = {
     root: props => ({
-        color: props.color ? props.color : THEME_COLOR,
+        color: props.iconColor ? props.iconColor : THEME_COLOR,
         ...props.iconStyles
     })
 }

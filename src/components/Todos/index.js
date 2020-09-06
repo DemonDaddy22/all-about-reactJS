@@ -12,7 +12,7 @@ import Todo from './components/Todo';
 export default class Todos extends React.Component {
 
     state = {
-        todos: [],
+        todos: JSON.parse(localStorage.getItem('todos')) || [],
         value: '',
         snackOpen: false,
         snackMessage: '',
@@ -26,27 +26,29 @@ export default class Todos extends React.Component {
             this.setState({ snackOpen: true, snackMessage: 'You need to add something first!', snackSeverity: 'info' });
         } else {
             const todo = { value: this.state.value, checked: false, isEditable: false };
-            this.setState({ todos: [...this.state.todos, todo], value: '', snackOpen: true, snackMessage: 'ToDo added successfully!', snackSeverity: 'success' });
+            let todos = [...this.state.todos, todo];
+            this.setState({ todos, value: '', snackOpen: true, snackMessage: 'ToDo added successfully!', snackSeverity: 'success' },
+                () => localStorage.setItem('todos', JSON.stringify(todos)));
         }
     };
 
     handleSnackClose = () => this.setState({ snackOpen: false });
 
-    toggleCheckBox = index => this.setState({ todos: this.state.todos.map((todo, i) => i === index ? { ...todo, checked: !todo.checked } : todo) });
+    toggleCheckBox = index => this.setState({ todos: this.state.todos.map((todo, i) => i === index ? { ...todo, checked: !todo.checked } : todo) },
+        () => localStorage.setItem('todos', JSON.stringify(this.state.todos)));
 
-    handleEditClick = index => this.setState({ todos: this.state.todos.map((todo, i) => i === index ? { ...todo, isEditable: !todo.isEditable } : todo) });
+    handleEditClick = index => this.setState({ todos: this.state.todos.map((todo, i) => i === index ? { ...todo, isEditable: !todo.isEditable } : todo) },
+        () => localStorage.setItem('todos', JSON.stringify(this.state.todos)));
 
     handleEditTodo = (index, value) => this.setState({
         snackOpen: true, snackMessage: 'ToDo edited successfully!', snackSeverity: 'success',
         todos: this.state.todos.map((todo, i) => i === index ? { value, checked: false, isEditable: false } : todo)
-    });
+    }, () => localStorage.setItem('todos', JSON.stringify(this.state.todos)));
 
     handleDeleteTodo = index => this.setState({
         snackOpen: true, snackMessage: 'ToDo deleted successfully!', snackSeverity: 'success',
         todos: this.state.todos.filter((todo, i) => i !== index)
-    });
-
-    checkRadio = () => this.setState({ checkedRadio: true });
+    }, () => localStorage.setItem('todos', JSON.stringify(this.state.todos)));
 
     render = () => {
         const { value, todos, snackMessage, snackOpen, snackSeverity } = this.state;

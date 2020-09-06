@@ -40,16 +40,12 @@ export default class Todo extends React.Component {
                     <Input id='edit-todo' label='Edit Todo' onChange={this.handleValueChange} value={this.state.value}></Input>
                 </div>}
             {!isEditable ? <>
-                <Iconbutton color={GREEN_700} className={classes.iconBtn} onClick={() => this.props.handleEditClick(index)} icon={<EditRoundedIcon fontSize='default' />}></Iconbutton>
-                <Iconbutton color={RED_700} className={classes.iconBtn} onClick={() => this.props.handleDeleteTodo(index)} icon={<DeleteOutlineRoundedIcon fontSize='default' />}></Iconbutton>
+                <Iconbutton iconColor={GREEN_700} className={classes.iconBtn} onClick={() => this.props.handleEditClick(index)} icon={<EditRoundedIcon fontSize='default' />}></Iconbutton>
+                <Iconbutton iconColor={RED_700} className={classes.iconBtn} onClick={() => this.props.handleDeleteTodo(index)} icon={<DeleteOutlineRoundedIcon fontSize='default' />}></Iconbutton>
             </> : <>
-                    <Iconbutton color={RED_700} className={classes.iconBtn} onClick={() => this.props.handleEditClick(index)} icon={<CloseRoundedIcon fontSize='default' />}></Iconbutton>
-                    <Iconbutton color={GREEN_700} className={classes.iconBtn} onClick={() => this.handleEditTodo(index)} icon={<CheckRoundedIcon fontSize='default' />}></Iconbutton>
+                    <Iconbutton iconColor={RED_700} className={classes.iconBtn} onClick={() => this.props.handleEditClick(index)} icon={<CloseRoundedIcon fontSize='default' />}></Iconbutton>
+                    <Iconbutton iconColor={GREEN_700} className={classes.iconBtn} onClick={() => this.handleEditTodo(index)} icon={<CheckRoundedIcon fontSize='default' />}></Iconbutton>
                 </>}
-            {/* input/text based on isEditable */}
         </div>;
     }
 }
-
-{/* 
-<Radio labelProps={{ style: { display: 'block', marginTop: 20 } }} label='Test' checked={this.state.checkedRadio} onChange={this.checkRadio}></Radio> */}
