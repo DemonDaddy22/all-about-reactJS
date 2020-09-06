@@ -19,7 +19,7 @@
     border-bottom-left-radius: 6px;
 }
 
-.labelWrapper {
+.labelWrapper, .todoInputWrapper {
     flex: 1;
     margin-left: 4px;
 }

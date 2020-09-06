@@ -34,6 +34,13 @@ export default class Todos extends React.Component {
 
     toggleCheckBox = index => this.setState({ todos: this.state.todos.map((todo, i) => i === index ? { ...todo, checked: !todo.checked } : todo) });
 
+    handleEditClick = index => this.setState({ todos: this.state.todos.map((todo, i) => i === index ? { ...todo, isEditable: !todo.isEditable } : todo) });
+
+    handleEditTodo = (index, value) => this.setState({
+        snackOpen: true, snackMessage: 'ToDo edited successfully!', snackSeverity: 'success',
+        todos: this.state.todos.map((todo, i) => i === index ? { value, checked: false, isEditable: false } : todo)
+    });
+
     checkRadio = () => this.setState({ checkedRadio: true });
 
     render = () => {
@@ -51,7 +58,8 @@ export default class Todos extends React.Component {
             </div>
             {!isEmptyList(todos) && <div className={classes.todosContainer}>
                 {todos.map((todo, index) => {
-                    return <Todo key={`todo-${index}`} index={index} todo={todo} toggleCheckBox={this.toggleCheckBox} />
+                    return <Todo key={`todo-${index}`} index={index} todo={todo} toggleCheckBox={this.toggleCheckBox}
+                        handleEditClick={this.handleEditClick} handleEditTodo={this.handleEditTodo} />
                 })}
             </div>}
             <SnackBar message={snackMessage} severity={snackSeverity} handleClose={this.handleSnackClose} open={snackOpen} />
