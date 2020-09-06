@@ -12,7 +12,7 @@ class SnackBar extends React.Component {
         return <Snackbar open={open} autoHideDuration={hideDuration} onClose={handleClose} anchorOrigin={{
             vertical: vertical,
             horizontal: horizontal,
-        }} TransitionComponent={Slide} maxSnack={3}>
+        }} TransitionComponent={Slide}>
             <MuiAlert elevation={elevation} variant={variant} onClose={handleClose} severity={severity}>
                 {message}
             </MuiAlert>
@@ -21,7 +21,7 @@ class SnackBar extends React.Component {
 }
 
 SnackBar.defaultProps = {
-    hideDuration: 6000,
+    hideDuration: 3000,
     vertical: 'bottom',
     horizontal: 'left',
     elevation: 5,
