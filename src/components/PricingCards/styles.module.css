@@ -3,10 +3,27 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 24px 0;
+}
+
+.cardMargin {
+    margin-top: 16px;
+}
+
+.cardMargin:first-child {
+    margin-top: 0;
 }
 
 @media(min-width: 900px) {
     .cardsContainer {
         flex-direction: row;
+        margin: 0;
+    }
+    .cardMargin {
+        margin-top: 0;
+        margin-left: 16px;
+    }
+    .cardMargin:first-child {
+        margin-left: 0;
     }
 }
