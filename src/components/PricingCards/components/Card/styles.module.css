@@ -1,8 +1,52 @@
 .card {
-    width: 200px;
-    height: 300px;
-    background-color: #a2e2b2;
+    width: 300px;
+    background-color: #ffffff;
     border-radius: 4px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.cardTitle {
+    color: #fff;
+    width: 100%;
+    font-size: 20px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 6px 0px;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    background-color: var(--theme-color);
+}
+
+.cardHero {
+    padding: 16px;
+}
+
+.cardPrice {
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: cornflowerblue;
+}
+
+.cardPriceDuration {
+    text-align: center;
+    font-weight: 100;
+    margin-top: -6px;
+    color: #888;
+}
+
+.cardFeaturesWrapper {
+    padding: 32px;
+    color: cornflowerblue;
+    line-height: 24px;
+}
+
+.cardButton {
+    width: 100%;
+    padding: 12px !important;
+    border-top-left-radius: inherit !important;
+    border-top-right-radius: inherit !important;
 }
