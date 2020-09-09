@@ -1,12 +1,12 @@
 import React from 'react';
 
-import './index.css';
+import classes from './styles.module.css';
 
 export default class Label extends React.Component {
 
     render = () => {
-        const { label, style } = this.props;
+        const { label, className, style } = this.props;
 
-        return <div className='label' style={style}>{label}</div>
+        return <div className={`${classes.label} ${className}`} style={style}>{label}</div>
     }
 }

@@ -6,6 +6,19 @@
     margin: 24px 0;
 }
 
+.switchLabel {
+    color: var(--text-prominent) !important;
+    margin-right: 8px;
+}
+
+.switchWrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0.75rem;
+    right: 3rem;
+}
+
 .centerCard {
     transform: scale(1.2);
     z-index: 100;

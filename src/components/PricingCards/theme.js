@@ -2,12 +2,12 @@ import { getPathValue, isEmptyString } from "../../utils";
 import { createMuiTheme } from "@material-ui/core";
 import { THEME_COLOR, THEME_COLOR_DARK, TEXT_COLOR, TEXT_COLOR_DARK } from "../../resources/colors";
 
-const themes = Object.freeze({
+export const themes = Object.freeze({
     LIGHT: 'light',
     DARK: 'dark'
 });
 
-export const themed = (lightVal, darkVal) => getTheme() === 'light' ? lightVal : darkVal;
+export const themed = (lightVal, darkVal) => getTheme() === themes.LIGHT ? lightVal : darkVal;
 
 export const getTheme = () => {
     const theme = !isEmptyString(JSON.parse(localStorage.getItem('pricingTheme'))) ? JSON.parse(localStorage.getItem('pricingTheme')) : themes.LIGHT;
