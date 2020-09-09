@@ -1,5 +1,5 @@
 :root {
-    --page-bg: #fff;
+    --page-bg: #f7f7f7;
     --card-bg: #fff;
     --card-container-bg: #fff;
     --dialog-bg: #fff;
@@ -25,12 +25,38 @@
     --border-bottom-color: rgba(224, 224, 224, 1);
 }
 
+[theme-mode="dark"] {
+    --page-bg: #161616;
+    --card-bg: #272727;
+    --card-container-bg: #363636;
+    --dialog-bg: #161616;
+    --overlay-bg: #2f2f2fb3;
+    --text-prominent: #fff;
+    --text: #d4d4d4;
+    --text-obscure: #b1b1b1;
+    --text-obscurer: #868686;
+    --text-opposite: #202124;
+    --card-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    --shadow: 0px 0px 10px #191919;
+    --card-border-mild-light-only: 0.5px solid transparent;
+    --theme-color: #1462af;
+    --theme-color-obscure: #1461af9f;
+    --component-border-disabled: #FFFFFF22;
+    --component-border-hover: #fff;
+    --component-border: #FFFFFF59;
+    --component-text-disabled: #ffffff80;
+    --hover-ripple: #ffffff18;
+    --ripple: #fff6;
+    --tag-color: #3e3d3d;
+    --border-bottom-color: rgba(81, 81, 81, 1);
+}
+
 body {
     margin: 0;
     font-family: 'Nunito', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #f7f7f7;
+    background: var(--page-bg);
     display: flex;
     align-items: center;
     justify-content: center;
