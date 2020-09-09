@@ -1,6 +1,6 @@
 .card {
     width: 300px;
-    background-color: #ffffff;
+    background-color: var(--card-bg);
     border-radius: 4px;
     position: relative;
     box-sizing: border-box;

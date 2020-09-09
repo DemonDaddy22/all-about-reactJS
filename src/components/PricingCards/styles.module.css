@@ -16,18 +16,7 @@
     align-items: center;
     position: absolute;
     top: 0.75rem;
-    right: 3rem;
-}
-
-.centerCard {
-    transform: scale(1.2);
-    z-index: 100;
-    box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1), -6px 0 6px rgba(0, 0, 0, 0.1) !important;
-    transition: all 0.2s ease-in-out;
-}
-
-.centerCard:hover {
-    box-shadow: 12px 0 12px rgba(0, 0, 0, 0.2), -12px 0 12px rgba(0, 0, 0, 0.15) !important;
+    right: 1rem;
 }
 
 .cardMargin {
@@ -35,7 +24,7 @@
 }
 
 .cardMargin:first-child {
-    margin-top: 0;
+    margin-top: 3rem;
 }
 
 @media(min-width: 900px) {
@@ -49,5 +38,17 @@
     }
     .cardMargin:first-child {
         margin-left: 0;
+    }
+    .centerCard {
+        transform: scale(1.2);
+        z-index: 100;
+        box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1), -6px 0 6px rgba(0, 0, 0, 0.1) !important;
+        transition: box-shadow 0.2s ease-in-out;
+    }
+    .centerCard:hover {
+        box-shadow: 12px 0 12px rgba(0, 0, 0, 0.2), -12px 0 12px rgba(0, 0, 0, 0.15) !important;
+    }
+    .switchWrapper {
+        right: 3rem;
     }
 }

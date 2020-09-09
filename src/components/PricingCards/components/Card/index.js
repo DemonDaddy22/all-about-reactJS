@@ -7,7 +7,7 @@ export default class Card extends React.Component {
     render = () => {
         const { cardContainerClass, title, price, features, specialFeature } = this.props;
 
-        return <div className={`${classes.card} ${cardContainerClass}`}>
+        return <div className={`${cardContainerClass} ${classes.card}`}>
             <div className={classes.cardTitle}>{title}</div>
             <div className={classes.cardHero}>
                 <div className={classes.cardPrice}>{price}</div>
