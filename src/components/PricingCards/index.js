@@ -5,7 +5,13 @@ import Card from './components/Card';
 import Switch from '../../ui-components/Switch';
 import { themes, setTheme, themed, getTheme } from './theme';
 import Label from '../../ui-components/Label';
+import Iconbutton from '../../ui-components/Button/Iconbutton';
+import Brightness4RoundedIcon from '@material-ui/icons/Brightness4Rounded';
+import Brightness7RoundedIcon from '@material-ui/icons/Brightness7Rounded';
+import { GREY_50 } from '../../resources/colors';
 
+// update styles of pricing card
+// use var and themed for colors for future implementation of theme on all the projects
 export default class PricingCards extends React.Component {
 
     state = {
@@ -22,14 +28,12 @@ export default class PricingCards extends React.Component {
     handleThemeChange = () => this.setState({ theme: !this.state.theme },
         () => {
             setTheme(this.state.theme ? themes.DARK : themes.LIGHT);
-            window.location.reload();
+            // window.location.reload();
         });
 
     render = () => <>
         <div className={classes.switchWrapper}>
-            <Label className={classes.switchLabel} label='Theme'></Label>
-            <Switch checked={this.state.theme} handleChange={this.handleThemeChange} buttoncolor={themed('#212121', '#f0f0f0')}
-                trackcolor={themed('#373737', '#ffffff')} />
+            <Iconbutton iconColor={GREY_50} onClick={this.handleThemeChange} icon={this.state.theme ? <Brightness7RoundedIcon fontSize='large' /> : <Brightness4RoundedIcon fontSize='large' />}></Iconbutton>
         </div>
         <div className={classes.cardsContainer}>
             <Card title={'Premium'} price={'$10'} cardContainerClass={classes.cardMargin}

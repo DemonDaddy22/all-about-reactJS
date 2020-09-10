@@ -6,11 +6,6 @@
     margin: 24px 0;
 }
 
-.switchLabel {
-    color: var(--text-prominent) !important;
-    margin-right: 8px;
-}
-
 .switchWrapper {
     display: flex;
     align-items: center;
