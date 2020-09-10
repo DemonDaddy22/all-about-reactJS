@@ -11,7 +11,7 @@ const styles = {
         backgroundColor: props.variant === 'outlined' ? TRANSPARENT : props.disabled ? '#aaa' : props.backgroundColor,
         '&:hover': {
             backgroundColor: props.disabled ? '#aaa' : props.variant === 'outlined' ? TRANSPARENT : props.backgroundColor,
-            boxShadow: props.disabled || props.noShadow ? null : `0px 0px 8px ${props.backgroundColor}`,
+            boxShadow: props.disabled || props.noShadow ? null : `0px 0px 6px ${props.backgroundColor}`,
         },
         '&:active': {
             boxShadow: props.disabled || props.noShadow ? null : `0px 0px 4px ${props.backgroundColor}`,

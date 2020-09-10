@@ -37,11 +37,7 @@
     .centerCard {
         transform: scale(1.2);
         z-index: 100;
-        box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1), -6px 0 6px rgba(0, 0, 0, 0.1) !important;
-        transition: box-shadow 0.2s ease-in-out;
-    }
-    .centerCard:hover {
-        box-shadow: 12px 0 12px rgba(0, 0, 0, 0.2), -12px 0 12px rgba(0, 0, 0, 0.15) !important;
+        box-shadow: 8px 0 8px rgba(0, 0, 0, 0.1), -8px 0 8px rgba(0, 0, 0, 0.1) !important;
     }
     .switchWrapper {
         right: 3rem;
