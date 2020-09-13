@@ -34,19 +34,21 @@ export default class PricingCards extends React.Component {
         });
 
     render = () => <Page>
-        <div className={classes.switchWrapper}>
-            <Iconbutton iconColor={GREY_50} onClick={this.handleThemeChange} icon={this.state.theme ? <Brightness7RoundedIcon fontSize='large' /> : <Brightness4RoundedIcon fontSize='large' />}></Iconbutton>
-        </div>
-        <div className={classes.cardsContainer}>
-            <Card title={{ label: 'Basic', style: { backgroundColor: this.state.primaryColor } }} price={{ label: '$25', style: { color: this.state.primaryColor } }}
-                cardContainerClass={classes.cardMargin} features={{ features: ['Online access to resources', 'Limited quizzes & exercises', 'Mentors for doubt clearance'], style: { color: this.state.primaryColor } }}
-                buttonColor={this.state.primaryColor} />
-            <Card title={{ label: 'Premium', style: { backgroundColor: this.state.secondaryColor } }} subtitle={{ label: 'Most Popular', style: { color: this.state.secondaryColor } }}
-                price={{ label: '$40', style: { color: this.state.secondaryColor } }} cardContainerClass={`${classes.cardMargin} ${classes.centerCard}`} buttonColor={this.state.secondaryColor}
-                features={{ features: ['Downloadable resources', '100+ quizzes & exercises', '1-on-1 mentor sessions'], style: { color: this.state.secondaryColor } }} />
-            <Card title={{ label: 'Ultimate', style: { backgroundColor: this.state.primaryColor } }} price={{ label: '$50', style: { color: this.state.primaryColor } }}
-                cardContainerClass={classes.cardMargin} features={{ features: ['Downloadable resources', 'All quizzes & exercises', '1-on-1 mentor sessions'], style: { color: this.state.primaryColor } }}
-                buttonColor={this.state.primaryColor} />
+        <div className={classes.pricingCardsContainer}>
+            <div className={classes.switchWrapper}>
+                <Iconbutton iconColor={GREY_50} onClick={this.handleThemeChange} icon={this.state.theme ? <Brightness7RoundedIcon fontSize='large' /> : <Brightness4RoundedIcon fontSize='large' />}></Iconbutton>
+            </div>
+            <div className={classes.cardsContainer}>
+                <Card title={{ label: 'Basic', style: { backgroundColor: this.state.primaryColor } }} price={{ label: '$25', style: { color: this.state.primaryColor } }}
+                    cardContainerClass={classes.cardMargin} features={{ features: ['Online access to resources', 'Limited quizzes & exercises', 'Mentors for doubt clearance'], style: { color: this.state.primaryColor } }}
+                    buttonColor={this.state.primaryColor} />
+                <Card title={{ label: 'Premium', style: { backgroundColor: this.state.secondaryColor } }} subtitle={{ label: 'Most Popular', style: { color: this.state.secondaryColor } }}
+                    price={{ label: '$40', style: { color: this.state.secondaryColor } }} cardContainerClass={`${classes.cardMargin} ${classes.centerCard}`} buttonColor={this.state.secondaryColor}
+                    features={{ features: ['Downloadable resources', '100+ quizzes & exercises', '1-on-1 mentor sessions'], style: { color: this.state.secondaryColor } }} />
+                <Card title={{ label: 'Ultimate', style: { backgroundColor: this.state.primaryColor } }} price={{ label: '$50', style: { color: this.state.primaryColor } }}
+                    cardContainerClass={classes.cardMargin} features={{ features: ['Downloadable resources', 'All quizzes & exercises', '1-on-1 mentor sessions'], style: { color: this.state.primaryColor } }}
+                    buttonColor={this.state.primaryColor} />
+            </div>
         </div>
     </Page>;
 }
