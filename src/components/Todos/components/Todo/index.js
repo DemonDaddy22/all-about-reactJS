@@ -17,6 +17,7 @@ export default class Todo extends React.Component {
     }
 
     componentDidUpdate = prevProps => {
+        // eslint-disable-next-line eqeqeq
         if (prevProps.todo != this.props.todo) this.setState({ value: this.props.todo.value });
     }
 
