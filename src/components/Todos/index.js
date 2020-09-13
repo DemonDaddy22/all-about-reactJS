@@ -57,21 +57,23 @@ export default class Todos extends React.Component {
         const { containerStyle } = this.props;
 
         return <Page>
-            <div className={classes.todosHeader}>ToDos Manager</div>
-            <div className={classes.addTodosContainer} style={containerStyle}>
-                <div className={classes.addTodoWrapper}>
-                    <Input id='add-todo' label='Add ToDo' onChange={this.handleValueChange} value={value} variant='outlined' rootInputStyles={{ backgroundColor: 'var(--text-light)', borderRadius: 'inherit' }} />
-                    <Button className={classes.desktopBtn} onClick={this.handleAddTodo} labelStyles={{ display: 'inline-flex', padding: 0 }} endIcon={<NoteAddIcon />}>Add ToDo</Button>
-                    <Iconbutton className={classes.mobileBtn} onClick={this.handleAddTodo} icon={<NoteAddIcon fontSize='large' />}></Iconbutton>
+            <div className={classes.todosContainer}>
+                <div className={classes.todosHeader}>ToDos Manager</div>
+                <div className={classes.addTodosContainer} style={containerStyle}>
+                    <div className={classes.addTodoWrapper}>
+                        <Input id='add-todo' label='Add ToDo' onChange={this.handleValueChange} value={value} variant='outlined' rootInputStyles={{ backgroundColor: 'var(--text-light)', borderRadius: 'inherit' }} />
+                        <Button className={classes.desktopBtn} onClick={this.handleAddTodo} labelStyles={{ display: 'inline-flex', padding: 0 }} endIcon={<NoteAddIcon />}>Add ToDo</Button>
+                        <Iconbutton className={classes.mobileBtn} onClick={this.handleAddTodo} icon={<NoteAddIcon fontSize='large' />}></Iconbutton>
+                    </div>
                 </div>
+                {!isEmptyList(todos) && <div className={classes.todosWrapper}>
+                    {todos.map((todo, index) => {
+                        return <Todo key={`todo-${index}`} index={index} todo={todo} toggleCheckBox={this.toggleCheckBox}
+                            handleEditClick={this.handleEditClick} handleEditTodo={this.handleEditTodo} handleDeleteTodo={this.handleDeleteTodo} />
+                    })}
+                </div>}
+                <SnackBar message={snackMessage} severity={snackSeverity} handleClose={this.handleSnackClose} open={snackOpen} />
             </div>
-            {!isEmptyList(todos) && <div className={classes.todosContainer}>
-                {todos.map((todo, index) => {
-                    return <Todo key={`todo-${index}`} index={index} todo={todo} toggleCheckBox={this.toggleCheckBox}
-                        handleEditClick={this.handleEditClick} handleEditTodo={this.handleEditTodo} handleDeleteTodo={this.handleDeleteTodo} />
-                })}
-            </div>}
-            <SnackBar message={snackMessage} severity={snackSeverity} handleClose={this.handleSnackClose} open={snackOpen} />
         </Page>;
     }
 }

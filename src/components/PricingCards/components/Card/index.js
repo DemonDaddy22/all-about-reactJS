@@ -3,7 +3,7 @@ import classes from './styles.module.css';
 import Button from '../../../../ui-components/Button';
 import { isEmptyString } from '../../../../utils';
 import { THEME_COLOR, THEME_COLOR_DARK } from '../../../../resources/colors';
-import { themed } from '../../theme';
+import { themed } from '../../../../utils/theme';
 
 export default class Card extends React.Component {
 

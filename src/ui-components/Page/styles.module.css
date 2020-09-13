@@ -6,3 +6,12 @@
     background-color: var(--page-bg);
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
+
+.switchWrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    z-index: 100;
+}

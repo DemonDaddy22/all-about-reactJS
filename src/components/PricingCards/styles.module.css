@@ -23,14 +23,6 @@
     margin: 24px 0;
 }
 
-.switchWrapper {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 0.75rem;
-    right: 1rem;
-}
-
 @media(min-width: 900px) {
     .cardsContainer {
         flex-direction: row;
@@ -42,9 +34,6 @@
     }
     .cardMargin:first-child {
         margin: 0;
-    }
-    .switchWrapper {
-        right: 3rem;
     }
     .centerCard {
         transform: scale(1.2);

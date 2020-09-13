@@ -1,6 +1,6 @@
-import { getPathValue, isEmptyString } from "../../utils";
+import { getPathValue, isEmptyString } from ".";
 import { createMuiTheme } from "@material-ui/core";
-import { THEME_COLOR, THEME_COLOR_DARK, TEXT_COLOR, TEXT_COLOR_DARK } from "../../resources/colors";
+import { THEME_COLOR, THEME_COLOR_DARK, TEXT_COLOR, TEXT_COLOR_DARK } from "../resources/colors";
 
 export const themes = Object.freeze({
     LIGHT: 'light',
