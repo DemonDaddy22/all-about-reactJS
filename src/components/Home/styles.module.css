@@ -1,11 +1,10 @@
 .homeContainer {
     position: relative;
-    min-width: inherit;
-    min-height: inherit;
-    padding: 16px;
+    margin: 8px;
 }
 
 .headerWrapper {
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +12,7 @@
 
 .header {
     color: var(--text);
-    font-size: 2.5rem;
+    font-size: 2rem;
     letter-spacing: 0.4px;
     font-weight: bold;
     display: flex;
@@ -40,6 +39,34 @@
     margin-top: -5px;
     font-size: 1.4em;
     animation: colorChange 20s ease-in-out infinite;
+}
+
+.githubLinks {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.linkButton {
+    padding: 6px 10px;
+    margin-left: 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    color: var(--text-contrast);
+    background-color: var(--text);
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.2px ease-in-out;
+}
+
+.linkButton:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.buttonLabel {
+    margin-left: 4px;
+    letter-spacing: -0.2px;
+    font-weight: bold;
 }
 
 @-webkit-keyframes colorChange {
@@ -69,7 +96,17 @@
 }
 
 @media (min-width: 900px) {
+    .homeContainer {
+        margin: 4rem;
+    }
     .headerWrapper {
         flex-direction: row;
+        margin-top: 0;
+    }
+    .header {
+        font-size: 2.5rem;
+    }
+    .githubLinks {
+        margin-top: 0;
     }
 }

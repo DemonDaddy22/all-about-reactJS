@@ -4,6 +4,7 @@
     --card-container-bg: #fff;
     --dialog-bg: #fff;
     --overlay-bg: #ffffffb3;
+    --text-contrast: #fcfcf7;
     --text-prominent: #000;
     --text-light: #fff;
     --text: #202124;
@@ -31,6 +32,7 @@
     --card-container-bg: #363636;
     --dialog-bg: #161616;
     --overlay-bg: #2f2f2fb3;
+    --text-contrast: #161616;
     --text-prominent: #fff;
     --text: #d4d4d4;
     --text-obscure: #b1b1b1;
