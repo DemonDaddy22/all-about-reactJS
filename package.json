@@ -1,7 +1,7 @@
 {
     "name": "react-projects",
     "version": "0.1.0",
-    "homepage": "https://DemonDaddy22.github.io/45DaysOfReactJS/",
+    "homepage": "https://DemonDaddy22.github.io/all-about-reactJS/",
     "private": true,
     "dependencies": {
         "@material-ui/core": "^4.11.0",
