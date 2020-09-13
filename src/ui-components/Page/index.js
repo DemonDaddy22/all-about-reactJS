@@ -24,6 +24,8 @@ export default class Page extends React.Component {
     handleThemeChange = () => this.setState({ darkMode: !this.state.darkMode },
         () => {
             setTheme(this.state.darkMode ? themes.DARK : themes.LIGHT);
+            // pass this function as a prop whenever a component needs to be re-mounted on theme change to trigger themed function
+            typeof this.props.shouldComponentUpdate === 'function' && this.props.shouldComponentUpdate(new Date().getTime());
             // window.location.reload();
         });
 
