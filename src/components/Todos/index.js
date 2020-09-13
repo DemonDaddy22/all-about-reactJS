@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react';
+
 import classes from './styles.module.css';
 import Input from '../../ui-components/Input';
 import Button from '../../ui-components/Button';
@@ -8,6 +9,7 @@ import NoteAddIcon from '@material-ui/icons/NoteAdd';
 import Iconbutton from '../../ui-components/Button/Iconbutton';
 import { isEmptyList, isEmptyString } from '../../utils';
 import Todo from './components/Todo';
+import Page from '../../ui-components/Page';
 
 export default class Todos extends React.Component {
 
@@ -54,7 +56,7 @@ export default class Todos extends React.Component {
         const { value, todos, snackMessage, snackOpen, snackSeverity } = this.state;
         const { containerStyle } = this.props;
 
-        return <>
+        return <Page>
             <div className={classes.todosHeader}>ToDos Manager</div>
             <div className={classes.addTodosContainer} style={containerStyle}>
                 <div className={classes.addTodoWrapper}>
@@ -70,6 +72,6 @@ export default class Todos extends React.Component {
                 })}
             </div>}
             <SnackBar message={snackMessage} severity={snackSeverity} handleClose={this.handleSnackClose} open={snackOpen} />
-        </>;
+        </Page>;
     }
 }

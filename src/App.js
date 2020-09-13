@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-import Todos from './components/Todos';
-import PricingCards from './components/PricingCards';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
 
 export default class App extends React.Component {
 
     render = () => {
-        // return <Todos />;
-        return <PricingCards />
+        return <BrowserRouter><Routes /></BrowserRouter>;
     }
 }

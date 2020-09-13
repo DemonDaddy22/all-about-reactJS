@@ -56,13 +56,6 @@ body {
     font-family: 'Nunito', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: var(--page-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    width: 100vw;
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 code {
@@ -127,6 +120,7 @@ code {
 }
 
 #root {
-    width: inherit;
-    height: inherit;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: auto;
 }

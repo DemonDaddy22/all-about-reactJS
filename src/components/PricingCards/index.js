@@ -7,6 +7,7 @@ import Iconbutton from '../../ui-components/Button/Iconbutton';
 import Brightness4RoundedIcon from '@material-ui/icons/Brightness4Rounded';
 import Brightness7RoundedIcon from '@material-ui/icons/Brightness7Rounded';
 import { GREY_50, GREEN_500, GREEN_300, INDIGO_300, INDIGO_500 } from '../../resources/colors';
+import Page from '../../ui-components/Page';
 
 // use var and themed for colors for future implementation of theme on all the projects
 export default class PricingCards extends React.Component {
@@ -32,7 +33,7 @@ export default class PricingCards extends React.Component {
             // window.location.reload();
         });
 
-    render = () => <>
+    render = () => <Page>
         <div className={classes.switchWrapper}>
             <Iconbutton iconColor={GREY_50} onClick={this.handleThemeChange} icon={this.state.theme ? <Brightness7RoundedIcon fontSize='large' /> : <Brightness4RoundedIcon fontSize='large' />}></Iconbutton>
         </div>
@@ -47,5 +48,5 @@ export default class PricingCards extends React.Component {
                 cardContainerClass={classes.cardMargin} features={{ features: ['Downloadable resources', 'All quizzes & exercises', '1-on-1 mentor sessions'], style: { color: this.state.primaryColor } }}
                 buttonColor={this.state.primaryColor} />
         </div>
-    </>;
+    </Page>;
 }
