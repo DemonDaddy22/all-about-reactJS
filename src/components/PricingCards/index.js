@@ -2,16 +2,14 @@ import React from 'react';
 
 import classes from './styles.module.css';
 import Card from './components/Card';
-import { themed, getTheme } from '../../utils/theme';
+import { themed } from '../../utils/theme';
 import { GREEN_500, GREEN_300, INDIGO_300, INDIGO_500 } from '../../resources/colors';
 import Page from '../../ui-components/Page';
 
 export default class PricingCards extends React.Component {
 
     // invoked whenever theme changes in order to trigger themed function call
-    updateComponent = (refresher = null) => {
-        if (refresher) this.setState({ refresher });
-    }
+    updateComponent = (refresher = null) => refresher && this.setState({ refresher });
 
     render = () => <Page shouldComponentUpdate={this.updateComponent}>
         <div className={classes.pricingCardsContainer}>
