@@ -5,6 +5,9 @@ import { withStyles } from '@material-ui/core';
 
 const styles = {
     root: props => ({
+        '& label': {
+            color: 'var(--text)'
+        },
         '& .MuiOutlinedInput-input': {
             ...props.rootInputStyles
         },
