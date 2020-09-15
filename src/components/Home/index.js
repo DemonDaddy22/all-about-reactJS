@@ -5,8 +5,8 @@ import Page from '../../ui-components/Page';
 import StarBorderRoundedIcon from '@material-ui/icons/StarBorderRounded';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import ProjectCard from './components/ProjectCard';
-
-const GITHUB_BASE = 'https://github.com/DemonDaddy22';
+import { projects } from './projects';
+import { GITHUB_BASE } from '../../resources/constants';
 export default class Home extends React.Component {
 
     handleGithubButtonClick = path => window.open(GITHUB_BASE + path);

@@ -6,6 +6,11 @@
     transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
+/* 
+for hover
+add scale, contrast (filter: contrast(1.25);)
+*/
+
 .cardImage {
     display: block;
     height: 275px;

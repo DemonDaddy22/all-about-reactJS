@@ -1,0 +1,1 @@
+export const GITHUB_BASE = 'https://github.com/DemonDaddy22';
