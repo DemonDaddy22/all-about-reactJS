@@ -71,8 +71,9 @@
 
 .projectsContainer {
     margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
 @-webkit-keyframes colorChange {
@@ -101,6 +102,12 @@
     100% { color: #da708a; }
 }
 
+@media (min-width: 768px) {
+    .projectsContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media (min-width: 900px) {
     .homeContainer {
         margin: 4rem;
@@ -114,5 +121,14 @@
     }
     .githubLinks {
         margin-top: 0;
+    }
+    .projectsContainer {
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .projectsContainer {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }

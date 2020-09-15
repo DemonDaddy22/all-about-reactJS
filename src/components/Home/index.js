@@ -32,6 +32,8 @@ export default class Home extends React.Component {
                 <ProjectCard />
                 <ProjectCard />
                 <ProjectCard />
+                <ProjectCard />
+                <ProjectCard />
             </div>
         </div>
     </Page>;

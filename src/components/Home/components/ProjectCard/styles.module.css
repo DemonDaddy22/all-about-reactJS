@@ -8,20 +8,20 @@
 
 .cardImage {
     display: block;
-    height: 300px;
-    width: 400px;
+    height: 275px;
+    width: 100%;
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
 }
 
 .cardContent {
-    padding: 24px;
+    padding: 16px;
 }
 
 .cardTitle {
     font-size: 1.5rem;
     letter-spacing: -0.4px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     color: var(--text);
     transition: color 0.5s ease-in-out;
 }
