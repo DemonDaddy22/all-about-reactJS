@@ -4,6 +4,7 @@ import classes from './styles.module.css';
 import Page from '../../ui-components/Page';
 import StarBorderRoundedIcon from '@material-ui/icons/StarBorderRounded';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import ProjectCard from './components/ProjectCard';
 
 const GITHUB_BASE = 'https://github.com/DemonDaddy22';
 export default class Home extends React.Component {
@@ -26,6 +27,11 @@ export default class Home extends React.Component {
                         <span style={{ marginLeft: 6 }} className={classes.buttonLabel}>Follow</span>
                     </div>
                 </div>
+            </div>
+            <div className={classes.projectsContainer}>
+                <ProjectCard />
+                <ProjectCard />
+                <ProjectCard />
             </div>
         </div>
     </Page>;

@@ -69,6 +69,12 @@
     font-weight: bold;
 }
 
+.projectsContainer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
 @-webkit-keyframes colorChange {
     0% { color: #da708a; }
     10% { color: #d36ecb; }
