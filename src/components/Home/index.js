@@ -32,11 +32,8 @@ export default class Home extends React.Component {
                 </div>
             </div>
             <div className={classes.projectsContainer}>
-                <ProjectCard />
-                <ProjectCard />
-                <ProjectCard />
-                <ProjectCard />
-                <ProjectCard />
+                {projects.map(project => <ProjectCard key={`project-${project.sequence}`} title={project.title}
+                    image={project.image} projectPath={project.projectPath} githubLink={project.githubLink} />)}
             </div>
         </div>
     </Page>;
