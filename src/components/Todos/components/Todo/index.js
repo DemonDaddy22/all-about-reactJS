@@ -38,7 +38,7 @@ export default class Todo extends React.Component {
             {!isEditable ? <div className={classes.labelWrapper}>
                 <div className={`${classes.label} ${checked && classes.strike}`}>{value}</div>
             </div> : <div className={classes.todoInputWrapper}>
-                    <Input id='edit-todo' label='Edit Todo' onChange={this.handleValueChange} value={this.state.value}></Input>
+                    <Input id='edit-todo' label='Edit Todo' onChange={this.handleValueChange} value={this.state.value} rootInputStyles={{ color: 'var(--text)' }}></Input>
                 </div>}
             {!isEditable ? <>
                 <Iconbutton iconColor={GREEN_700} className={classes.iconBtn} onClick={() => this.props.handleEditClick(index)} icon={<EditRoundedIcon fontSize='default' />}></Iconbutton>

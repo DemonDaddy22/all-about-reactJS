@@ -9,9 +9,12 @@ import { projects } from './projects';
 import { GITHUB_BASE } from '../../resources/constants';
 export default class Home extends React.Component {
 
+    // invoked whenever theme changes in order to trigger themed function call
+    updateComponent = (refresher = null) => refresher && this.setState({ refresher });
+
     handleGithubButtonClick = path => window.open(GITHUB_BASE + path);
 
-    render = () => <Page>
+    render = () => <Page shouldComponentUpdate={this.updateComponent}>
         <div className={classes.homeContainer}>
             <div className={classes.headerWrapper}>
                 <div className={classes.header}>

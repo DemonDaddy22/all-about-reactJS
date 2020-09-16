@@ -11,6 +11,9 @@ const styles = {
         '& .MuiOutlinedInput-input': {
             ...props.rootInputStyles
         },
+        '& .MuiInput-input': {
+            ...props.rootInputStyles
+        },
         '& .MuiOutlinedInput-notchedOutline': {
             boxShadow: 'var(--shadow)',
             transition: 'border-color 0.25s ease-in-out'
