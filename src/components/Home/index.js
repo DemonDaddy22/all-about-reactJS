@@ -7,6 +7,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import ProjectCard from './components/ProjectCard';
 import { projects } from './projects';
 import { GITHUB_BASE } from '../../resources/constants';
+import { themed } from '../../utils/theme';
 export default class Home extends React.Component {
 
     // invoked whenever theme changes in order to trigger themed function call
@@ -33,7 +34,7 @@ export default class Home extends React.Component {
             </div>
             <div className={classes.projectsContainer}>
                 {projects.map(project => <ProjectCard key={`project-${project.sequence}`} title={project.title}
-                    image={project.image} projectPath={project.projectPath} githubLink={project.githubLink} />)}
+                    image={themed(project.imageLight, project.imageDark)} projectPath={project.projectPath} githubLink={project.githubLink} />)}
             </div>
         </div>
     </Page>;

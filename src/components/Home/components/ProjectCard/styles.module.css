@@ -3,7 +3,16 @@
     border: 1px solid var(--border-color);
     background-color: var(--card-bg);
     box-shadow: var(--card-shadow);
-    transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.cardContainer:hover {
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.cardContainer:hover > .cardImage {
+    filter: contrast(1.05);
 }
 
 /* 
@@ -16,7 +25,8 @@ add scale, contrast (filter: contrast(1.25);)
     width: 100%;
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
-    transition: background-image 0.5s ease-in-out;
+    background-color: var(--page-bg);
+    transition: background-image 0.5s ease-in-out, filter 0.2s ease-in-out;
 }
 
 .cardContent {
@@ -37,4 +47,18 @@ add scale, contrast (filter: contrast(1.25);)
     text-transform: uppercase;
     color: var(--text-obscure);
     transition: color 0.5s ease-in-out;
+}
+
+.cardLink:hover {
+    cursor: pointer;
+    color: var(--text-obscurer);
+    transition: color 0.2s ease-in-out;
+}
+
+@media (min-width: 900px) {
+    .cardContainer:hover {
+        box-shadow: var(--card-shadow-hover);
+        transform: scale(1.02);
+        transition: transform 0.2s ease-in-out;
+    }
 }
