@@ -44,8 +44,8 @@ export default class Todo extends React.Component {
                 <Iconbutton iconColor={GREEN_700} className={classes.iconBtn} onClick={() => this.props.handleEditClick(index)} icon={<EditRoundedIcon fontSize='default' />}></Iconbutton>
                 <Iconbutton iconColor={RED_700} className={classes.iconBtn} onClick={() => this.props.handleDeleteTodo(index)} icon={<DeleteOutlineRoundedIcon fontSize='default' />}></Iconbutton>
             </> : <>
-                    <Iconbutton iconColor={RED_700} className={classes.iconBtn} onClick={() => this.props.handleEditClick(index)} icon={<CloseRoundedIcon fontSize='default' />}></Iconbutton>
                     <Iconbutton iconColor={GREEN_700} className={classes.iconBtn} onClick={() => this.handleEditTodo(index)} icon={<CheckRoundedIcon fontSize='default' />}></Iconbutton>
+                    <Iconbutton iconColor={RED_700} className={classes.iconBtn} onClick={() => this.props.handleEditClick(index)} icon={<CloseRoundedIcon fontSize='default' />}></Iconbutton>
                 </>}
         </div>;
     }

@@ -6,6 +6,7 @@ export default class ProjectCard extends React.Component {
 
     handleClick = e => url => {
         e.preventDefault();
+        e.stopPropagation();
         window.open(url);
     }
 

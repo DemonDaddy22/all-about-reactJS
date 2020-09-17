@@ -8,17 +8,11 @@
 
 .cardContainer:hover {
     cursor: pointer;
-    transition: box-shadow 0.2s ease-in-out;
 }
 
 .cardContainer:hover > .cardImage {
     filter: contrast(1.05);
 }
-
-/* 
-for hover
-add scale, contrast (filter: contrast(1.25);)
-*/
 
 .cardImage {
     height: 275px;
@@ -42,6 +36,7 @@ add scale, contrast (filter: contrast(1.25);)
 }
 
 .cardLink {
+    width: fit-content;
     font-size: 0.75rem;
     letter-spacing: 0.4px;
     text-transform: uppercase;
@@ -52,7 +47,10 @@ add scale, contrast (filter: contrast(1.25);)
 .cardLink:hover {
     cursor: pointer;
     color: var(--text-obscurer);
-    transition: color 0.2s ease-in-out;
+}
+
+.linkUnderline {
+    color: #0ff;
 }
 
 @media (min-width: 900px) {
