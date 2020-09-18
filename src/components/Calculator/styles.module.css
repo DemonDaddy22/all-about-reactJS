@@ -1,0 +1,10 @@
+.calculatorContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: inherit;
+}
+
+.calculatorWrapper {
+    width: 50%;
+}

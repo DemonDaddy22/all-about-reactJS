@@ -1,0 +1,11 @@
+.rowContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+}
+
+.rowContainer:first-child {
+    margin-top: 0;
+}

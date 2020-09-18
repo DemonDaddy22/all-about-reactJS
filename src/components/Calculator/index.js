@@ -9,7 +9,9 @@ export default class Calculator extends React.Component {
 
     render = () => <Page>
         <div className={classes.calculatorContainer}>
-            {rows.map((row, index) => <InputRow key={`buttons-row-${index}`} row={row} index={index} />)}
+            <div className={classes.calculatorWrapper}>
+                {rows.map((row, index) => <InputRow key={`buttons-row-${index}`} row={row} index={index} />)}
+            </div>
         </div>
     </Page>
 }
