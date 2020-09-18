@@ -7,7 +7,10 @@ import InputRow from './components/InputRow';
 
 export default class Calculator extends React.Component {
 
-    render = () => <Page>
+    // invoked whenever theme changes in order to trigger themed function call
+    updateComponent = (refresher = null) => refresher && this.setState({ refresher });
+
+    render = () => <Page shouldComponentUpdate={this.updateComponent}>
         <div className={classes.calculatorContainer}>
             <div className={classes.calculatorWrapper}>
                 {rows.map((row, index) => <InputRow key={`buttons-row-${index}`} row={row} index={index} />)}
