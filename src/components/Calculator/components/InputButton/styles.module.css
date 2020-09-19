@@ -1,9 +1,11 @@
 .inputButton {
-    border-radius: 10px;
-    padding: 6px 8px;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 6px 14px;
     margin-left: 8px;
     border: 1px solid var(--border-color);
-    transition: color 0.5s ease-in-out, border 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    box-shadow: var(--card-shadow);
+    transition: color 0.5s ease-in-out, border 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
 .inputButton:nth-child(4n+1) {

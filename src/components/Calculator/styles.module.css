@@ -6,7 +6,12 @@
 }
 
 .calculatorWrapper {
-    width: 90%;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-opposite);
+    transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
 @media (min-width: 768px) {
