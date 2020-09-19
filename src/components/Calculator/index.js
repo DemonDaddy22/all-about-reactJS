@@ -13,6 +13,9 @@ export default class Calculator extends React.Component {
     render = () => <Page shouldComponentUpdate={this.updateComponent}>
         <div className={classes.calculatorContainer}>
             <div className={classes.calculatorWrapper}>
+                <div className={classes.displayWrapper}>
+                    <div className={classes.displayText}>5*6+2</div>
+                </div>
                 {rows.map((row, index) => <InputRow key={`buttons-row-${index}`} row={row} index={index} />)}
             </div>
         </div>
