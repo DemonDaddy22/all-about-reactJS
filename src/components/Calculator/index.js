@@ -5,6 +5,15 @@ import Page from '../../ui-components/Page';
 import { rows } from './rows';
 import InputRow from './components/InputRow';
 
+const operators = ['+', '-', '×', '÷', '%'];
+const operatorMap = Object.freeze({
+    '+': '+',
+    '-': '-',
+    '×': '*',
+    '÷': '/',
+    '%': '%'
+});
+
 export default class Calculator extends React.Component {
 
     state = {
@@ -15,8 +24,37 @@ export default class Calculator extends React.Component {
     updateComponent = (refresher = null) => refresher && this.setState({ refresher });
 
     onButtonClick = button => {
-        this.setState({ expression: this.state.expression + button });
+        let expression = this.state.expression === '0' ? '' : this.state.expression;
+        switch (button) {
+            case '=':
+                try {
+                    // eslint-disable-next-line
+                    expression = eval(expression);
+                    this.setState({ expression });
+                } catch (e) {
+                    console.log(e.message);
+                } finally {
+                    break;
+                }
+            case 'AC':
+                this.clearExpression();
+                break;
+            case '+/-':
+                // handle toggling when expr is empty, and when it has something
+                // add negative sign for - and nothing for +
+                break;
+            default:
+                if (this.isOperator(button)) expression += this.getOperator(button);
+                else expression += button;
+                this.setState({ expression });
+        }
     }
+
+    isOperator = button => operators.includes(button);
+
+    getOperator = button => operatorMap[button];
+
+    clearExpression = () => this.setState({ expression: '0' });
 
     render = () => <Page shouldComponentUpdate={this.updateComponent}>
         <div className={classes.calculatorContainer}>
