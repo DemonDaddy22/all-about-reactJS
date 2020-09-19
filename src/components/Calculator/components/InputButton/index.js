@@ -27,6 +27,6 @@ export default class InputButton extends React.Component {
                 break;
         }
 
-        return <div className={classes.inputButton} style={{ flex: flex, backgroundColor: buttonColor, color: textColor }}>{buttonContent}</div>
+        return <div className={classes.inputButton} style={{ flex: flex, backgroundColor: buttonColor, color: textColor }} onClick={() => this.props.onButtonClick(buttonContent)}>{buttonContent}</div>
     }
 }

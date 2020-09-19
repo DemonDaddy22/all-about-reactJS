@@ -9,7 +9,7 @@ export default class extends React.Component {
         const { row, index } = this.props;
 
         return <div className={classes.rowContainer}>
-            {row.map((entry, i) => <InputButton key={`button-${index}-${i}`} flex={entry.flex} buttonContent={entry.buttonContent} position={entry.position} />)}
+            {row.map((entry, i) => <InputButton key={`button-${index}-${i}`} flex={entry.flex} buttonContent={entry.buttonContent} position={entry.position} onButtonClick={this.props.onButtonClick} />)}
         </div>;
     }
 }

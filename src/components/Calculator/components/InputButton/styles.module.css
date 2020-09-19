@@ -5,7 +5,13 @@
     margin-left: 8px;
     border: 1px solid var(--border-color);
     box-shadow: var(--card-shadow);
-    transition: color 0.5s ease-in-out, border 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out, border 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.inputButton:hover {
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    filter: brightness(0.9);
 }
 
 .inputButton:nth-child(4n+1) {
