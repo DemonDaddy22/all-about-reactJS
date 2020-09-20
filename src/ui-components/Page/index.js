@@ -30,6 +30,7 @@ export default class Page extends React.Component {
         });
 
     render = () => <div className={classes.page}>
+        {/* add home button, github links */}
         <div className={classes.switchWrapper}>
             <Iconbutton iconColor={GREY_50} onClick={this.handleThemeChange} icon={this.state.darkMode ? <Brightness7RoundedIcon fontSize='large' /> : <Brightness4RoundedIcon fontSize='large' />}></Iconbutton>
         </div>
