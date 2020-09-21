@@ -5,6 +5,7 @@ import Home from '../components/Home';
 import Todos from '../components/Todos';
 import PricingCards from '../components/PricingCards';
 import Calculator from '../components/Calculator';
+import ColorPicker from '../components/ColorPicker';
 
 export default class Routes extends React.Component {
 
@@ -18,6 +19,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/pricing-cards' component={PricingCards} />
 
                 <Route exact path='/calculator' component={Calculator} />
+                
+                <Route exact path='/color-picker' component={ColorPicker} />
 
                 <Redirect to='/' from='*' />
             </Switch>
