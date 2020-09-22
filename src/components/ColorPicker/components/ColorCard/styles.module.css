@@ -1,11 +1,13 @@
 .card {
-    height: 3rem;
-    background-color: blueviolet;
+    height: 10rem;
 }
 
 @media (min-width: 768px) {
     .card {
-        border-radius: 4px;
-        height: 4.5rem;
+        border-radius: 10px;
+        height: 12rem;
+    }
+    .card:last-child {
+        margin-bottom: 2rem;
     }
 }

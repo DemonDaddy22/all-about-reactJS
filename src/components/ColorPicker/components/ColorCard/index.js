@@ -6,6 +6,6 @@ export default class ColorCard extends React.Component {
 
     render = () => {
 
-        return <div className={classes.card}></div>;
+        return <div className={classes.card} style={{ backgroundColor: this.props.colour }}></div>;
     }
 }
