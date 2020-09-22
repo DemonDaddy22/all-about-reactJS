@@ -1,5 +1,6 @@
 .card {
     height: 10rem;
+    transition: background-color 0.25s ease-in-out;
 }
 
 @media (min-width: 768px) {
