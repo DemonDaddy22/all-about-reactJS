@@ -19,3 +19,23 @@ export const getPathValue = (obj, accumulatedPath, defaultValue) => {
     }
     return tempObj === null ? defaultValue : tempObj;
 };
+
+export const getColours = count => {
+    let colours = [], i = 0;
+    
+    while (i < count) {
+        const colour = getRandomColor();
+        if (!isColourPresent(colour, colours)) {
+            colours.push(colour);
+            i++;
+        }
+    }
+
+    return colours
+}
+
+export const getRandomColor = () => `rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`;
+
+export const getRandomValue = value => Math.floor(Math.random() * value);
+
+export const isColourPresent = (colour, colours) => !isEmptyList(colours.filter(col => col === colour));
