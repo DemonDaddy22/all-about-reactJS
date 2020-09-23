@@ -32,7 +32,7 @@ export const getColours = count => {
     }
 
     return colours
-}
+};
 
 export const getRandomColor = () => `rgb(${getRandomValue(255)}, ${getRandomValue(255)}, ${getRandomValue(255)})`;
 
@@ -45,7 +45,7 @@ export const isValidColour = colour => {
     const style = new Option().style;
     style.color = colour;
     return style.color === colour;
-}
+};
 
 export const hexToRGB = colour => {
     if (!isValidColour(colour)) return null;
@@ -55,7 +55,7 @@ export const hexToRGB = colour => {
 
     let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(colour);
     return result ? `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)})` : null;
-}
+};
 
 export const rgbToHex = colour => {
     if (!isValidColour(colour)) return null;
@@ -73,7 +73,7 @@ export const rgbToHex = colour => {
     if (b.length === 1) b = '0' + b;
 
     return '#' + r + g + b;
-}
+};
 
 export const isColourDark = colour => {
     if (!isValidColour(colour)) return false;
@@ -88,4 +88,4 @@ export const isColourDark = colour => {
 
     let luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
     return luma < 40;
-}
+};
