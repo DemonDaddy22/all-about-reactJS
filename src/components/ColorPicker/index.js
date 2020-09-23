@@ -3,9 +3,10 @@ import React from 'react';
 import classes from './styles.module.css';
 import Iconbutton from '../../ui-components/Button/Iconbutton';
 import Page from '../../ui-components/Page';
-import { getColours, isColourDark } from '../../utils';
+import { getColours, isColourDark, rgbToHex } from '../../utils';
 import ColorCard from './components/ColorCard';
 import ColorLensRoundedIcon from '@material-ui/icons/ColorLensRounded';
+import Input from '../../ui-components/Input';
 
 export default class ColorPicker extends React.Component {
 
@@ -34,7 +35,10 @@ export default class ColorPicker extends React.Component {
                     <div style={headerColour && { color: headerColour }} className={classes.header}>
                         Color Picker
                     </div>
-                    <Iconbutton iconColor='#fff' onClick={this.getColours} icon={<ColorLensRoundedIcon fontSize='large' />}></Iconbutton>
+                    <div className={classes.inputWrapper}>
+                        <Iconbutton iconColor='#fff' onClick={this.getColours} icon={<ColorLensRoundedIcon fontSize='large' />} style={{ marginRight: 8 }}></Iconbutton>
+                        <Input id='color-picker' type='color' value={rgbToHex(selectedColour) || '#ffffff'} onChange={(e) => this.handleColourChange(e.target.value)} rootInputStyles={{ height: '2rem' }} />
+                    </div>
                 </div>
                 <div className={classes.palette}>
                     {colours.map((colour, index) => <ColorCard key={`colour-card-${index}`} colour={colour} handleColourChange={this.handleColourChange} />)}

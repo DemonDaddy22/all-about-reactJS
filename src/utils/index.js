@@ -44,8 +44,15 @@ export const isValidColour = colour => {
     if (isEmptyString(colour)) return false;
     const style = new Option().style;
     style.color = colour;
+    if (isHexColour(colour)) {
+        // convert hex to rgb as style.color gets converted to rgb
+        let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(colour);
+        colour = `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)})`;
+    }
     return style.color === colour;
 };
+
+export const isHexColour = colour => /^#([0-9A-F]{3}){1,2}$/i.test(colour);
 
 export const hexToRGB = colour => {
     if (!isValidColour(colour)) return null;
@@ -53,12 +60,14 @@ export const hexToRGB = colour => {
     let shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i; // checks for 3 digit hex value (#0f0) and converts them to 6 digit hex value
     colour = colour.replace(shorthandRegex, (m, r, g, b) => r + r + g + g + b + b);
 
-    let result = new RegExp('/^#?([a-f\\d]{2})([a-f\\d]{2})([a-f\\d]{2})$/i').exec(colour);
+    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(colour);
     return result ? `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)})` : null;
 };
 
 export const rgbToHex = colour => {
     if (!isValidColour(colour)) return null;
+
+    if (isHexColour(colour)) return colour;
 
     // Turn colour rgb(r, g, b) into rgb(r g b)
     let sep = colour.indexOf(', ') > -1 ? ', ' : ' ';
@@ -79,10 +88,9 @@ export const rgbToHex = colour => {
 export const isColourDark = colour => {
     if (!isValidColour(colour)) return false;
 
-    const isHex = new RegExp('/^#([0-9A-F]{3}){1,2}$/i').test(colour);
-    if (!isHex) colour = rgbToHex(colour);
+    if (!isHexColour(colour)) colour = rgbToHex(colour);
 
-    const is3digitHex = new RegExp('/^#[0-9A-F]{3}$/i').test(colour);
+    const is3digitHex = /^#[0-9A-F]{3}$/i.test(colour);
     if (is3digitHex) colour = colour.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => r + r + g + g + b + b);
 
     let rgb = parseInt(colour.substring(1), 16);   
@@ -91,6 +99,5 @@ export const isColourDark = colour => {
     let b = (rgb >> 0) & 0xff;
 
     let luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
-    console.log(luma);
     return luma < 100;
 };

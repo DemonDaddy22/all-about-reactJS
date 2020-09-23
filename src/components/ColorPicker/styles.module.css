@@ -24,6 +24,17 @@
     grid-template-columns: 1fr;
 }
 
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    margin-top: 0.75rem;
+    padding: 2px 14px 10px 2px;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 @media (min-width: 768px) {
     .headerContainer {
         border-bottom: none;
@@ -36,6 +47,9 @@
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
+    .inputWrapper {
+        max-width: 15%;
+    }
 }
 
 @media (min-width: 900px) {
@@ -46,5 +60,14 @@
         width: 75%;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 2rem;
+    }
+    .inputWrapper {
+        max-width: 10%;
+        transition: background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+    }
+    .inputWrapper:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+        transform: scale(1.02);
     }
 }
