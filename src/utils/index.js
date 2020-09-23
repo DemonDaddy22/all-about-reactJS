@@ -53,7 +53,7 @@ export const hexToRGB = colour => {
     let shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i; // checks for 3 digit hex value (#0f0) and converts them to 6 digit hex value
     colour = colour.replace(shorthandRegex, (m, r, g, b) => r + r + g + g + b + b);
 
-    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(colour);
+    let result = new RegExp('/^#?([a-f\\d]{2})([a-f\\d]{2})([a-f\\d]{2})$/i').exec(colour);
     return result ? `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)})` : null;
 };
 
@@ -66,7 +66,8 @@ export const rgbToHex = colour => {
     // Turn colour rgb(r g b) into [r, g, b]
     colour = colour.substr(4).split(')')[0].split(sep);
 
-    let r = parseInt(colour[0], 16), g = parseInt(colour[1], 16), b = parseInt(colour[2], 16);
+    // + converts string to number
+    let r = (+colour[0]).toString(16), g = (+colour[1]).toString(16), b = (+colour[2]).toString(16);
 
     if (r.length === 1) r = '0' + r;
     if (g.length === 1) g = '0' + g;
@@ -78,14 +79,18 @@ export const rgbToHex = colour => {
 export const isColourDark = colour => {
     if (!isValidColour(colour)) return false;
 
-    if (!(/^#[0-9A-F]{3}{1,2}$/i.test(colour))) colour = rgbToHex(colour);
-    if (/^#[0-9A-F]{3}$/i.test(colour)) colour = colour.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => r + r + g + g + b + b);
+    const isHex = new RegExp('/^#([0-9A-F]{3}){1,2}$/i').test(colour);
+    if (!isHex) colour = rgbToHex(colour);
 
-    let rgb = parseInt(colour, 16);   
-    let r = (rgb >> 16) & 0xff;  
-    let g = (rgb >> 8) & 0xff;  
+    const is3digitHex = new RegExp('/^#[0-9A-F]{3}$/i').test(colour);
+    if (is3digitHex) colour = colour.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => r + r + g + g + b + b);
+
+    let rgb = parseInt(colour.substring(1), 16);   
+    let r = (rgb >> 16) & 0xff;
+    let g = (rgb >> 8) & 0xff;
     let b = (rgb >> 0) & 0xff;
 
     let luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
-    return luma < 40;
+    console.log(luma);
+    return luma < 100;
 };
