@@ -21,6 +21,16 @@ export default class Todos extends React.Component {
         snackSeverity: ''
     }
 
+    componentDidMount = () => {
+        window.addEventListener('keydown', this.handleKeyDown);
+    }
+
+    componentWillUnmount = () => {
+        window.removeEventListener('keydown', this.handleKeyDown);
+    }
+
+    handleKeyDown = e => e.key === 'Enter' && this.handleAddTodo();
+
     handleValueChange = e => this.setState({ value: e.target.value });
 
     handleAddTodo = () => {
@@ -32,6 +42,8 @@ export default class Todos extends React.Component {
             this.setState({ todos, value: '', snackOpen: true, snackMessage: 'ToDo added successfully!', snackSeverity: 'success' },
                 () => localStorage.setItem('todos', JSON.stringify(todos)));
         }
+        // shifts the focus back to input field so that the user doesn't have to make an extra click
+        document.querySelector('#add-todo').focus();
     };
 
     handleSnackClose = () => this.setState({ snackOpen: false });
