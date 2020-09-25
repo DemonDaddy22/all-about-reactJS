@@ -6,6 +6,7 @@ import Todos from '../components/Todos';
 import PricingCards from '../components/PricingCards';
 import Calculator from '../components/Calculator';
 import ColorPicker from '../components/ColorPicker';
+import GitHubProfileViewer from '../components/GitHubProfileViewer';
 
 export default class Routes extends React.Component {
 
@@ -21,6 +22,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/calculator' component={Calculator} />
                 
                 <Route exact path='/color-picker' component={ColorPicker} />
+                
+                <Route exact path='/github-profile-viewer' component={GitHubProfileViewer} />
 
                 <Redirect to='/' from='*' />
             </Switch>
