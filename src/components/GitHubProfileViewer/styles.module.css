@@ -1,0 +1,63 @@
+.searchInputContainer {
+    background-color: var(--card-bg);
+    padding: 16px 8px 16px 16px;
+    width: 85%;
+    margin: 5rem auto 0;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.searchInputContainer:hover {
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--text);
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--text);
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--text);
+}
+
+.searchWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.desktopBtn {
+    display: none !important;
+}
+
+.mobileBtn {
+    margin-left: 8px !important;
+    display: block !important;
+}
+
+@media (min-width: 900px) {
+    .searchInputContainer {
+        max-width: 800px;
+        margin-left: 1.5rem;
+    }
+    .desktopBtn {
+        display: block !important;
+        margin-left: 8px !important;
+        min-width: 150px !important;
+        padding: 16px 0 !important;
+    }
+    .mobileBtn {
+        margin-left: 0 !important;
+        display: none !important;
+    }
+}
