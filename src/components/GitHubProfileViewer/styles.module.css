@@ -1,8 +1,12 @@
+.viewerContainer {
+    margin-top: 5rem;
+}
+
 .searchInputContainer {
     background-color: var(--card-bg);
     padding: 16px 8px 16px 16px;
     width: 85%;
-    margin: 5rem auto 0;
+    margin: 2rem auto 0;
     border-radius: 6px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -45,11 +49,40 @@
     display: block !important;
 }
 
-@media (min-width: 900px) {
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-top: 2rem;
+}
+
+.profileWrapper, .reposWrapper {
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--component-border);
+    transition: border 0.5s ease-in-out;
+}
+
+.reposWrapper {
+    flex: 1;
+}
+
+@media (min-width: 768px) {
     .searchInputContainer {
-        max-width: 800px;
+        max-width: 900px;
         margin-left: 1.5rem;
     }
+    .contentContainer {
+        flex-direction: row;
+        margin-left: 1.5rem;
+        width: 95%;
+    }
+    .reposWrapper {
+        margin-left: 2rem;
+    }
+}
+
+@media (min-width: 900px) {
     .desktopBtn {
         display: block !important;
         margin-left: 8px !important;

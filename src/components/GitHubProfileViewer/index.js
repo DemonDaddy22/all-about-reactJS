@@ -8,6 +8,8 @@ import Page from '../../ui-components/Page';
 import classes from './styles.module.css';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { isEmptyString } from '../../utils';
+import Profile from './components/Profile';
+import Repos from './components/Repos';
 
 export default class GitHubProfileViewer extends React.Component {
 
@@ -66,6 +68,14 @@ export default class GitHubProfileViewer extends React.Component {
                         <Input id='search-user' label='Search User' onChange={this.handleValueChange} value={this.state.username} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }} />
                         <Button className={classes.desktopBtn} onClick={this.handleSearchUser} labelStyles={{ display: 'inline-flex', padding: 0 }} endIcon={<GitHubIcon style={{ marginLeft: 4 }} />}>Find Me</Button>
                         <Iconbutton className={classes.mobileBtn} onClick={this.handleSearchUser} icon={<GitHubIcon fontSize='large' />}></Iconbutton>
+                    </div>
+                </div>
+                <div className={classes.contentContainer}>
+                    <div className={classes.profileWrapper}>
+                        <Profile />
+                    </div>
+                    <div className={classes.reposWrapper}>
+                        <Repos />
                     </div>
                 </div>
             </div>
