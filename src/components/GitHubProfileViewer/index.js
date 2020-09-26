@@ -7,17 +7,21 @@ import Page from '../../ui-components/Page';
 
 import classes from './styles.module.css';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import { isEmptyString } from '../../utils';
 
 export default class GitHubProfileViewer extends React.Component {
 
     state = {
-        username: ''
+        username: '',
+        searchUser: false,
+        snack: null
     }
 
     componentDidMount = () => {
         const user = 'DemonDaddy22';
         this.fetchUserData(user);
         this.fetchReposData(user);
+        window.addEventListener('keydown', this.handleKeyDown);
     }
 
     fetchUserData = user => {
@@ -32,7 +36,26 @@ export default class GitHubProfileViewer extends React.Component {
             .then(data => console.log(data));
     }
 
+    handleKeyDown = e => e.key === 'Enter' && this.handleSearchUser();
+
     handleValueChange = e => this.setState({ username: e.target.value });
+
+    handleSearchUser = () => {
+        if (isEmptyString(this.state.username)) {
+            this.setState({ snack: {
+                open: true,
+                message: `Uh-oh! I don't like empty strings`,
+                severity: 'warning'
+            } });
+        } else {
+            this.setState({ searchUser: true });
+        }
+    }
+
+    clearUsername = () => {
+        this.setState({ username: '' });
+        document.querySelector('#search-user').focus();
+    }
 
     render = () => {
 
