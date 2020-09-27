@@ -20,6 +20,11 @@ export const getPathValue = (obj, accumulatedPath, defaultValue) => {
     return tempObj === null ? defaultValue : tempObj;
 };
 
+export const handleError = response => {
+    if (!response.ok) throw Error(response.statusText);
+    return response;
+}
+
 export const getColours = count => {
     let colours = [], i = 0;
 

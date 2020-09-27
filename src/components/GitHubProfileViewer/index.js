@@ -10,6 +10,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import { isEmptyString } from '../../utils';
 import Profile from './components/Profile';
 import Repos from './components/Repos';
+import SnackBar from '../../ui-components/SnackBar';
 
 export default class GitHubProfileViewer extends React.Component {
 
@@ -20,9 +21,9 @@ export default class GitHubProfileViewer extends React.Component {
     }
 
     componentDidMount = () => {
-        const user = 'DemonDaddy22';
-        this.fetchUserData(user);
-        this.fetchReposData(user);
+        // const user = 'DemonDaddy22';
+        // this.fetchUserData(user);
+        // this.fetchReposData(user);
         window.addEventListener('keydown', this.handleKeyDown);
     }
 
@@ -55,9 +56,11 @@ export default class GitHubProfileViewer extends React.Component {
     }
 
     clearUsername = () => {
-        this.setState({ username: '' });
+        this.setState({ username: '', searchUser: false });
         document.querySelector('#search-user').focus();
     }
+
+    handleSnackClose = () => this.setState({ snack: { ...this.state.snack, open: false } });
 
     render = () => {
 
@@ -72,13 +75,14 @@ export default class GitHubProfileViewer extends React.Component {
                 </div>
                 <div className={classes.contentContainer}>
                     <div className={classes.profileWrapper}>
-                        <Profile />
+                        <Profile username={this.state.username} searchUser={this.state.searchUser} clearUsername={this.clearUsername} />
                     </div>
                     <div className={classes.reposWrapper}>
                         <Repos />
                     </div>
                 </div>
             </div>
+            {this.state?.snack?.message && <SnackBar message={this.state.snack.message} severity={this.state.snack.severity} handleClose={this.handleSnackClose} open={this.state.snack.open} />}
         </Page>;
     }
 }

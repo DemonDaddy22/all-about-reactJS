@@ -1,0 +1,12 @@
+.profileContainer {
+    position: relative;
+}
+
+.loader {
+    composes: center from global;
+}
+
+.noData {
+    color: var(--text-obscure);
+    composes: center from global;
+}
