@@ -14,29 +14,33 @@ export default class Profile extends React.Component {
     componentDidMount = () => this.props.searchUser && this.fetchUserData(this.props.username);
 
     componentDidUpdate = prevProps => {
-        console.table(prevProps);
-        console.log('--------------------------------------------------');
-        console.table(this.props);
         if (prevProps.searchUser !== this.props.searchUser && this.props.searchUser) this.fetchUserData(this.props.username);
     }
 
     fetchUserData = username => this.setState({ loader: true }, () => fetch(GITHUB_API_BASE + `/users/${username}`)
         .then(handleError)
         .then(res => res.json())
-        .then(data => this.setState({ loader: false, profileData: data }, () => {
-            console.table(data);
-            this.props.clearUsername();
-        }))
+        .then(data => this.setState({ loader: false, profileData: data }, () => this.props.clearUsername()))
         .catch(error => this.setState({ loader: false, profileData: null }, () => console.log(error))));
 
     render = () => {
+        const profileData = this.state.profileData;
 
-        return <div className={classes.profileContainer}>
+        return <>
             {this.state.loader ?
                 <div className={classes.loader}>Loading...</div>
-                : !this.state.profileData ?
+                : !profileData ?
                     <div className={classes.noData}>Try searching for a valid user</div>
-                    : <div className={classes.profileContent}>{this.state.profileData.login}</div>}
-        </div>;
+                    : <>
+                        <img className={classes.profilePic} src={profileData.avatar_url} alt='profile-pic' />
+                        <div className={classes.name}>{profileData.name}</div>
+                        <div className={classes.username}>{profileData.login}</div>
+                        <div className={classes.bio}>{profileData.bio}</div>
+                        <div className={classes.stats}>
+                            <div className={classes.followers}>{profileData.followers}</div>
+                            <div className={classes.following}>{profileData.following}</div>
+                        </div>
+                    </>}
+        </>;
     }
 }

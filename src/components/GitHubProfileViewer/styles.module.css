@@ -59,6 +59,8 @@
 .profileWrapper, .reposWrapper {
     padding: 1rem;
     border-radius: 6px;
+    position: relative;
+    height: fit-content;
     border: 1px solid var(--component-border);
     transition: border 0.5s ease-in-out;
 }
@@ -79,7 +81,11 @@
         width: 95%;
     }
     .reposWrapper {
+        margin-top: 0;
         margin-left: 2rem;
+    }
+    .profileWrapper {
+        width: 260px;
     }
 }
 
@@ -93,5 +99,8 @@
     .mobileBtn {
         margin-left: 0 !important;
         display: none !important;
+    }
+    .profileWrapper {
+        width: 300px;
     }
 }

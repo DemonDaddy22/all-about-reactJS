@@ -22,15 +22,8 @@ export default class GitHubProfileViewer extends React.Component {
 
     componentDidMount = () => {
         // const user = 'DemonDaddy22';
-        // this.fetchUserData(user);
         // this.fetchReposData(user);
         window.addEventListener('keydown', this.handleKeyDown);
-    }
-
-    fetchUserData = user => {
-        fetch(GITHUB_API_BASE + `/users/${user}`)
-            .then(res => res.json())
-            .then(data => console.table(data));
     }
 
     fetchReposData = user => {

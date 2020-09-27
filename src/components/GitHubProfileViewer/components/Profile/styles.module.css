@@ -1,5 +1,6 @@
 .profileContainer {
     position: relative;
+    min-width: 150px;
 }
 
 .loader {
@@ -9,4 +10,11 @@
 .noData {
     color: var(--text-obscure);
     composes: center from global;
+}
+
+.profilePic {
+    display: block;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
 }
