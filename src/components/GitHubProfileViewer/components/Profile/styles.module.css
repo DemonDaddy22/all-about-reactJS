@@ -1,20 +1,56 @@
-.profileContainer {
-    position: relative;
-    min-width: 150px;
-}
-
 .loader {
-    composes: center from global;
+    
 }
 
 .noData {
     color: var(--text-obscure);
-    composes: center from global;
 }
 
 .profilePic {
     display: block;
     height: 250px;
     width: 250px;
+    margin: 0 auto;
     border-radius: 50%;
+}
+
+.name {
+    margin-top: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-prominent);
+    transition: color 0.5s ease-in-out;
+}
+
+.username {
+    font-size: 1.2rem;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+.bio, .company {
+    margin-top: 1rem;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+.company {
+    font-weight: 600;
+}
+
+.stats {
+    flex: 1;
+    margin-top: 1rem;
+    display: flex;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+.following {
+    margin-left: 8px;
+}
+
+.stat {
+    font-weight: 600;
+    margin-right: 4px;
 }

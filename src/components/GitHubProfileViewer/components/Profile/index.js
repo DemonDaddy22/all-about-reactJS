@@ -37,9 +37,22 @@ export default class Profile extends React.Component {
                         <div className={classes.username}>{profileData.login}</div>
                         <div className={classes.bio}>{profileData.bio}</div>
                         <div className={classes.stats}>
-                            <div className={classes.followers}>{profileData.followers}</div>
-                            <div className={classes.following}>{profileData.following}</div>
+                            <div className={classes.followers}>
+                                <span className={classes.stat}>{profileData.followers}</span>
+                                followers
+                            </div>
+                            <div className={classes.following}>
+                                <span className={classes.stat}>{profileData.following}</span>
+                                following
+                            </div>
                         </div>
+                        {/* add icons for below items */}
+                        {profileData?.company && <div className={classes.company}>
+                            {profileData.company}
+                        </div>}
+                        {/* add location */}
+                        {/* add blog */}
+                        {/* add twitter */}
                     </>}
         </>;
     }
