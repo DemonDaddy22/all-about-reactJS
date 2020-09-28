@@ -30,7 +30,7 @@ export default class Profile extends React.Component {
 
     render = () => {
         const profileData = this.state.profileData;
-
+        // add necessary links
         return <>
             {this.state.loader ?
                 <div className={classes.loader}><SpinnerLoader /></div>

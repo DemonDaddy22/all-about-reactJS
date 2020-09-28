@@ -2,6 +2,7 @@ import React from 'react';
 import { GITHUB_API_BASE } from '../../../../resources/constants';
 import SpinnerLoader from '../../../../ui-components/SpinnerLoader';
 import { handleError, isEmptyList } from '../../../../utils';
+import RepoCard from '../RepoCard';
 
 import classes from './styles.module.css';
 
@@ -18,7 +19,7 @@ export default class Repos extends React.Component {
         if (prevProps.searchUser !== this.props.searchUser && this.props.searchUser) this.fetchReposData(this.props.username);
     }
 
-    fetchReposData = username => this.setState({ loader: true }, () => fetch(GITHUB_API_BASE + `/users/${username}/repos`)
+    fetchReposData = username => this.setState({ loader: true }, () => fetch(GITHUB_API_BASE + `/users/${username}/repos?sort=pushed`)
         .then(handleError)
         .then(res => res.json())
         .then(data => this.setState({ loader: false, reposData: data }, () => this.props.clearUsername()))
@@ -32,7 +33,9 @@ export default class Repos extends React.Component {
                 <div className={classes.loader}><SpinnerLoader /></div>
                 : isEmptyList(reposData) ?
                     <div className={classes.noData}>No repos data available</div>
-                    : <></>}
+                    : <div className={classes.reposGrid}>
+                        {reposData.map(repo => <RepoCard key={repo.name} name={repo.name} />)}    
+                    </div>}
         </>;
     }
 }

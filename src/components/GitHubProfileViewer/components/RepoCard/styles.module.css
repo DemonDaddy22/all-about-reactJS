@@ -1,0 +1,6 @@
+.repoCard {
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--component-border);
+    transition: border 0.5s ease-in-out;
+}

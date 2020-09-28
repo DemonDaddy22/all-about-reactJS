@@ -7,3 +7,15 @@
     align-items: center;
     justify-content: center;
 }
+
+.reposGrid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+    .reposGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
