@@ -1,8 +1,12 @@
 import React from 'react';
-import { GITHUB_API_BASE } from '../../../../resources/constants';
-import { handleError } from '../../../../utils';
 
 import classes from './styles.module.css';
+import { GITHUB_API_BASE } from '../../../../resources/constants';
+import { handleError } from '../../../../utils';
+import LocationCityRoundedIcon from '@material-ui/icons/LocationCityRounded';
+import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded';
+import LinkRoundedIcon from '@material-ui/icons/LinkRounded';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
 export default class Profile extends React.Component {
 
@@ -46,13 +50,22 @@ export default class Profile extends React.Component {
                                 following
                             </div>
                         </div>
-                        {/* add icons for below items */}
                         {profileData?.company && <div className={classes.company}>
+                            <LocationCityRoundedIcon style={{ fontSize: '1.25rem', marginRight: 6, color: 'var(--text-obscurer)' }} />
                             {profileData.company}
                         </div>}
-                        {/* add location */}
-                        {/* add blog */}
-                        {/* add twitter */}
+                        {profileData?.location && <div className={classes.location}>
+                            <LocationOnRoundedIcon style={{ fontSize: '1.25rem', marginRight: 6, color: 'var(--text-obscurer)' }} />
+                            {profileData.location}
+                        </div>}
+                        {profileData?.blog && <div className={classes.blog}>
+                            <LinkRoundedIcon style={{ fontSize: '1.25rem', marginRight: 6, color: 'var(--text-obscurer)' }} />
+                            {profileData.blog}
+                        </div>}
+                        {profileData?.twitter_username && <div className={classes.twitter}>
+                            <TwitterIcon style={{ fontSize: '1.25rem', marginRight: 6, color: 'var(--text-obscurer)' }} />
+                            @{profileData.twitter_username}
+                        </div>}
                     </>}
         </>;
     }

@@ -28,10 +28,18 @@
     transition: color 0.5s ease-in-out;
 }
 
-.bio, .company {
-    margin-top: 1rem;
+.bio, .company, .location, .blog, .twitter {
+    margin-top: 0.25rem;
+    text-overflow: ellipsis;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-end;
     color: var(--text);
     transition: color 0.5s ease-in-out;
+}
+
+.bio {
+    font-size: 1rem;
 }
 
 .company {
@@ -40,8 +48,9 @@
 
 .stats {
     flex: 1;
-    margin-top: 1rem;
     display: flex;
+    font-size: 0.9rem;
+    margin: 1.25rem 0 1rem;
     color: var(--text);
     transition: color 0.5s ease-in-out;
 }

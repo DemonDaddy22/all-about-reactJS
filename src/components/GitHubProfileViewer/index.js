@@ -61,7 +61,7 @@ export default class GitHubProfileViewer extends React.Component {
             <div className={classes.viewerContainer}>
                 <div className={classes.searchInputContainer}>
                     <div className={classes.searchWrapper}>
-                        <Input id='search-user' label='Search User' onChange={this.handleValueChange} value={this.state.username} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }} />
+                        <Input id='search-user' label='Search GitHub User' onChange={this.handleValueChange} value={this.state.username} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }} />
                         <Button className={classes.desktopBtn} onClick={this.handleSearchUser} labelStyles={{ display: 'inline-flex', padding: 0 }} endIcon={<GitHubIcon style={{ marginLeft: 4 }} />}>Find Me</Button>
                         <Iconbutton className={classes.mobileBtn} onClick={this.handleSearchUser} icon={<GitHubIcon fontSize='large' />}></Iconbutton>
                     </div>
