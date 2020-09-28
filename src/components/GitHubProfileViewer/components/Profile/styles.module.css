@@ -63,3 +63,9 @@
     font-weight: 600;
     margin-right: 4px;
 }
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

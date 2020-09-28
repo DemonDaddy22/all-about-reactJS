@@ -7,6 +7,7 @@ import LocationCityRoundedIcon from '@material-ui/icons/LocationCityRounded';
 import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded';
 import LinkRoundedIcon from '@material-ui/icons/LinkRounded';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import SpinnerLoader from '../../../../ui-components/SpinnerLoader';
 
 export default class Profile extends React.Component {
 
@@ -32,7 +33,7 @@ export default class Profile extends React.Component {
 
         return <>
             {this.state.loader ?
-                <div className={classes.loader}>Loading...</div>
+                <div className={classes.loader}><SpinnerLoader /></div>
                 : !profileData ?
                     <div className={classes.noData}>Try searching for a valid user</div>
                     : <>
