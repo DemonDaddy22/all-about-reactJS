@@ -20,11 +20,9 @@ export default class GitHubProfileViewer extends React.Component {
         snack: null
     }
 
-    componentDidMount = () => {
-        // const user = 'DemonDaddy22';
-        // this.fetchReposData(user);
-        window.addEventListener('keydown', this.handleKeyDown);
-    }
+    componentDidMount = () => window.addEventListener('keydown', this.handleKeyDown);
+
+    componentWillUnmount = () => window.removeEventListener('keydown', this.handleKeyDown);
 
     fetchReposData = user => {
         fetch(GITHUB_API_BASE + `/users/${user}/repos`)
@@ -71,7 +69,7 @@ export default class GitHubProfileViewer extends React.Component {
                         <Profile username={this.state.username} searchUser={this.state.searchUser} clearUsername={this.clearUsername} />
                     </div>
                     <div className={classes.reposWrapper}>
-                        <Repos />
+                        <Repos username={this.state.username} searchUser={this.state.searchUser} clearUsername={this.clearUsername} />
                     </div>
                 </div>
             </div>

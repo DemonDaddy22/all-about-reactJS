@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './styles.module.css';
 import { GITHUB_API_BASE } from '../../../../resources/constants';
-import { handleError } from '../../../../utils';
+import { handleError, isEmptyObject } from '../../../../utils';
 import LocationCityRoundedIcon from '@material-ui/icons/LocationCityRounded';
 import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded';
 import LinkRoundedIcon from '@material-ui/icons/LinkRounded';
@@ -34,7 +34,7 @@ export default class Profile extends React.Component {
         return <>
             {this.state.loader ?
                 <div className={classes.loader}><SpinnerLoader /></div>
-                : !profileData ?
+                : isEmptyObject(profileData) ?
                     <div className={classes.noData}>Try searching for a valid user</div>
                     : <>
                         <img className={classes.profilePic} src={profileData.avatar_url} alt='profile-pic' />
