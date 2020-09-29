@@ -24,12 +24,6 @@ export default class GitHubProfileViewer extends React.Component {
 
     componentWillUnmount = () => window.removeEventListener('keydown', this.handleKeyDown);
 
-    fetchReposData = user => {
-        fetch(GITHUB_API_BASE + `/users/${user}/repos`)
-            .then(res => res.json())
-            .then(data => console.log(data));
-    }
-
     handleKeyDown = e => e.key === 'Enter' && this.handleSearchUser();
 
     handleValueChange = e => this.setState({ username: e.target.value });
@@ -42,12 +36,12 @@ export default class GitHubProfileViewer extends React.Component {
                 severity: 'warning'
             } });
         } else {
-            this.setState({ searchUser: true });
+            this.setState({ searchUser: true, refresher: new Date().getTime() });
         }
     }
 
-    clearUsername = () => {
-        this.setState({ username: '', searchUser: false });
+    clearUsername = (username = '') => {
+        this.setState({ username, searchUser: false });
         document.querySelector('#search-user').focus();
     }
 

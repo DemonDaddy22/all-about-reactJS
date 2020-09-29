@@ -24,7 +24,7 @@ export default class Repos extends React.Component {
         .then(handleError)
         .then(res => res.json())
         .then(data => this.setState({ loader: false, reposData: data }, () => this.props.clearUsername()))
-        .catch(error => this.setState({ loader: false, reposData: null }, () => console.log(error))));
+        .catch(error => this.setState({ loader: false, reposData: null }, () => this.props.clearUsername(username))));
 
     render = () => {
         const reposData = this.state.reposData;

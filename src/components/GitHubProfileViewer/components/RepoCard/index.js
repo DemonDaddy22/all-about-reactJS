@@ -18,9 +18,9 @@ export default class RepoCard extends React.Component {
             </div>}
             <div className={classes.repoDescription}>{repo?.description}</div>
             <div className={classes.bottomContent}>
-                <div className={classes.repoLanguage}>{repo?.language}</div>
+                {repo?.language && <div className={classes.repoLanguage}>{repo.language}</div>}
                 {getPathValue(repo, 'stargazers_count', 0) > 0 && <div className={classes.repoStars}>
-                    <StarBorderRoundedIcon color='inherit' className={classes.repoIcon} style={{ marginRight: 4 }} />
+                    <StarBorderRoundedIcon color='inherit' className={classes.repoIcon} style={{ marginTop: -2, marginRight: 4 }} />
                     {repo.stargazers_count}
                 </div>}
                 {getPathValue(repo, 'forks_count', 0) > 0 && <div className={classes.repoForks}>

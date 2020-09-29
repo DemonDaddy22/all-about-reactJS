@@ -26,7 +26,7 @@ export default class Profile extends React.Component {
         .then(handleError)
         .then(res => res.json())
         .then(data => this.setState({ loader: false, profileData: data }, () => this.props.clearUsername()))
-        .catch(error => this.setState({ loader: false, profileData: null }, () => console.log(error))));
+        .catch(error => this.setState({ loader: false, profileData: null }, () => this.props.clearUsername(this.props.username))));
 
     render = () => {
         const profileData = this.state.profileData;
