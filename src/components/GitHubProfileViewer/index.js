@@ -1,5 +1,4 @@
 import React from 'react';
-import { GITHUB_API_BASE } from '../../resources/constants';
 import Button from '../../ui-components/Button';
 import Iconbutton from '../../ui-components/Button/Iconbutton';
 import Input from '../../ui-components/Input';
