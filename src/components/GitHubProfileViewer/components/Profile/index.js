@@ -8,6 +8,7 @@ import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded';
 import LinkRoundedIcon from '@material-ui/icons/LinkRounded';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import SpinnerLoader from '../../../../ui-components/SpinnerLoader';
+import SnackBar from '../../../../ui-components/SnackBar';
 
 export default class Profile extends React.Component {
 
@@ -25,8 +26,16 @@ export default class Profile extends React.Component {
     fetchUserData = username => this.setState({ loader: true }, () => fetch(GITHUB_API_BASE + `/users/${username}`)
         .then(handleError)
         .then(res => res.json())
-        .then(data => this.setState({ loader: false, profileData: data }, () => this.props.clearUsername()))
-        .catch(error => this.setState({ loader: false, profileData: null }, () => this.props.clearUsername(this.props.username))));
+        .then(data => this.setState({ loader: false, profileData: data, snack: null }, () => this.props.clearUsername()))
+        .catch(error => this.setState({
+            loader: false, profileData: null, snack: {
+                open: true,
+                message: error.message,
+                severity: 'error'
+            }
+        }, () => this.props.clearUsername(this.props.username))));
+
+    handleSnackClose = () => this.setState({ snack: { ...this.state.snack, open: false } });
 
     render = () => {
         const profileData = this.state.profileData;
@@ -68,6 +77,7 @@ export default class Profile extends React.Component {
                             @{profileData.twitter_username}
                         </div>}
                     </>}
+            {this.state?.snack?.message && <SnackBar message={this.state.snack.message} severity={this.state.snack.severity} handleClose={this.handleSnackClose} open={this.state.snack.open} />}
         </>;
     }
 }
