@@ -19,6 +19,7 @@ export default class Repos extends React.Component {
         if (prevProps.searchUser !== this.props.searchUser && this.props.searchUser) this.fetchReposData(this.props.username);
     }
 
+    // show error in snackbar
     fetchReposData = username => this.setState({ loader: true }, () => fetch(GITHUB_API_BASE + `/users/${username}/repos?sort=pushed`)
         .then(handleError)
         .then(res => res.json())
@@ -34,7 +35,7 @@ export default class Repos extends React.Component {
                 : isEmptyList(reposData) ?
                     <div className={classes.noData}>No repos data available</div>
                     : <div className={classes.reposGrid}>
-                        {reposData.map(repo => <RepoCard key={repo.name} name={repo.name} />)}    
+                        {reposData.map((repo, index) => <RepoCard key={`repo-${index}`} repo={repo} />)}    
                     </div>}
         </>;
     }
