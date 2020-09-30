@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/all-about-reactJS/static/css/main.cdab7ed9.chunk.css",
-    "main.js": "/all-about-reactJS/static/js/main.db340c3d.chunk.js",
-    "main.js.map": "/all-about-reactJS/static/js/main.db340c3d.chunk.js.map",
+    "main.css": "/all-about-reactJS/static/css/main.ce93d0bd.chunk.css",
+    "main.js": "/all-about-reactJS/static/js/main.3faefafc.chunk.js",
+    "main.js.map": "/all-about-reactJS/static/js/main.3faefafc.chunk.js.map",
     "runtime-main.js": "/all-about-reactJS/static/js/runtime-main.51916d60.js",
     "runtime-main.js.map": "/all-about-reactJS/static/js/runtime-main.51916d60.js.map",
-    "static/js/2.f3f4ed9d.chunk.js": "/all-about-reactJS/static/js/2.f3f4ed9d.chunk.js",
-    "static/js/2.f3f4ed9d.chunk.js.map": "/all-about-reactJS/static/js/2.f3f4ed9d.chunk.js.map",
+    "static/js/2.6cc930f7.chunk.js": "/all-about-reactJS/static/js/2.6cc930f7.chunk.js",
+    "static/js/2.6cc930f7.chunk.js.map": "/all-about-reactJS/static/js/2.6cc930f7.chunk.js.map",
     "index.html": "/all-about-reactJS/index.html",
-    "precache-manifest.867b50e1b775e94faf7366231d48a382.js": "/all-about-reactJS/precache-manifest.867b50e1b775e94faf7366231d48a382.js",
+    "precache-manifest.f20ef9ba5e79bf98d5a8f5a3c56bb08a.js": "/all-about-reactJS/precache-manifest.f20ef9ba5e79bf98d5a8f5a3c56bb08a.js",
     "service-worker.js": "/all-about-reactJS/service-worker.js",
-    "static/css/main.cdab7ed9.chunk.css.map": "/all-about-reactJS/static/css/main.cdab7ed9.chunk.css.map",
-    "static/js/2.f3f4ed9d.chunk.js.LICENSE.txt": "/all-about-reactJS/static/js/2.f3f4ed9d.chunk.js.LICENSE.txt",
+    "static/css/main.ce93d0bd.chunk.css.map": "/all-about-reactJS/static/css/main.ce93d0bd.chunk.css.map",
+    "static/js/2.6cc930f7.chunk.js.LICENSE.txt": "/all-about-reactJS/static/js/2.6cc930f7.chunk.js.LICENSE.txt",
     "static/media/pricing_dark.jpg": "/all-about-reactJS/static/media/pricing_dark.418b8f3b.jpg",
-    "static/media/pricing_light.jpg": "/all-about-reactJS/static/media/pricing_light.79b6e38a.jpg"
+    "static/media/pricing_light.jpg": "/all-about-reactJS/static/media/pricing_light.79b6e38a.jpg",
+    "static/media/profile_viewer_dark.jpg": "/all-about-reactJS/static/media/profile_viewer_dark.870443f3.jpg",
+    "static/media/profile_viewer_light.jpg": "/all-about-reactJS/static/media/profile_viewer_light.41ee8076.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.51916d60.js",
-    "static/js/2.f3f4ed9d.chunk.js",
-    "static/css/main.cdab7ed9.chunk.css",
-    "static/js/main.db340c3d.chunk.js"
+    "static/js/2.6cc930f7.chunk.js",
+    "static/css/main.ce93d0bd.chunk.css",
+    "static/js/main.3faefafc.chunk.js"
   ]
 }
