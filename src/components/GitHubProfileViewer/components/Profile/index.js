@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './styles.module.css';
 import { GITHUB_API_BASE } from '../../../../resources/constants';
-import { handleError, isEmptyObject } from '../../../../utils';
+import { handleError, isEmptyObject, isEmptyString } from '../../../../utils';
 import LocationCityRoundedIcon from '@material-ui/icons/LocationCityRounded';
 import LocationOnRoundedIcon from '@material-ui/icons/LocationOnRounded';
 import LinkRoundedIcon from '@material-ui/icons/LinkRounded';
@@ -37,6 +37,11 @@ export default class Profile extends React.Component {
 
     handleSnackClose = () => this.setState({ snack: { ...this.state.snack, open: false } });
 
+    handleLinkClick = url => {
+        if (isEmptyString(url)) return;
+        window.open(url);
+    }
+
     render = () => {
         const profileData = this.state.profileData;
         // add necessary links
@@ -47,7 +52,10 @@ export default class Profile extends React.Component {
                     <div className={classes.noData}>Try searching for a valid user</div>
                     : <>
                         <img className={classes.profilePic} src={profileData.avatar_url} alt='profile-pic' />
-                        <div className={classes.name}>{profileData.name}</div>
+                        <div className={`${classes.name} ${profileData?.html_url && classes.nameActive}`}
+                            onClick={() => profileData?.html_url ? this.handleLinkClick(profileData.html_url) : {}}>
+                            {profileData.name}
+                        </div>
                         <div className={classes.username}>{profileData.login}</div>
                         <div className={classes.bio}>{profileData.bio}</div>
                         <div className={classes.stats}>
@@ -68,7 +76,8 @@ export default class Profile extends React.Component {
                             <LocationOnRoundedIcon style={{ fontSize: '1.25rem', marginRight: 6, color: 'var(--text-obscurer)' }} />
                             {profileData.location}
                         </div>}
-                        {profileData?.blog && <div className={classes.blog}>
+                        {profileData?.blog && <div className={`${classes.blog} ${profileData?.blog && classes.blogActive}`}
+                            onClick={() => profileData?.blog ? this.handleLinkClick(`https://${profileData.blog}`) : {}}>
                             <LinkRoundedIcon style={{ fontSize: '1.25rem', marginRight: 6, color: 'var(--text-obscurer)' }} />
                             {profileData.blog}
                         </div>}

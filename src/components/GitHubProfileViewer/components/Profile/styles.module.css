@@ -18,6 +18,11 @@
     transition: color 0.5s ease-in-out;
 }
 
+.nameActive:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .username {
     font-size: 1.2rem;
     color: var(--text);
@@ -35,7 +40,13 @@
 }
 
 .bio {
+    margin-top: 0.5rem;
     font-size: 1rem;
+}
+
+.blogActive:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .company {
