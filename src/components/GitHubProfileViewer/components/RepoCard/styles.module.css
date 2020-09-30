@@ -16,6 +16,11 @@
     transition: color 0.5s ease-in-out;
 }
 
+.repoNameActive:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .repoIcon {
     font-size: 1rem !important;
     margin-right: 8px;

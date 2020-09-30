@@ -1,18 +1,24 @@
 import React from 'react';
 
 import classes from './styles.module.css';
-import { getPathValue } from '../../../../utils';
+import { getPathValue, isEmptyString } from '../../../../utils';
 import SubjectRoundedIcon from '@material-ui/icons/SubjectRounded';
 import StarBorderRoundedIcon from '@material-ui/icons/StarBorderRounded';
 import AccountTreeRoundedIcon from '@material-ui/icons/AccountTreeRounded';
 
 export default class RepoCard extends React.Component {
 
+    handleLinkClick = url => {
+        if (isEmptyString(url)) return;
+        window.open(url);
+    }
+
     render = () => {
         const repo = this.props.repo;
 
         return <div className={classes.repoCard}>
-            {repo?.name && <div className={classes.repoName}>
+            {repo?.name && <div className={`${classes.repoName} ${repo?.html_url && classes.repoNameActive}`}
+                onClick={() => repo?.html_url ? this.handleLinkClick(repo.html_url) : {}}>
                 <SubjectRoundedIcon color='inherit' className={classes.repoIcon} />
                 {repo.name}
             </div>}
