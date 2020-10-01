@@ -5,7 +5,7 @@
 
 - If there's any grammatical mistake, changes in the documentation, raise a PR for the same.
 
-- If you want to suggest ideas on which others can work upon, please add them to the ideas.md file, so that people can use them on create new and interesting stuff.
+- If you want to suggest ideas on which others can work upon, please add them to the [ideas.md](https://github.com/DemonDaddy22/all-about-reactJS/blob/master/ideas.md), so that people can use them to create new and interesting stuff.
 
 - If there's a bug fix, code impromevement or feature addition, kindly open an **Issue** first, so that others can also pick up that issue and start working on it.
 
