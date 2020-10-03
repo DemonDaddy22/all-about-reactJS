@@ -9,6 +9,7 @@ const styles = {
     root: props => ({
         borderColor: `${props.disabled ? TRANSPARENT : props.variant === 'outlined' ? props.borderColor : TRANSPARENT} !important`,
         backgroundColor: props.variant === 'outlined' ? TRANSPARENT : props.disabled ? '#aaa' : props.backgroundColor,
+        transition: 'box-shadow 0.35s ease-in-out',
         '&:hover': {
             backgroundColor: props.disabled ? '#aaa' : props.variant === 'outlined' ? TRANSPARENT : props.backgroundColor,
             boxShadow: props.disabled || props.noShadow ? null : `0px 0px 6px ${props.backgroundColor}`,
