@@ -7,6 +7,7 @@ import PricingCards from '../components/PricingCards';
 import Calculator from '../components/Calculator';
 import ColorPicker from '../components/ColorPicker';
 import GitHubProfileViewer from '../components/GitHubProfileViewer';
+import StonePaperScissor from '../components/StonePaperScissor';
 
 export default class Routes extends React.Component {
 
@@ -24,6 +25,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/color-picker' component={ColorPicker} />
                 
                 <Route exact path='/github-profile-viewer' component={GitHubProfileViewer} />
+
+                <Route exact path='/stone-paper-scissor' component={StonePaperScissor} />
 
                 <Redirect to='/' from='*' />
             </Switch>

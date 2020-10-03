@@ -19,6 +19,8 @@
     --border-color: rgba(0, 0, 0, 0.1);
     --theme-color: #1976d2;
     --theme-color-obscure: #1976d29f;
+    --secondary-theme-color: #d32f66;
+    --secondary-theme-color: #d32f66d0;
     --component-border-disabled: rgba(0, 0, 0, 0.12);
     --component-border-hover: rgba(0, 0, 0, 0.87);
     --component-border: rgba(0, 0, 0, 0.23);
@@ -49,6 +51,8 @@
     --border-color: rgba(163, 163, 163, 0.1);
     --theme-color: #1b7fe4;
     --theme-color-obscure: #1461af9f;
+    --secondary-theme-color: #da4375;
+    --secondary-theme-color: #da4375d3;
     --component-border-disabled: #FFFFFF22;
     --component-border-hover: #fff;
     --component-border: #FFFFFF59;
