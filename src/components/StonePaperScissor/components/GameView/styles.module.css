@@ -1,0 +1,12 @@
+.cardsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .cardsWrapper {
+        margin-top: 2rem;
+        flex-direction: row;
+    }
+}
