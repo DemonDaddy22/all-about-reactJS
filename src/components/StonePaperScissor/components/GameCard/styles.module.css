@@ -16,13 +16,62 @@
     box-shadow: var(--card-shadow-hover);
 }
 
+.cardImageWrapper {
+    padding: 1rem 1rem 0;
+    margin: 0 auto;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--overlay-bg);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.cardImage {
+    display: block;
+    height: inherit;
+    width: inherit;
+    filter: var(--svg-color);
+    transition: filter 0.5s ease-in-out;
+}
+
+.cardTitle {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: -0.3px;
+    text-transform: uppercase;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
 @media (min-width: 768px) {
     .card {
         margin-top: 0;
         margin-left: 1rem;
     }
-
     .card:first-child {
         margin-left: 0;
+    }
+    .cardImageWrapper {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 900px) {
+    .cardImageWrapper {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cardImageWrapper {
+        width: 300px;
+        height: 300px;
     }
 }

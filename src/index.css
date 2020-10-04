@@ -3,7 +3,7 @@
     --card-bg: #fff;
     --card-container-bg: #fff;
     --dialog-bg: #fff;
-    --overlay-bg: #ffffffb3;
+    --overlay-bg: #f0f0f070;
     --text-contrast: #fcfcf7;
     --text-prominent: #000;
     --text-light: #fff;
@@ -29,6 +29,7 @@
     --ripple: #00000066;
     --tag-color: #e0e0e0;
     --border-bottom-color: rgba(224, 224, 224, 1);
+    --svg-color: invert(9%) sepia(3%) saturate(1524%) hue-rotate(189deg) brightness(101%) contrast(92%);
 }
 
 [theme-mode="dark"] {
@@ -61,6 +62,7 @@
     --ripple: #fff6;
     --tag-color: #3e3d3d;
     --border-bottom-color: rgba(81, 81, 81, 1);
+    --svg-color: invert(98%) sepia(10%) saturate(94%) hue-rotate(187deg) brightness(109%) contrast(81%);
 }
 
 body {
