@@ -7,7 +7,7 @@ const GameView = React.memo(({ options, selectOption }) => {
 
     return <>
         <div className={classes.cardsWrapper}>
-            {Object.keys(options).map(option => <GameCard cardStyle={{ cursor: 'pointer' }} option={options[option]} />)}
+            {Object.keys(options).map(option => <GameCard selectOption={selectOption} cardStyle={{ cursor: 'pointer' }} option={options[option]} />)}
         </div>
     </>;
 });
