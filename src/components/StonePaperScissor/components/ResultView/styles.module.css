@@ -1,17 +1,20 @@
 .resultWrapper {
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.errorText {
-    font-size: 1.25rem;
-    color: var(--text-obscure);
+.resultText {
+    font-size: 2rem;
+    font-weight: 100;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: var(--text);
     transition: color 0.5s ease-in-out;
 }
 
 .cardsWrapper {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;

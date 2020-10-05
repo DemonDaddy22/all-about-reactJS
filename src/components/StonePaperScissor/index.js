@@ -21,6 +21,7 @@ const StonePaperScissor = React.memo(props => {
     const resetScore = () => {
         localStorage.setItem('score', JSON.stringify(0));
         setScore(0);
+        setShowResult(false);
     }
 
     return <Page>
@@ -37,7 +38,7 @@ const StonePaperScissor = React.memo(props => {
             </div>
             <div className={classes.contentWrapper}>
                 {showResult ?
-                    <ResultView selectedOption={selectedOption} options={OPTIONS} toggleView={() => setShowResult(false)} /> :
+                    <ResultView selectedOption={selectedOption} options={OPTIONS} score={score} setScore={setScore} toggleView={() => setShowResult(false)} /> :
                     <GameView options={OPTIONS} selectOption={setSelectedOption} toggleView={() => setShowResult(true)} />}
             </div>
         </div>
