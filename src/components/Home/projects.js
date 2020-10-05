@@ -8,6 +8,8 @@ import pickerDarkImage from '../../images/picker_dark.jpg';
 import pickerLightImage from '../../images/picker_light.jpg';
 import profileViewerDarkImage from '../../images/profile_viewer_dark.jpg';
 import profileViewerLightImage from '../../images/profile_viewer_light.jpg';
+import gameDarkImage from '../../images/game_dark.jpg';
+import gameLightImage from '../../images/game_light.jpg';
 import { BASE_URL } from '../../resources/constants';
 
 export const projects = [
@@ -16,4 +18,5 @@ export const projects = [
     { sequence: '3', title: 'Calculator', imageLight: calculatorLightImage, imageDark: calculatorDarkImage, projectPath: `${BASE_URL}/#/calculator`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/Calculator' },
     { sequence: '4', title: 'Color Picker', imageLight: pickerLightImage, imageDark: pickerDarkImage, projectPath: `${BASE_URL}/#/color-picker`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/ColorPicker' },
     { sequence: '5', title: 'GitHub Profile Viewer', imageLight: profileViewerLightImage, imageDark: profileViewerDarkImage, projectPath: `${BASE_URL}/#/github-profile-viewer`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/GitHubProfileViewer' },
+    { sequence: '6', title: 'Stone-Paper-Scissor', imageLight: gameLightImage, imageDark: gameDarkImage, projectPath: `${BASE_URL}/#/stone-paper-scissor`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/StonePaperScissor' },
 ];
