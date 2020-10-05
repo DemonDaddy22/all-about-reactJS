@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { GREEN_400, ORANGE_400, RED_400 } from '../../../../resources/colors';
 import Button from '../../../../ui-components/Button';
 import { isEmptyObject } from '../../../../utils';
 import GameCard from '../GameCard';
@@ -13,18 +14,13 @@ const results = Object.freeze({
 
 const ResultView = React.memo(({ selectedOption, options, score, setScore, toggleView }) => {
 
-    // console log to check if component renders if props aren't changed
-    // change border colour of cards based on result
-    // display result text
-    // get random option from set of options
     const [randomOption, setRandomOption] = useState(null);
     const [playerResult, setPlayerResult] = useState(results.DRAW);
 
     useEffect(() => {
-        console.log("render results");
         if (!isEmptyObject(options)) {
             const computerOption = options[getRandomOptionKey(options)];
-            const result = getResult(selectedOption, computerOption);
+            const result = getResult(computerOption);
 
             setRandomOption(computerOption);
             setPlayerResult(result);
@@ -36,16 +32,16 @@ const ResultView = React.memo(({ selectedOption, options, score, setScore, toggl
                 localStorage.setItem('score', JSON.stringify(score));
             }
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const getRandomOptionKey = options => Object.keys(options)[Math.floor(Math.random() * Object.keys(options).length)];
 
-    const getResult = (userOption = {}, computerOption = {}) => {
-        if (userOption.title === computerOption.title) return results.DRAW;
-        else if ((userOption.title === 'paper' && computerOption.title === 'stone') ||
-            (userOption.title === 'stone' && computerOption.title === 'scissor') ||
-            (userOption.title === 'scissor' && computerOption.title === 'paper')) return results.WIN;
+    const getResult = (computerOption = {}) => {
+        if (selectedOption.title === computerOption.title) return results.DRAW;
+        else if ((selectedOption.title === 'paper' && computerOption.title === 'stone') ||
+            (selectedOption.title === 'stone' && computerOption.title === 'scissor') ||
+            (selectedOption.title === 'scissor' && computerOption.title === 'paper')) return results.WIN;
         else return results.LOSE;
     }
 
@@ -58,8 +54,8 @@ const ResultView = React.memo(({ selectedOption, options, score, setScore, toggl
                             : 'You drew!'}
                 </div>
                 <div className={classes.cardsWrapper}>
-                    <GameCard toggleView={toggleView} option={selectedOption} />
-                    <GameCard toggleView={toggleView} option={randomOption} />
+                    <GameCard cardStyle={{ border: `6px solid ${playerResult === results.WIN ? GREEN_400 : playerResult === results.LOSE ? RED_400 : ORANGE_400}` }} toggleView={toggleView} option={selectedOption} />
+                    <GameCard cardStyle={{ border: `6px solid ${playerResult === results.WIN ? GREEN_400 : playerResult === results.LOSE ? RED_400 : ORANGE_400}` }} toggleView={toggleView} option={randomOption} />
                 </div>
                 <Button variant='outlined' borderColor='var(--theme-color)' labelColor='var(--theme-color)' backgroundColor='var(--theme-color)'
                     className={classes.resetBtn} onClick={toggleView} labelStyles={{ display: 'inline-flex', padding: 0 }}>Try Again</Button>
