@@ -7,12 +7,12 @@
 
 - If you want to suggest ideas on which others can work upon, please add them to the [ideas.md](https://github.com/DemonDaddy22/all-about-reactJS/blob/master/ideas.md), so that people can use them to create new and interesting stuff.
 
-- If there's a bug fix, code impromevement or feature addition, kindly open an **Issue** first, so that others can also pick up that issue and start working on it.
+- If there's a bug fix, code improvements or feature addition, kindly open an **Issue** first, so that others can also pick up that issue and start working on it.
 
 ### Guidelines for PRs and Issues
 ---
 
-- Please attach necessary screenshots and try to give a thorough description about the change you are proposing. This will ensure an easy and quick merging of your PR.
+- Please attach necessary screenshots and try to give a thorough description of the change you are proposing. This will ensure an easy and quick merging of your PR.
 
 - Please try not to delete any currently implemented functionality or add additional packages for minor changes.
 
