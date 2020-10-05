@@ -1,27 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e81d60e98b9d796e05f2d97a19454cd8",
+    "revision": "c580f1d37b54831695761515ea6f36ee",
     "url": "/all-about-reactJS/index.html"
   },
   {
-    "revision": "6e6a1f803be39c0350da",
-    "url": "/all-about-reactJS/static/css/main.e8a209d2.chunk.css"
+    "revision": "7c450304206f8a067ca4",
+    "url": "/all-about-reactJS/static/css/main.f4de9212.chunk.css"
   },
   {
-    "revision": "abb19ff0556b4e069eba",
-    "url": "/all-about-reactJS/static/js/2.6ff529de.chunk.js"
+    "revision": "09d658b55774ccb591e2",
+    "url": "/all-about-reactJS/static/js/2.cc53ec4d.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/all-about-reactJS/static/js/2.6ff529de.chunk.js.LICENSE.txt"
+    "url": "/all-about-reactJS/static/js/2.cc53ec4d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6e6a1f803be39c0350da",
-    "url": "/all-about-reactJS/static/js/main.f0e159c3.chunk.js"
+    "revision": "7c450304206f8a067ca4",
+    "url": "/all-about-reactJS/static/js/main.733469fe.chunk.js"
   },
   {
     "revision": "fe99af2c7e9f85a99da4",
     "url": "/all-about-reactJS/static/js/runtime-main.51916d60.js"
+  },
+  {
+    "revision": "8212bdee2c1c932c4d815777cd275a59",
+    "url": "/all-about-reactJS/static/media/game_dark.8212bdee.jpg"
+  },
+  {
+    "revision": "4b44d188fa51069ee4b744df77cc54b3",
+    "url": "/all-about-reactJS/static/media/game_light.4b44d188.jpg"
   },
   {
     "revision": "418b8f3b94ceb142329470681e5e9d1e",
