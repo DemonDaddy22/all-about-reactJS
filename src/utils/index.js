@@ -106,3 +106,23 @@ export const isColourDark = colour => {
     let luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
     return luma < 100;
 };
+
+export const copyTextToClipboard = (text = '') => {
+  if (!text) return;
+  var textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.style.top = "0";
+  textArea.style.left = "0";
+  textArea.style.position = "fixed";
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Fallback: Copying text command was ' + msg);
+  } catch (err) {
+    console.error('Fallback: Oops, unable to copy', err);
+  }
+  document.body.removeChild(textArea);
+}

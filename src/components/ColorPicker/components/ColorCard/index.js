@@ -1,13 +1,13 @@
 import React from 'react';
-import copy from 'copy-to-clipboard';
 import classes from './styles.module.css';
 import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
+import { copyTextToClipboard } from '../../../../utils';
 
 export default class ColorCard extends React.Component {
 
     onClickCopy = (e) => {
         e.stopPropagation();
-        copy(this.props.colour);
+        copyTextToClipboard(this.props.colour);
     }
 
     render = () => {
