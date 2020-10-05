@@ -20,6 +20,7 @@
     background: rgba(0, 0, 0, 0.4);
     color: white;
     border-top-left-radius: 20px;
+    border-bottom-right-radius: 10px;
 }
 
 .code {
