@@ -1,4 +1,4 @@
-export const isEmptyString = obj => obj === null || obj === undefined || (typeof obj == "string" && obj.trim() === '');
+export const isEmptyString = obj => obj === null || obj === undefined || (typeof obj == 'string' && obj.trim() === '');
 
 export const isValidNumber = obj => obj !== null && !isNaN(parseFloat(obj)) && !isNaN(Number(obj));
 
@@ -98,7 +98,7 @@ export const isColourDark = colour => {
     const is3digitHex = /^#[0-9A-F]{3}$/i.test(colour);
     if (is3digitHex) colour = colour.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => r + r + g + g + b + b);
 
-    let rgb = parseInt(colour.substring(1), 16);   
+    let rgb = parseInt(colour.substring(1), 16);
     let r = (rgb >> 16) & 0xff;
     let g = (rgb >> 8) & 0xff;
     let b = (rgb >> 0) & 0xff;
@@ -108,21 +108,24 @@ export const isColourDark = colour => {
 };
 
 export const copyTextToClipboard = (text = '') => {
-  if (!text) return;
-  var textArea = document.createElement("textarea");
-  textArea.value = text;
-  textArea.style.top = "0";
-  textArea.style.left = "0";
-  textArea.style.position = "fixed";
-  document.body.appendChild(textArea);
-  textArea.focus();
-  textArea.select();
-  try {
-    var successful = document.execCommand('copy');
-    var msg = successful ? 'successful' : 'unsuccessful';
-    console.log('Fallback: Copying text command was ' + msg);
-  } catch (err) {
-    console.error('Fallback: Oops, unable to copy', err);
-  }
-  document.body.removeChild(textArea);
+    if (!text) return;
+
+    let textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.position = 'fixed';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        let copySuccess = document.execCommand('copy');
+        let message = copySuccess ? 'successful' : 'unsuccessful';
+        console.log('Copying text was ' + message);
+    } catch (err) {
+        console.error(err);
+    }
+    
+    document.body.removeChild(textArea);
 }

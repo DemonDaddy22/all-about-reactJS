@@ -5,7 +5,7 @@ import { copyTextToClipboard } from '../../../../utils';
 
 export default class ColorCard extends React.Component {
 
-    onClickCopy = (e) => {
+    onClickCopy = e => {
         e.stopPropagation();
         copyTextToClipboard(this.props.colour);
     }
@@ -14,9 +14,9 @@ export default class ColorCard extends React.Component {
 
         return <div className={classes.card} style={{ backgroundColor: this.props.colour }} onClick={() => this.props.handleColourChange(this.props.colour)}>
             <div className={classes.copy}>
-                <span className={classes.code}>{this.props.colour}</span>
+                <div className={classes.code}>{this.props.colour}</div>
                 <div className={classes.icon} onClick={this.onClickCopy}>
-                    <FileCopyOutlinedIcon fontSize='small' />
+                    <FileCopyOutlinedIcon fontSize='small' style={{ marginTop: 2 }} />
                 </div>
             </div>
         </div>;

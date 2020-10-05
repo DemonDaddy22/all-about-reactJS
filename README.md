@@ -1,7 +1,10 @@
 # All About ReactJS
 
-### If you want to contribute to this project, consider reading the [contribution.md](https://github.com/DemonDaddy22/all-about-reactJS/blob/master/contribution.md) first to get a better idea of how to contribute to this repo.
-<br></br>
+<br>
+
+### If you want to contribute to this project, consider reading the [CONTRIBUTION.md](CONTRIBUTION.md) first to get a better idea of how to contribute to this repo.
+
+<br>
 
 I'll be working on 20 different ReactJS projects over the next 50 days. I would also be deploying all the projects so that it is easy to visualise the projects.
 

@@ -1,7 +1,7 @@
 .card {
     height: 10rem;
-    transition: background-color 0.25s ease-in-out;
     position: relative;
+    transition: background-color 0.25s ease-in-out;
 }
 
 .card .copy {
@@ -14,23 +14,24 @@
 
 .copy {
     bottom: 0px;
-    position: absolute;
     right: 0px;
     padding: 10px 20px;
+    position: absolute;
+    color: #fff;
     background: rgba(0, 0, 0, 0.4);
-    color: white;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 10px;
 }
 
 .code {
     margin-right: 10px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .icon {
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.8;
+    transition: opacity 0.25s ease-in-out;
 }
 
 .icon:hover {
