@@ -1,0 +1,36 @@
+.generatorWrapper {
+    min-width: inherit;
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.generatorContainer {
+    padding: 16px;
+    width: 300px;
+    border-radius: 6px;
+    border: 1px solid var(--component-border);
+    background-color: var(--card-bg);
+    box-shadow: 0 0 10px var(--text);
+    transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.passwordContainer {
+    flex: 1;
+    padding: 8px;
+    min-height: 40px;
+    font-size: 1.125rem;
+    border-radius: 4px;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    color: var(--text-light);
+    background-color: var(--theme-color);
+    transition: background-color 0.5s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .generatorContainer {
+        width: 500px;
+    }
+}
