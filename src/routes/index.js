@@ -8,6 +8,7 @@ import Calculator from '../components/Calculator';
 import ColorPicker from '../components/ColorPicker';
 import GitHubProfileViewer from '../components/GitHubProfileViewer';
 import StonePaperScissor from '../components/StonePaperScissor';
+import PasswordGenerator from '../components/PasswordGenerator';
 
 export default class Routes extends React.Component {
 
@@ -27,6 +28,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/github-profile-viewer' component={GitHubProfileViewer} />
 
                 <Route exact path='/stone-paper-scissor' component={StonePaperScissor} />
+
+                <Route exact path='/password-generator' component={PasswordGenerator} />
 
                 <Redirect to='/' from='*' />
             </Switch>
