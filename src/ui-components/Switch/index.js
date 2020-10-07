@@ -23,11 +23,11 @@ const styles = {
 class CustomSwitch extends React.Component {
 
     render = () => {
-        const { checked, disabled, handleChange, label } = this.props;
+        const { checked, disabled, handleChange, label, containerStyle } = this.props;
 
         return <FormControlLabel
             control={<Switch color='default' checked={checked} disabled={disabled} onChange={handleChange} {...this.props} />}
-            label={label}
+            label={label} style={containerStyle}
         />
     }
 }

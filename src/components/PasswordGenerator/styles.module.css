@@ -18,15 +18,38 @@
 
 .passwordContainer {
     flex: 1;
-    padding: 8px;
+    padding: 1rem 0.75rem;
     min-height: 40px;
     font-size: 1.125rem;
     border-radius: 4px;
     word-wrap: break-word;
     box-sizing: border-box;
     color: var(--text-light);
+    box-shadow: var(--card-shadow);
     background-color: var(--theme-color);
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.optionsContainer {
+    flex: 1;
+    padding: 16px;
+    margin-top: 1.5rem;
+}
+
+.optionRow {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.optionRow:first-child {
+    margin-top: 0;
+}
+
+.optionText {
+    flex: 1;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
 }
 
 @media (min-width: 768px) {
