@@ -19,7 +19,7 @@ const OPTIONS = Object.freeze({
 export default class PasswordGenerator extends React.Component {
 
     state = {
-        passwordString: 'Test',
+        passwordString: '',
         passwordLength: '10',
         lowercase: true,
         uppercase: true,
@@ -27,12 +27,18 @@ export default class PasswordGenerator extends React.Component {
         special: true
     }
 
+    componentDidMount = () => window.addEventListener('keydown', this.handleKeyDown);
+
+    componentWillUnmount = () => window.removeEventListener('keydown', this.handleKeyDown);
+
+    handleKeyDown = e => e.key === 'Enter' && this.handleGeneratePassword();
+
     updateComponent = (refresher = null) => refresher && this.setState({ refresher });
 
     handleChangeLength = e => {
         const length = e.target.value;
-        if (parseInt(length) > 7 && parseInt(length) < 21) this.setState({ passwordLength: length, passwordLengthValidation: null });
-        else this.setState({ passwordLengthValidation: 'Length must be between 8 and 20' });
+        if (parseInt(length) > 7 && parseInt(length) < 26) this.setState({ passwordLength: length, passwordLengthValidation: null });
+        else this.setState({ passwordLengthValidation: 'Length must be between 8 and 25' });
     };
 
     handleSwitch = key => this.setState({ [key]: !this.state[key] });
@@ -40,6 +46,7 @@ export default class PasswordGenerator extends React.Component {
     handleGeneratePassword = () => {
         const characterTypes = Object.keys(OPTIONS).filter(option => this.state[option]);
         this.setState({ passwordString: this.generatePasswordHelper(characterTypes) });
+        document.querySelector('#generate-password').focus();
     }
 
     generatePasswordHelper = options => {
@@ -60,6 +67,8 @@ export default class PasswordGenerator extends React.Component {
     }
 
     render = () => {
+        // add copy button
+        // show copy on hovering the text box and length > 0
         const { passwordString, passwordLength, lowercase, uppercase, numeric, special } = this.state;
 
         return <Page shouldComponentUpdate={this.updateComponent}>
@@ -90,7 +99,8 @@ export default class PasswordGenerator extends React.Component {
                             <div className={classes.optionText}>Contains special</div>
                             <CustomSwitch buttoncolor={themed(PURPLE_800, PURPLE_700)} trackcolor={themed(PURPLE_300, PURPLE_200)} onChange={() => this.handleSwitch('special')} checked={special} containerStyle={{ marginRight: 0 }} />
                         </div>
-                        <Button backgroundColor={themed(GREEN_500, GREEN_400)} className={classes.generateButton} onClick={this.handleGeneratePassword} labelStyles={{ display: 'inline-flex', padding: 0 }}>Generate Password</Button>
+                        <Button id='generate-password' backgroundColor={themed(GREEN_500, GREEN_400)} className={classes.generateButton}
+                            onClick={this.handleGeneratePassword} labelStyles={{ display: 'inline-flex', padding: 0 }} disableFocusRipple>Generate Password</Button>
                     </div>
                 </div>
             </div>
