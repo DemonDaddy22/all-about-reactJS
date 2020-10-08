@@ -10,10 +10,10 @@ import { themed } from '../../utils/theme';
 import { GREEN_400, GREEN_500, PURPLE_200, PURPLE_300, PURPLE_700, PURPLE_800, RED_500, RED_700 } from '../../resources/colors';
 
 const OPTIONS = Object.freeze({
-    lowercase: [[97, 122]],
-    uppercase: [[65, 90]],
-    numeric: [[48, 57]],
-    special: [[33, 47], [58, 64], [91, 96], [123, 126]]
+    lowercase: [[97, 123]],
+    uppercase: [[65, 91]],
+    numeric: [[48, 58]],
+    special: [[33, 48], [58, 65], [91, 97], [123, 127]]
 });
 
 export default class PasswordGenerator extends React.Component {
@@ -36,6 +36,28 @@ export default class PasswordGenerator extends React.Component {
     };
 
     handleSwitch = key => this.setState({ [key]: !this.state[key] });
+
+    handleGeneratePassword = () => {
+        const characterTypes = Object.keys(OPTIONS).filter(option => this.state[option]);
+        this.setState({ passwordString: this.generatePasswordHelper(characterTypes) });
+    }
+
+    generatePasswordHelper = options => {
+        let passwordString = '', i = 0;
+
+        while (i++ < parseInt(this.state.passwordLength)) {
+            const optionIndex = Math.floor(Math.random() * options.length);
+            passwordString += this.getRandomCharacter(OPTIONS[options[optionIndex]]);
+        }
+
+        return passwordString;
+    }
+
+    getRandomCharacter = characterRange => {
+        const rangeIndex = Math.floor(Math.random() * characterRange.length);
+        const charCode = Math.floor(Math.random() * (characterRange[rangeIndex][1] - characterRange[rangeIndex][0])) + characterRange[rangeIndex][0];
+        return String.fromCharCode(charCode);
+    }
 
     render = () => {
         const { passwordString, passwordLength, lowercase, uppercase, numeric, special } = this.state;
