@@ -1,23 +1,27 @@
 import React from 'react';
 
 import { Switch, FormControlLabel, withStyles } from '@material-ui/core';
-import { BLUE_500, BLUE_300 } from '../../resources/colors';
+import { BLUE_300, BLUE_700, BLUE_800, BLUE_200 } from '../../resources/colors';
+import { themed } from '../../utils/theme';
 
 const styles = {
     switchBase: props => ({
-        color: props.buttoncolor ? props.buttoncolor : BLUE_500,
-        '&$checked': {
-            color: props.buttoncolor ? props.buttoncolor : BLUE_300,
-            backgroundColor: props.trackcolor ? props.trackcolor : BLUE_300,
+        // color: props.buttoncolor ? props.buttoncolor : BLUE_500,
+        '&.Mui-checked': {
+            color: props.buttoncolor ? props.buttoncolor : themed(BLUE_800, BLUE_700)
         },
-        '&$checked + $track': {
-            backgroundColor: props.trackcolor ? props.trackcolor : BLUE_300,
+        '& + .MuiSwitch-track': {
+            backgroundColor: 'var(--text-obscurer)'
+        },
+        '&.Mui-checked + .MuiSwitch-track': {
+            backgroundColor: props.trackcolor ? props.trackcolor : themed(BLUE_300, BLUE_200)
+        },
+        '&.MuiSwitch-colorSecondary.Mui-checked:hover': {
+            backgroundColor: 'var(--hover-ripple)'
         },
     }),
     checked: {},
-    track: props => ({
-        backgroundColor: props.trackcolor ? props.trackcolor : BLUE_300,
-    }),
+    track: {}
 }
 
 class CustomSwitch extends React.Component {

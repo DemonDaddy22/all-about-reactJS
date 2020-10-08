@@ -4,6 +4,9 @@ import classes from './styles.module.css';
 import Page from '../../ui-components/Page';
 import Input from '../../ui-components/Input';
 import CustomSwitch from '../../ui-components/Switch';
+import Button from '../../ui-components/Button';
+import { themed } from '../../utils/theme';
+import { GREEN_400, GREEN_500, PURPLE_200, PURPLE_300, PURPLE_700, PURPLE_800 } from '../../resources/colors';
 
 const OPTIONS = Object.freeze({
     lowercase: [[97, 122]],
@@ -23,10 +26,14 @@ export default class PasswordGenerator extends React.Component {
         special: true
     }
 
+    updateComponent = (refresher = null) => refresher && this.setState({ refresher });
+
+    handleSwitch = key => this.setState({ [key]: !this.state[key] });
+
     render = () => {
         const { passwordString, passwordLength, lowercase, uppercase, numeric, special } = this.state;
 
-        return <Page>
+        return <Page shouldComponentUpdate={this.updateComponent}>
             <div className={classes.generatorWrapper}>
                 <div className={classes.generatorContainer}>
                     <div className={classes.passwordContainer}>{passwordString}</div>
@@ -38,20 +45,21 @@ export default class PasswordGenerator extends React.Component {
                         </div>
                         <div className={classes.optionRow}>
                             <div className={classes.optionText}>Contains lowercase</div>
-                            <CustomSwitch checked={lowercase} containerStyle={{ marginRight: 0 }} />
+                            <CustomSwitch buttoncolor={themed(PURPLE_800, PURPLE_700)} trackcolor={themed(PURPLE_300, PURPLE_200)} onChange={() => this.handleSwitch('lowercase')} checked={lowercase} containerStyle={{ marginRight: 0 }} />
                         </div>
                         <div className={classes.optionRow}>
                             <div className={classes.optionText}>Contains uppercase</div>
-                            <CustomSwitch checked={uppercase} containerStyle={{ marginRight: 0 }} />
+                            <CustomSwitch buttoncolor={themed(PURPLE_800, PURPLE_700)} trackcolor={themed(PURPLE_300, PURPLE_200)} onChange={() => this.handleSwitch('uppercase')} checked={uppercase} containerStyle={{ marginRight: 0 }} />
                         </div>
                         <div className={classes.optionRow}>
                             <div className={classes.optionText}>Contains numbers</div>
-                            <CustomSwitch checked={numeric} containerStyle={{ marginRight: 0 }} />
+                            <CustomSwitch buttoncolor={themed(PURPLE_800, PURPLE_700)} trackcolor={themed(PURPLE_300, PURPLE_200)} onChange={() => this.handleSwitch('numeric')} checked={numeric} containerStyle={{ marginRight: 0 }} />
                         </div>
                         <div className={classes.optionRow}>
                             <div className={classes.optionText}>Contains special</div>
-                            <CustomSwitch checked={special} containerStyle={{ marginRight: 0 }} />
+                            <CustomSwitch buttoncolor={themed(PURPLE_800, PURPLE_700)} trackcolor={themed(PURPLE_300, PURPLE_200)} onChange={() => this.handleSwitch('special')} checked={special} containerStyle={{ marginRight: 0 }} />
                         </div>
+                        <Button backgroundColor={themed(GREEN_500, GREEN_400)} className={classes.generateButton} onClick={this.handleGeneratePassword} labelStyles={{ display: 'inline-flex', padding: 0 }}>Generate Password</Button>
                     </div>
                 </div>
             </div>
