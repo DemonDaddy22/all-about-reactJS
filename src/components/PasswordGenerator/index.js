@@ -5,8 +5,9 @@ import Page from '../../ui-components/Page';
 import Input from '../../ui-components/Input';
 import CustomSwitch from '../../ui-components/Switch';
 import Button from '../../ui-components/Button';
+import Label from '../../ui-components/Label';
 import { themed } from '../../utils/theme';
-import { GREEN_400, GREEN_500, PURPLE_200, PURPLE_300, PURPLE_700, PURPLE_800 } from '../../resources/colors';
+import { GREEN_400, GREEN_500, PURPLE_200, PURPLE_300, PURPLE_700, PURPLE_800, RED_500, RED_700 } from '../../resources/colors';
 
 const OPTIONS = Object.freeze({
     lowercase: [[97, 122]],
@@ -19,7 +20,7 @@ export default class PasswordGenerator extends React.Component {
 
     state = {
         passwordString: 'Test',
-        passwordLength: 10,
+        passwordLength: '10',
         lowercase: true,
         uppercase: true,
         numeric: true,
@@ -27,6 +28,12 @@ export default class PasswordGenerator extends React.Component {
     }
 
     updateComponent = (refresher = null) => refresher && this.setState({ refresher });
+
+    handleChangeLength = e => {
+        const length = e.target.value;
+        if (parseInt(length) > 7 && parseInt(length) < 21) this.setState({ passwordLength: length, passwordLengthValidation: null });
+        else this.setState({ passwordLengthValidation: 'Length must be between 8 and 20' });
+    };
 
     handleSwitch = key => this.setState({ [key]: !this.state[key] });
 
@@ -40,9 +47,11 @@ export default class PasswordGenerator extends React.Component {
                     <div className={classes.optionsContainer}>
                         <div className={classes.optionRow}>
                             <div className={classes.optionText}>Password length</div>
-                            <Input type='number' value={passwordLength} min={8} max={20} fullWidth={false}
+                            <Input type='number' value={passwordLength} fullWidth={false} onChange={this.handleChangeLength}
                                 style={{ width: '10%', marginRight: '0.75rem' }} rootInputStyles={{ color: 'var(--text)', transition: 'color 0.5s ease-in-out' }} />
                         </div>
+                        {this.state?.passwordLengthValidation && <Label label={this.state.passwordLengthValidation}
+                            style={{ color: themed(RED_700, RED_500) }} className={classes.validation}></Label>}
                         <div className={classes.optionRow}>
                             <div className={classes.optionText}>Contains lowercase</div>
                             <CustomSwitch buttoncolor={themed(PURPLE_800, PURPLE_700)} trackcolor={themed(PURPLE_300, PURPLE_200)} onChange={() => this.handleSwitch('lowercase')} checked={lowercase} containerStyle={{ marginRight: 0 }} />

@@ -46,6 +46,11 @@
     margin-top: 0;
 }
 
+.validation {
+    font-size: 0.75rem !important;
+    transition: color 0.5s ease-in-out;
+}
+
 .optionText {
     flex: 1;
     color: var(--text);
