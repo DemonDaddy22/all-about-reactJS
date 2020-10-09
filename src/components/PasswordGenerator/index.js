@@ -7,7 +7,9 @@ import CustomSwitch from '../../ui-components/Switch';
 import Button from '../../ui-components/Button';
 import Label from '../../ui-components/Label';
 import { themed } from '../../utils/theme';
-import { GREEN_400, GREEN_500, PURPLE_200, PURPLE_300, PURPLE_700, PURPLE_800, RED_500, RED_700 } from '../../resources/colors';
+import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
+import { DEEP_PURPLE_400, DEEP_PURPLE_500, PURPLE_200, PURPLE_300, PURPLE_700, PURPLE_800, RED_500, RED_700 } from '../../resources/colors';
+import { isEmptyString } from '../../utils';
 
 const OPTIONS = Object.freeze({
     lowercase: [[97, 123]],
@@ -74,7 +76,12 @@ export default class PasswordGenerator extends React.Component {
         return <Page shouldComponentUpdate={this.updateComponent}>
             <div className={classes.generatorWrapper}>
                 <div className={classes.generatorContainer}>
-                    <div className={classes.passwordContainer}>{passwordString}</div>
+                    <div className={`${classes.passwordContainer} ${!isEmptyString(passwordString) && classes.cursorPointer}`}>
+                        <div className={classes.passwordText}>{passwordString}</div>
+                        {!isEmptyString(passwordString) && <div className={classes.copy}>
+                            <FileCopyOutlinedIcon fontSize='small' style={{ marginTop: 2 }} />
+                        </div>}
+                    </div>
                     <div className={classes.optionsContainer}>
                         <div className={classes.optionRow}>
                             <div className={classes.optionText}>Password length</div>
@@ -99,7 +106,7 @@ export default class PasswordGenerator extends React.Component {
                             <div className={classes.optionText}>Contains special</div>
                             <CustomSwitch buttoncolor={themed(PURPLE_800, PURPLE_700)} trackcolor={themed(PURPLE_300, PURPLE_200)} onChange={() => this.handleSwitch('special')} checked={special} containerStyle={{ marginRight: 0 }} />
                         </div>
-                        <Button id='generate-password' backgroundColor={themed(GREEN_500, GREEN_400)} className={classes.generateButton}
+                        <Button id='generate-password' backgroundColor={themed(DEEP_PURPLE_500, DEEP_PURPLE_400)} className={classes.generateButton}
                             onClick={this.handleGeneratePassword} labelStyles={{ display: 'inline-flex', padding: 0 }} disableFocusRipple>Generate Password</Button>
                     </div>
                 </div>

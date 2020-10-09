@@ -17,17 +17,41 @@
 }
 
 .passwordContainer {
-    flex: 1;
-    padding: 1rem 0.75rem;
-    min-height: 56px;
-    font-size: 1.125rem;
+    min-height: 60px;
     border-radius: 4px;
+    font-size: 1.125rem;
+    padding: 1rem 0.75rem;
     word-wrap: break-word;
     box-sizing: border-box;
-    color: var(--text-prominent);
+    display: flex;
+    color: var(--text);
     box-shadow: var(--card-shadow);
-    background-color: var(--text-contrast);
+    background-color: var(--tag-color);
     transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.passwordText {
+    flex: 1;
+    font-weight: 600;
+    margin-right: 6px;
+    letter-spacing: 0.3px;
+}
+
+.copy {
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.passwordContainer:hover {
+    box-shadow: var(--card-shadow-hover);
+}
+
+.passwordContainer:hover .copy {
+    opacity: 1;
 }
 
 .optionsContainer {
