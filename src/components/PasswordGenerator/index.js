@@ -10,6 +10,7 @@ import { themed } from '../../utils/theme';
 import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import { DEEP_PURPLE_400, DEEP_PURPLE_500, PURPLE_200, PURPLE_300, PURPLE_700, PURPLE_800, RED_500, RED_700 } from '../../resources/colors';
 import { copyTextToClipboard, isEmptyList, isEmptyString } from '../../utils';
+import SnackBar from '../../ui-components/SnackBar';
 
 const OPTIONS = Object.freeze({
     lowercase: [[97, 123]],
@@ -71,7 +72,12 @@ export default class PasswordGenerator extends React.Component {
         return String.fromCharCode(charCode);
     }
 
-    handleCopyPassword = password => !isEmptyString(password) && copyTextToClipboard(password);
+    handleCopyPassword = password => {
+        if (isEmptyString(password)) return;
+        this.setState({ snack: { message: 'Password copied to clipboard', severity: 'success', open: true } }, () => copyTextToClipboard(password));
+    }
+
+    handleSnackClose = () => this.setState({ snack: { ...this.state.snack, open: false } });
 
     render = () => {
         const { passwordString, passwordLength, lowercase, uppercase, numeric, special } = this.state;
@@ -116,6 +122,8 @@ export default class PasswordGenerator extends React.Component {
                     </div>
                 </div>
             </div>
+            {this.state?.snack && <SnackBar message={this.state.snack.message} severity={this.state.snack.severity}
+                open={this.state.snack.open} horizontal='center' handleClose={this.handleSnackClose} />}
         </Page>
     }
 }
