@@ -10,6 +10,8 @@ import profileViewerDarkImage from '../../images/profile_viewer_dark.jpg';
 import profileViewerLightImage from '../../images/profile_viewer_light.jpg';
 import gameDarkImage from '../../images/game_dark.jpg';
 import gameLightImage from '../../images/game_light.jpg';
+import passwordDarkImage from '../../images/password_dark.jpg';
+import passwordLightImage from '../../images/password_light.jpg';
 import { BASE_URL } from '../../resources/constants';
 
 export const projects = [
@@ -19,4 +21,5 @@ export const projects = [
     { sequence: '4', title: 'Color Picker', imageLight: pickerLightImage, imageDark: pickerDarkImage, projectPath: `${BASE_URL}/#/color-picker`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/ColorPicker' },
     { sequence: '5', title: 'GitHub Profile Viewer', imageLight: profileViewerLightImage, imageDark: profileViewerDarkImage, projectPath: `${BASE_URL}/#/github-profile-viewer`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/GitHubProfileViewer' },
     { sequence: '6', title: 'Stone-Paper-Scissor', imageLight: gameLightImage, imageDark: gameDarkImage, projectPath: `${BASE_URL}/#/stone-paper-scissor`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/StonePaperScissor' },
+    { sequence: '7', title: 'Password-Generator', imageLight: passwordLightImage, imageDark: passwordDarkImage, projectPath: `${BASE_URL}/#/password-generator`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/PasswordGenerator' },
 ];
