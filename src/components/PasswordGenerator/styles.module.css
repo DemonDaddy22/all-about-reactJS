@@ -38,8 +38,7 @@
 }
 
 .copy {
-    opacity: 0;
-    transition: opacity 0.25s ease-in-out;
+    opacity: 1;
 }
 
 .cursorPointer {
@@ -48,10 +47,6 @@
 
 .passwordContainer:hover {
     box-shadow: var(--card-shadow-hover);
-}
-
-.passwordContainer:hover .copy {
-    opacity: 1;
 }
 
 .optionsContainer {
@@ -91,5 +86,12 @@
 @media (min-width: 768px) {
     .generatorContainer {
         width: 500px;
+    }
+    .copy {
+        opacity: 0;
+        transition: opacity 0.25s ease-in-out;
+    }
+    .passwordContainer:hover .copy {
+        opacity: 1;
     }
 }
