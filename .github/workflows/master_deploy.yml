@@ -23,11 +23,3 @@ jobs:
                   git config user.name ${{ secrets.USERNAME }}
                   git remote set-url origin https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git
                   npm run deploy
-    eslint:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v1
-            - name: Perform linting
-              uses: stefanoeb/eslint-action@1.0.2
-              with:
-                  files: src/
