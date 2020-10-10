@@ -7,17 +7,20 @@
 
 name: Labeler
 on:
-- pull_request_target
+    - pull_request_target
 
 jobs:
-  pr_label:
-  # prevent running it in the forks
-    if: github.repository == 'DemonDaddy22/all-about-reactJS'
-    runs-on: ubuntu-latest
+    pr_label:
+        # prevent running it in the forks
+        if: github.repository == 'DemonDaddy22/all-about-reactJS'
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Adding label
-        uses: actions/labeler@v2
-        with:
-          configuration-path: .github/labeler.yml
-          repo-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        steps:
+            - name: Adding label
+              uses: actions/labeler@v2
+              with:
+                  configuration-path: .github/labeler.yml
+                  sync_labels: true  
+                  repo_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+              env:
+                  GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}

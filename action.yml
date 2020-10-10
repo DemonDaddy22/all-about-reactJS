@@ -5,7 +5,6 @@ author: 'GitHub'
 inputs: 
   repo-token:
     description: 'The GITHUB_TOKEN secret'
-    default: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
     required: false
   configuration-path:
     description: 'The path for the label configurations'
