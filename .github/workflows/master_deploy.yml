@@ -17,6 +17,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install Packages
       run: npm install
+    - name: Project Linting
+      run: npm run lint
     - name: Deploy Application to GH Pages
       run: |
         git config user.email ${{ secrets.EMAIL }}
