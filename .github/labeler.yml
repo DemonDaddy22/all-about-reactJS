@@ -1,0 +1,14 @@
+repo:
+    - ./*
+
+modules:
+    - node_modules/*
+    - node_modules/**/*
+
+source:
+    - src/**/*
+
+documentation:
+    - README.md
+    - CONTRIBUTION.md
+    - IDEAS.md
