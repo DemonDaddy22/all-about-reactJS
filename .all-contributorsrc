@@ -11,7 +11,10 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/39908472?v=4",
       "profile": "https://shades-of-demon.herokuapp.com/",
       "contributions": [
-        "ideas"
+        "code",
+        "ideas",
+        "doc",
+        "review"
       ]
     }
   ],

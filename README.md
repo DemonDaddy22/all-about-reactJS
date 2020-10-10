@@ -3,8 +3,6 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-<br>
-
 ### If you want to contribute to this project, consider reading the [CONTRIBUTION.md](CONTRIBUTION.md) first to get a better idea of how to contribute to this repo.
 
 <br>
