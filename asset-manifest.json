@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/all-about-reactJS/static/css/main.fc7c745c.chunk.css",
+    "main.css": "/all-about-reactJS/static/css/main.25100c2c.chunk.css",
     "main.js": "/all-about-reactJS/static/js/main.ee27b4ff.chunk.js",
     "main.js.map": "/all-about-reactJS/static/js/main.ee27b4ff.chunk.js.map",
     "runtime-main.js": "/all-about-reactJS/static/js/runtime-main.51916d60.js",
@@ -8,9 +8,9 @@
     "static/js/2.5d64c4ff.chunk.js": "/all-about-reactJS/static/js/2.5d64c4ff.chunk.js",
     "static/js/2.5d64c4ff.chunk.js.map": "/all-about-reactJS/static/js/2.5d64c4ff.chunk.js.map",
     "index.html": "/all-about-reactJS/index.html",
-    "precache-manifest.16a8db618e89b05149eaee5c9f073cce.js": "/all-about-reactJS/precache-manifest.16a8db618e89b05149eaee5c9f073cce.js",
+    "precache-manifest.5fc7a7861b2a68b6c34de8c209c1de5a.js": "/all-about-reactJS/precache-manifest.5fc7a7861b2a68b6c34de8c209c1de5a.js",
     "service-worker.js": "/all-about-reactJS/service-worker.js",
-    "static/css/main.fc7c745c.chunk.css.map": "/all-about-reactJS/static/css/main.fc7c745c.chunk.css.map",
+    "static/css/main.25100c2c.chunk.css.map": "/all-about-reactJS/static/css/main.25100c2c.chunk.css.map",
     "static/js/2.5d64c4ff.chunk.js.LICENSE.txt": "/all-about-reactJS/static/js/2.5d64c4ff.chunk.js.LICENSE.txt",
     "static/media/pricing_dark.jpg": "/all-about-reactJS/static/media/pricing_dark.418b8f3b.jpg",
     "static/media/pricing_light.jpg": "/all-about-reactJS/static/media/pricing_light.79b6e38a.jpg",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.51916d60.js",
     "static/js/2.5d64c4ff.chunk.js",
-    "static/css/main.fc7c745c.chunk.css",
+    "static/css/main.25100c2c.chunk.css",
     "static/js/main.ee27b4ff.chunk.js"
   ]
 }
