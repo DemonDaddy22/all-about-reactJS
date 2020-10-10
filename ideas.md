@@ -22,6 +22,6 @@ Weather app is one of the best beginner friendly project to get started with Rea
 Moving Hamburger Animation is a good project to hold command on React.
 <br>
 <strong>Links for references</strong>
-* [https://codepen.io/FlorinPop17/full/wvvZvWp](https://codepen.io/FlorinPop17/full/wvvZvWp)
-* [https://www.youtube.com/watch?v=dIyVTjJAkLw](https://www.youtube.com/watch?v=dIyVTjJAkLw)
-* [https://hamburger-react.netlify.app/](https://hamburger-react.netlify.app/)
+-  [https://codepen.io/FlorinPop17/full/wvvZvWp](https://codepen.io/FlorinPop17/full/wvvZvWp)
+-  [https://www.youtube.com/watch?v=dIyVTjJAkLw](https://www.youtube.com/watch?v=dIyVTjJAkLw)
+-  [https://hamburger-react.netlify.app/](https://hamburger-react.netlify.app/)
