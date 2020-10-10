@@ -6,7 +6,8 @@
 # https://github.com/actions/labeler
 
 name: Labeler
-on: [pull_request]
+on:
+- pull_request_target
 
 jobs:
   pr_label:
@@ -18,4 +19,5 @@ jobs:
       - name: Adding label
         uses: actions/labeler@v2
         with:
-          repo-token: "${{ secrets.PERSONAL_ACCESS_TOKEN }}"
+          configuration-path: .github/labeler.yml
+          repo-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
