@@ -17,3 +17,11 @@ Weather app is one of the best beginner friendly project to get started with Rea
 <strong>Links for references</strong>
 * [https://levelup.gitconnected.com/weather-app-in-react-js-ca668ae86b14](https://levelup.gitconnected.com/weather-app-in-react-js-ca668ae86b14)
 * [https://www.youtube.com/watch?v=GuA0_Z1llYU](https://www.youtube.com/watch?v=GuA0_Z1llYU)
+
+### Moving Hamburger Animation
+Moving Hamburger Animation is a good project to hold command on React.
+<br>
+<strong>Links for references</strong>
+* [https://codepen.io/FlorinPop17/full/wvvZvWp](https://codepen.io/FlorinPop17/full/wvvZvWp)
+* [https://www.youtube.com/watch?v=dIyVTjJAkLw](https://www.youtube.com/watch?v=dIyVTjJAkLw)
+* [https://hamburger-react.netlify.app/](https://hamburger-react.netlify.app/)
