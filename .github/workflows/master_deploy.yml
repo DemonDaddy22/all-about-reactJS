@@ -1,25 +1,33 @@
 name: ReactProjectsCI
 on:
-  push:
-    branches:
-      - master
+    push:
+        branches:
+            - master
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x]
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install Packages
-      run: npm install
-    - name: Deploy Application to GH Pages
-      run: |
-        git config user.email ${{ secrets.EMAIL }}
-        git config user.name ${{ secrets.USERNAME }}
-        git remote set-url origin https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git
-        npm run deploy
+    build:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [10.x]
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - name: Install Packages
+              run: npm instal/l
+            - name: Deploy Application to GH Pages
+              run: |
+                  git config user.email ${{ secrets.EMAIL }}
+                  git config user.name ${{ secrets.USERNAME }}
+                  git remote set-url origin https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git
+                  npm run deploy
+    eslint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - name: Perform linting
+              uses: stefanoeb/eslint-action@1.0.2
+              with:
+                  files: src/
