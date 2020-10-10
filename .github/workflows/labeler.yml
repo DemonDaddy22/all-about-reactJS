@@ -9,9 +9,13 @@ name: Labeler
 on: [pull_request]
 
 jobs:
-  label:
-
+  pr_label:
+  # prevent running it in the forks
+    if: github.repository == 'DemonDaddy22/all-about-reactJS'
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/labeler@v2
+      - name: Adding label
+        uses: actions/labeler@v2
+        with:
+          repo-token: "${{ secrets.PERSONAL_ACCESS_TOKEN }}"
