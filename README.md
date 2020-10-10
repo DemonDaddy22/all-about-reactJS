@@ -1,7 +1,15 @@
 # All About ReactJS
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+![All Contributors](https://img.shields.io/github/all-contributors/demondaddy22/all-about-reactJS?color=%23fca503&style=for-the-badge)
+![Commit Activity](https://img.shields.io/github/commit-activity/m/demondaddy22/all-about-reactJS?color=%2300bfff&style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/demondaddy22/all-about-reactJS?color=%23abd100&style=for-the-badge)
+![Repo Size](https://img.shields.io/github/repo-size/demondaddy22/all-about-reactJS?color=%23ff47b6&style=for-the-badge)
+<br>
+![Open Issues](https://img.shields.io/github/issues-raw/demondaddy22/all-about-reactJS?color=%239e6eff&style=for-the-badge)
+![Pull Requests](https://img.shields.io/github/issues-pr-raw/demondaddy22/all-about-reactJS?color=%2302b09f&style=for-the-badge)
+![Workflow Status](https://img.shields.io/github/workflow/status/demondaddy22/all-about-reactJS/ReactProjectsCI?style=for-the-badge)
+
+<br>
 
 ### If you want to contribute to this project, consider reading the [CONTRIBUTION.md](CONTRIBUTION.md) first to get a better idea of how to contribute to this repo.
 
@@ -22,6 +30,9 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 6. **Stone-Paper-Scissor &nbsp;✂**: A responsive [Stone-Paper-Scissor](https://demondaddy22.github.io/all-about-reactJS/#/stone-paper-scissor) game built using React Hooks. The score is persisted using the browser's localStorage.
 
 7. **Password Generator &nbsp;🔐**: A responsive [password generator](https://demondaddy22.github.io/all-about-reactJS/#/password-generator) that allows the user to generate a password of specified length containing a random sequence of lowercase, uppercase, numeric or special characters. The user can also click on the generated password to copy it to the clipboard.
+
+<br>
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
