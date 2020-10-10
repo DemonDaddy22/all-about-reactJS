@@ -1,7 +1,15 @@
 # All About ReactJS
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+![All Contributors](https://img.shields.io/github/all-contributors/demondaddy22/all-about-reactJS?color=%23fca503&style=for-the-badge)
+![Commit Activity](https://img.shields.io/github/commit-activity/w/demondaddy22/all-about-reactJS?color=%2300bfff&style=for-the-badge)
+![Last Commit](https://img.shields.io/github/last-commit/demondaddy22/all-about-reactJS?color=%23abd100&style=for-the-badge)
+![Repo Size](https://img.shields.io/github/repo-size/demondaddy22/all-about-reactJS?color=%23ff47b6&style=for-the-badge)
+<br>
+![Open Issues](https://img.shields.io/github/issues-raw/demondaddy22/all-about-reactJS?color=%239e6eff&style=for-the-badge)
+![Pull Requests](https://img.shields.io/github/issues-pr-raw/demondaddy22/all-about-reactJS?color=%2302b09f&style=for-the-badge)
+![Workflow Status](https://img.shields.io/github/workflow/status/demondaddy22/all-about-reactJS/ReactProjectsCI?style=for-the-badge)
+
+<br>
 
 ### If you want to contribute to this project, consider reading the [CONTRIBUTING.md](CONTRIBUTING.md) first to get a better idea of how to contribute to this repo.
 
@@ -22,6 +30,9 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 6. **Stone-Paper-Scissor &nbsp;✂**: A responsive [Stone-Paper-Scissor](https://demondaddy22.github.io/all-about-reactJS/#/stone-paper-scissor) game built using React Hooks. The score is persisted using the browser's localStorage.
 
 7. **Password Generator &nbsp;🔐**: A responsive [password generator](https://demondaddy22.github.io/all-about-reactJS/#/password-generator) that allows the user to generate a password of specified length containing a random sequence of lowercase, uppercase, numeric or special characters. The user can also click on the generated password to copy it to the clipboard.
+
+<br>
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -31,7 +42,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://shades-of-demon.herokuapp.com/"><img src="https://avatars1.githubusercontent.com/u/39908472?v=4" width="100px;" alt=""/><br /><sub><b>Rohan Gupta</b></sub></a><br /><a href="#ideas-DemonDaddy22" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://shades-of-demon.herokuapp.com/"><img src="https://avatars1.githubusercontent.com/u/39908472?v=4" width="100px;" alt=""/><br /><sub><b>Rohan Gupta</b></sub></a><br /><a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=DemonDaddy22" title="Code">💻</a> <a href="#ideas-DemonDaddy22" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=DemonDaddy22" title="Documentation">📖</a> <a href="https://github.com/DemonDaddy22/all-about-reactJS/pulls?q=is%3Apr+reviewed-by%3ADemonDaddy22" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/vineetnilawar"><img src="https://avatars0.githubusercontent.com/u/55659836?v=4" width="100px;" alt=""/><br /><sub><b>Vineet Nilawar</b></sub></a><br /><a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=vineetnilawar" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Jaikishann"><img src="https://avatars2.githubusercontent.com/u/23214005?v=4" width="100px;" alt=""/><br /><sub><b>Jaikishan</b></sub></a><br /><a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=Jaikishann" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.neupanedipendra.com.np"><img src="https://avatars2.githubusercontent.com/u/38071091?v=4" width="100px;" alt=""/><br /><sub><b>Dipendra Neupane</b></sub></a><br /><a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=neupanedipen" title="Documentation">📖</a></td>
   </tr>
 </table>
 
