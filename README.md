@@ -11,7 +11,7 @@
 
 <br>
 
-### If you want to contribute to this project, consider reading the [CONTRIBUTION.md](CONTRIBUTION.md) first to get a better idea of how to contribute to this repo.
+### If you want to contribute to this project, consider reading the [CONTRIBUTION.md](contribution.md) first to get a better idea of how to contribute to this repo.
 
 <br>
 
