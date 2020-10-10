@@ -46,6 +46,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/vineetnilawar"><img src="https://avatars0.githubusercontent.com/u/55659836?v=4" width="100px;" alt=""/><br /><sub><b>Vineet Nilawar</b></sub></a><br /><a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=vineetnilawar" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Jaikishann"><img src="https://avatars2.githubusercontent.com/u/23214005?v=4" width="100px;" alt=""/><br /><sub><b>Jaikishan</b></sub></a><br /><a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=Jaikishann" title="Code">💻</a></td>
     <td align="center"><a href="https://www.neupanedipendra.com.np"><img src="https://avatars2.githubusercontent.com/u/38071091?v=4" width="100px;" alt=""/><br /><sub><b>Dipendra Neupane</b></sub></a><br /><a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=neupanedipen" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Ritika0126"><img src="https://avatars3.githubusercontent.com/u/51254896?v=4" width="100px;" alt=""/><br /><sub><b>Ritika0126</b></sub></a><br /><a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=Ritika0126" title="Documentation">📖</a></td>
   </tr>
 </table>
 
