@@ -1,4 +1,7 @@
 # All About ReactJS
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <br>
 
@@ -21,3 +24,21 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 6. **Stone-Paper-Scissor &nbsp;✂**: A responsive [Stone-Paper-Scissor](https://demondaddy22.github.io/all-about-reactJS/#/stone-paper-scissor) game built using React Hooks. The score is persisted using the browser's localStorage.
 
 7. **Password Generator &nbsp;🔐**: A responsive [password generator](https://demondaddy22.github.io/all-about-reactJS/#/password-generator) that allows the user to generate a password of specified length containing a random sequence of lowercase, uppercase, numeric or special characters. The user can also click on the generated password to copy it to the clipboard.
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://shades-of-demon.herokuapp.com/"><img src="https://avatars1.githubusercontent.com/u/39908472?v=4" width="100px;" alt=""/><br /><sub><b>Rohan Gupta</b></sub></a><br /><a href="#ideas-DemonDaddy22" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
