@@ -12,7 +12,7 @@ on:
 jobs:
     pr_label:
         # prevent running it in the forks
-        # if: github.repository == 'DemonDaddy22/all-about-reactJS'
+        if: github.repository == 'DemonDaddy22/all-about-reactJS'
         runs-on: ubuntu-latest
 
         steps:

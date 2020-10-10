@@ -1,5 +1,6 @@
 repo:
     - ./*
+    - '**'
 
 modules:
     - node_modules/*
