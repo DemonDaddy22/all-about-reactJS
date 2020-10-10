@@ -22,4 +22,8 @@
 
 <br>
 
+**Make sure you add yourself to the Contributors list using [@all-contributors](https://github.com/all-contributors/all-contributors)**
+
+<br>
+
 ### *Happy Coding!* 😃
