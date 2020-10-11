@@ -10,6 +10,4 @@ source:
     - src/**/*
 
 documentation:
-    - README.md
-    - CONTRIBUTION.md
-    - IDEAS.md
+    - '*.md'

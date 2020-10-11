@@ -1,4 +1,4 @@
-## Read this before making any contributions to this project.
+## Read this before making any contributions to this project
 ---
 <br>
 
