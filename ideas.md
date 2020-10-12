@@ -32,5 +32,3 @@ Portfolio creator allows the user to create own portfolio by adding up their own
 <strong>Links for references</strong>
 - [https://github.com/Aqsa48/Aqsa48-MyPortfolio](https://github.com/Aqsa48/Aqsa48-MyPortfolio)
 - [https://aqsa-portfolio.herokuapp.com/](https://aqsa-portfolio.herokuapp.com/)
-
-
