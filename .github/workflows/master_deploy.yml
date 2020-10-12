@@ -19,9 +19,8 @@ jobs:
               run: npm install
             - name: Deploy Application to GH Pages
               run: |
-                  git config user.email ${{ secrets.EMAIL }}
                   git config user.name ${{ secrets.USERNAME }}
-                  git remote set-url origin https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git
+                  git remote set-url origin https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ secrets.USERNAME }}.git
  
 
                   npm run deploy
