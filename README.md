@@ -48,6 +48,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.neupanedipendra.com.np"><img src="https://avatars2.githubusercontent.com/u/38071091?v=4" width="100px;" alt=""/><br /><sub><b>Dipendra Neupane</b></sub></a><br /><a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=neupanedipen" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/Ritika0126"><img src="https://avatars3.githubusercontent.com/u/51254896?v=4" width="100px;" alt=""/><br /><sub><b>Ritika0126</b></sub></a><br /><a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=Ritika0126" title="Documentation">📖</a></td>
     <td align="center"><a href="https://aqsa-portfolio.herokuapp.com/"><img src="https://avatars0.githubusercontent.com/u/21342218?v=4" width="100px;" alt=""/><br /><sub><b>Aqsa Umar</b></sub></a><br /><a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=Aqsa48" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/mustafamasvi/"><img src="https://avatars3.githubusercontent.com/u/18447601?v=4" width="100px;" alt=""/><br /><sub><b>Mustafa Masvi</b></sub></a><br /><a href="https://github.com/DemonDaddy22/all-about-reactJS/commits?author=mustafamasvi" title="Documentation">📖</a></td>
   </tr>
 </table>
 
