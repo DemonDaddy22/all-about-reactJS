@@ -52,6 +52,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "Aqsa48",
+      "name": "Aqsa Umar",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/21342218?v=4",
+      "profile": "https://aqsa-portfolio.herokuapp.com/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
