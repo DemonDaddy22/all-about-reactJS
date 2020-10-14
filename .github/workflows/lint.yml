@@ -1,6 +1,7 @@
 name: Lint
 
-on: [pull-request]
+on:
+- pull_request_target
 
 jobs:
   eslint:
@@ -10,5 +11,5 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - run: npm ci
-      - run: eslint src/
+      - run: yarn
+      - run: ./node_modules/.bin/eslint src/
