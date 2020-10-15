@@ -49,12 +49,13 @@ export default class RandomJokes extends React.Component {
         const { jokes, loader } = this.state;
 
         return <Page>
-            {loader ? <div className={classes.loader}><SpinnerLoader /></div> :
-                isEmptyList(jokes) ? <div>Couldn't find any jokes to amuse you, LoL!</div> :
+            <>
+                <div className={`${classes.loader} ${!loader && classes.hideLoader}`}><SpinnerLoader /></div>
+                {isEmptyList(jokes) ? <div>Couldn't find any jokes to amuse you, LoL!</div> :
                     <div className={classes.jokesContainer}>
                         {jokes.map((joke, index) => <JokeCard key={joke.id || index} joke={joke} />)}
-                    </div>    
-                }
+                    </div>
+                }</>
         </Page>;
     }
 }
