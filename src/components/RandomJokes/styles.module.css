@@ -1,0 +1,23 @@
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.jokesContainer {
+    width: 95%;
+    margin: 5rem auto;
+}
+
+@media (min-width: 768px) {
+    .jokesContainer {
+        width: 90%;
+    }
+}
+
+@media (min-width: 900px) {
+    .jokesContainer {
+        width: 80%;
+    }
+}

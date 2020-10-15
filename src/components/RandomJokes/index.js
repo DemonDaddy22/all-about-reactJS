@@ -4,6 +4,7 @@ import classes from './styles.module.css';
 import { handleError, isEmptyList, isEmptyObject, isEmptyString } from '../../utils';
 import Page from '../../ui-components/Page';
 import SpinnerLoader from '../../ui-components/SpinnerLoader';
+import JokeCard from './components/JokeCard';
 
 export default class RandomJokes extends React.Component {
 
@@ -48,9 +49,12 @@ export default class RandomJokes extends React.Component {
         const { jokes, loader } = this.state;
 
         return <Page>
-            {loader ? <SpinnerLoader /> :
+            {loader ? <div className={classes.loader}><SpinnerLoader /></div> :
                 isEmptyList(jokes) ? <div>Couldn't find any jokes to amuse you, LoL!</div> :
-                    jokes.map(joke => <div>{joke?.joke}</div>)}
+                    <div className={classes.jokesContainer}>
+                        {jokes.map((joke, index) => <JokeCard key={joke.id || index} joke={joke} />)}
+                    </div>    
+                }
         </Page>;
     }
 }

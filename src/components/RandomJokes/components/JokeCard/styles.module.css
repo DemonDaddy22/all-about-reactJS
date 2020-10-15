@@ -1,0 +1,19 @@
+.jokeContainer {
+    padding: 16px;
+    color: var(--text);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-top: 0;
+    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+}
+
+.jokeContainer:first-of-type {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-top: 1px solid var(--border-color);
+}
+
+.jokeContainer:last-of-type {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
