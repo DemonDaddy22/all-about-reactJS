@@ -5,6 +5,7 @@ import { handleError, isEmptyList, isEmptyObject, isEmptyString } from '../../ut
 import Page from '../../ui-components/Page';
 import SpinnerLoader from '../../ui-components/SpinnerLoader';
 import JokeCard from './components/JokeCard';
+import { Collapse } from '@material-ui/core';
 
 export default class RandomJokes extends React.Component {
 
@@ -26,7 +27,9 @@ export default class RandomJokes extends React.Component {
                 jokes.push(joke);
             }
         }
-        this.setState({ loader: false, jokes: [...this.state.jokes, ...jokes] });
+        this.setState({ loader: false, jokes: [...this.state.jokes, ...jokes] }, () => {
+            jokes.forEach((joke, index) => setTimeout(() => this.toggleJokeVisibility(joke.id, true), index * 50))
+        });
     });
 
     fetchJoke = async () => {
@@ -45,15 +48,21 @@ export default class RandomJokes extends React.Component {
         return joke;
     }
 
+    toggleJokeVisibility = (id, visible, callback) => this.setState(prevState => ({
+        jokes: prevState.jokes.map(joke => joke.id === id ? { ...joke, visible } : joke)
+    }), callback);
+
     render = () => {
         const { jokes, loader } = this.state;
 
         return <Page>
             <>
                 <div className={`${classes.loader} ${!loader && classes.hideLoader}`}><SpinnerLoader /></div>
-                {isEmptyList(jokes) ? <div>Couldn't find any jokes to amuse you, LoL!</div> :
+                {isEmptyList(jokes) && !loader ? <div className={classes.noData}>Couldn't find any jokes to amuse you, LoL!</div> :
                     <div className={classes.jokesContainer}>
-                        {jokes.map((joke, index) => <JokeCard key={joke.id || index} joke={joke} />)}
+                        {jokes.map((joke, index) => <Collapse className={classes.collapseWrapper} key={joke.id || index} in={joke.visible} timeout={500} mountOnEnter unmountOnExit>
+                            <JokeCard className={classes.jokeWrapper} joke={joke} />
+                        </Collapse>)}
                     </div>
                 }</>
         </Page>;
