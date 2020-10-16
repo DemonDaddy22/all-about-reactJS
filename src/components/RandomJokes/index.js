@@ -16,7 +16,7 @@ export default class RandomJokes extends React.Component {
         loader: true
     }
 
-    componentDidMount = () => this.fetchJokes();
+    componentDidMount = () => this.fetchJokes(); 
 
     fetchJokes = (numJokes = 10) => this.setState({ loader: true }, async () => {
         let jokes = [];
@@ -68,7 +68,8 @@ export default class RandomJokes extends React.Component {
                 return <AllJokes jokes={this.state.jokes} loader={this.state.loader}
                     handleCopyJoke={this.handleCopyJoke} handleLikeJoke={this.handleLikeJoke} />
             case 1:
-                return <LikedJokes jokes={this.state.jokes} />
+                return <LikedJokes jokes={this.state.jokes} loader={this.state.loader}
+                    handleCopyJoke={this.handleCopyJoke} handleLikeJoke={this.handleLikeJoke} />
         }
     }
 

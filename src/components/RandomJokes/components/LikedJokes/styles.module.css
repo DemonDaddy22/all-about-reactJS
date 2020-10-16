@@ -1,0 +1,42 @@
+.noData {
+    word-break: break-word;
+    font-weight: 100;
+    margin-top: 8rem;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: var(--text-obscure);
+    transition: color 0.5s ease-in-out;
+}
+
+.jokesContainer {
+    width: 90%;
+    margin: 2rem auto;
+    composes: animateFadeGrow from global;
+}
+
+/* pretty weird but using custom class name (collapseWrapper) instead of .MuiCollapse-container makes it work */
+
+.jokesContainer>.collapseWrapper .jokeWrapper {
+    border-top: 0;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+}
+
+.jokesContainer>.collapseWrapper:first-of-type .jokeWrapper {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-top: 1px solid var(--border-color);
+}
+
+.jokesContainer>.collapseWrapper:last-of-type .jokeWrapper {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+@media (min-width: 900px) {
+    .jokesContainer {
+        width: 80%;
+    }
+} 

@@ -12,6 +12,7 @@
 .jokesContainer {
     width: 90%;
     margin: 2rem auto;
+    composes: animateFadeGrow from global;
 }
 
 /* pretty weird but using custom class name (collapseWrapper) instead of .MuiCollapse-container makes it work */
