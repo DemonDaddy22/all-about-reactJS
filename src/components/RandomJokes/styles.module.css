@@ -30,9 +30,10 @@
 
 /* pretty weird but using custom class name (collapseWrapper) instead of .MuiCollapse-container makes it work */
 .jokesContainer > .collapseWrapper .jokeWrapper{
-    border: 1px solid var(--border-color);
     border-top: 0;
-    transition: border 0.5s ease-in-out;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
 }
 
 .jokesContainer > .collapseWrapper:first-of-type .jokeWrapper {

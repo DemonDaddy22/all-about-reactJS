@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from './styles.module.css';
-import { handleError, isEmptyList, isEmptyObject, isEmptyString } from '../../utils';
+import { copyTextToClipboard, handleError, isEmptyList, isEmptyObject, isEmptyString } from '../../utils';
 import Page from '../../ui-components/Page';
 import SpinnerLoader from '../../ui-components/SpinnerLoader';
 import JokeCard from './components/JokeCard';
@@ -53,6 +53,8 @@ export default class RandomJokes extends React.Component {
         jokes: prevState.jokes.map(joke => joke.id === id ? { ...joke, visible, liked: false } : joke)
     }), callback);
 
+    handleCopyJoke = joke => !isEmptyString(joke) && copyTextToClipboard(joke);
+    
     handleLikeJoke = id => id && this.setState(prevState => ({
         jokes: prevState.jokes.map(joke => joke.id === id ? { ...joke, liked: !joke.liked } : joke)
     }));
@@ -66,7 +68,7 @@ export default class RandomJokes extends React.Component {
                 {isEmptyList(jokes) && !loader ? <div className={classes.noData}>Couldn't find any jokes to amuse you, LoL!</div> :
                     <div className={classes.jokesContainer}>
                         {jokes.map((joke, index) => <Collapse className={classes.collapseWrapper} key={joke.id || index} in={joke.visible} timeout={'auto'} mountOnEnter unmountOnExit>
-                            <JokeCard className={classes.jokeWrapper} joke={joke} handleLikeJoke={this.handleLikeJoke} />
+                            <JokeCard className={classes.jokeWrapper} joke={joke} handleCopyJoke={this.handleCopyJoke} handleLikeJoke={this.handleLikeJoke} />
                         </Collapse>)}
                     </div>
                 }</>
