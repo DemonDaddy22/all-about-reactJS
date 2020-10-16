@@ -3,8 +3,9 @@
 }
 
 .loader {
+    z-index: 100;
     opacity: 1;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -23,7 +24,7 @@
 }
 
 .jokesContainer {
-    width: 95%;
+    width: 90%;
     margin: 5rem auto;
 }
 
@@ -43,12 +44,6 @@
 .jokesContainer > .collapseWrapper:last-of-type .jokeWrapper {
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
-}
-
-@media (min-width: 768px) {
-    .jokesContainer {
-        width: 90%;
-    }
 }
 
 @media (min-width: 900px) {

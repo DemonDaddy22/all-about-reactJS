@@ -6,6 +6,7 @@ import Page from '../../ui-components/Page';
 import SpinnerLoader from '../../ui-components/SpinnerLoader';
 import JokeCard from './components/JokeCard';
 import { Collapse } from '@material-ui/core';
+import Button from '../../ui-components/Button';
 
 export default class RandomJokes extends React.Component {
 
@@ -48,9 +49,13 @@ export default class RandomJokes extends React.Component {
         return joke;
     }
 
-    toggleJokeVisibility = (id, visible, callback) => this.setState(prevState => ({
-        jokes: prevState.jokes.map(joke => joke.id === id ? { ...joke, visible } : joke)
+    toggleJokeVisibility = (id, visible, callback) => id && this.setState(prevState => ({
+        jokes: prevState.jokes.map(joke => joke.id === id ? { ...joke, visible, liked: false } : joke)
     }), callback);
+
+    handleLikeJoke = id => id && this.setState(prevState => ({
+        jokes: prevState.jokes.map(joke => joke.id === id ? { ...joke, liked: !joke.liked } : joke)
+    }));
 
     render = () => {
         const { jokes, loader } = this.state;
@@ -60,8 +65,8 @@ export default class RandomJokes extends React.Component {
                 <div className={`${classes.loader} ${!loader && classes.hideLoader}`}><SpinnerLoader /></div>
                 {isEmptyList(jokes) && !loader ? <div className={classes.noData}>Couldn't find any jokes to amuse you, LoL!</div> :
                     <div className={classes.jokesContainer}>
-                        {jokes.map((joke, index) => <Collapse className={classes.collapseWrapper} key={joke.id || index} in={joke.visible} timeout={500} mountOnEnter unmountOnExit>
-                            <JokeCard className={classes.jokeWrapper} joke={joke} />
+                        {jokes.map((joke, index) => <Collapse className={classes.collapseWrapper} key={joke.id || index} in={joke.visible} timeout={'auto'} mountOnEnter unmountOnExit>
+                            <JokeCard className={classes.jokeWrapper} joke={joke} handleLikeJoke={this.handleLikeJoke} />
                         </Collapse>)}
                     </div>
                 }</>

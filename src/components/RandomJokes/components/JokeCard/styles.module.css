@@ -1,6 +1,31 @@
 .jokeContainer {
     padding: 16px;
-    color: var(--text);
     background-color: var(--card-bg);
-    transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+}
+
+.joke {
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+.buttonsWrapper {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    cursor: pointer;
+    margin-right: 1rem;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+.likedJoke {
+    color: var(--secondary-theme-color) !important;
+}
+
+.button:last-child {
+    margin-right: 0;
 }
