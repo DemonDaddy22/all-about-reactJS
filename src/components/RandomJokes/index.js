@@ -1,17 +1,18 @@
 import React from 'react';
 
 import classes from './styles.module.css';
-import { copyTextToClipboard, handleError, isEmptyList, isEmptyObject, isEmptyString } from '../../utils';
+import { copyTextToClipboard, handleError, isEmptyObject, isEmptyString } from '../../utils';
 import Page from '../../ui-components/Page';
 import SpinnerLoader from '../../ui-components/SpinnerLoader';
-import JokeCard from './components/JokeCard';
-import { Collapse } from '@material-ui/core';
-import Button from '../../ui-components/Button';
+import { Tab, Tabs } from '@material-ui/core';
+import AllJokes from './components/AllJokes';
+import LikedJokes from './components/LikedJokes';
 
 export default class RandomJokes extends React.Component {
 
     state = {
         jokes: [],
+        currentTab: 0,
         loader: true
     }
 
@@ -54,24 +55,35 @@ export default class RandomJokes extends React.Component {
     }), callback);
 
     handleCopyJoke = joke => !isEmptyString(joke) && copyTextToClipboard(joke);
-    
+
     handleLikeJoke = id => id && this.setState(prevState => ({
         jokes: prevState.jokes.map(joke => joke.id === id ? { ...joke, liked: !joke.liked } : joke)
     }));
 
+    onTabChange = (e, tab) => this.setState({ currentTab: tab });
+
+    renderContent = tab => {
+        switch (tab) {
+            case 0:
+                return <AllJokes jokes={this.state.jokes} loader={this.state.loader}
+                    handleCopyJoke={this.handleCopyJoke} handleLikeJoke={this.handleLikeJoke} />
+            case 1:
+                return <LikedJokes jokes={this.state.jokes} />
+        }
+    }
+
     render = () => {
-        const { jokes, loader } = this.state;
+        const { currentTab, loader } = this.state;
 
         return <Page>
             <>
                 <div className={`${classes.loader} ${!loader && classes.hideLoader}`}><SpinnerLoader /></div>
-                {isEmptyList(jokes) && !loader ? <div className={classes.noData}>Couldn't find any jokes to amuse you, LoL!</div> :
-                    <div className={classes.jokesContainer}>
-                        {jokes.map((joke, index) => <Collapse className={classes.collapseWrapper} key={joke.id || index} in={joke.visible} timeout={'auto'} mountOnEnter unmountOnExit>
-                            <JokeCard className={classes.jokeWrapper} joke={joke} handleCopyJoke={this.handleCopyJoke} handleLikeJoke={this.handleLikeJoke} />
-                        </Collapse>)}
-                    </div>
-                }</>
+                <Tabs value={currentTab} onChange={this.onTabChange} classes={{ root: classes.tabsRoot, indicator: classes.tabIndicator }}>
+                    <Tab label='All Jokes' classes={{ root: classes.tabRoot }} disableFocusRipple disableRipple disableTouchRipple></Tab>
+                    <Tab label='Liked Jokes' classes={{ root: classes.tabRoot }} disableFocusRipple disableRipple disableTouchRipple></Tab>
+                </Tabs>
+                {this.renderContent(currentTab)}
+            </>
         </Page>;
     }
 }
