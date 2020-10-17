@@ -12,6 +12,8 @@ import gameDarkImage from '../../images/game_dark.jpg';
 import gameLightImage from '../../images/game_light.jpg';
 import passwordDarkImage from '../../images/password_dark.jpg';
 import passwordLightImage from '../../images/password_light.jpg';
+import jokesDarkImage from '../../images/jokes_dark.jpg';
+import jokesLightImage from '../../images/jokes_light.jpg';
 import { BASE_URL } from '../../resources/constants';
 
 export const projects = [
@@ -22,4 +24,5 @@ export const projects = [
     { sequence: '5', title: 'GitHub Profile Viewer', imageLight: profileViewerLightImage, imageDark: profileViewerDarkImage, projectPath: `${BASE_URL}/#/github-profile-viewer`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/GitHubProfileViewer' },
     { sequence: '6', title: 'Stone-Paper-Scissor', imageLight: gameLightImage, imageDark: gameDarkImage, projectPath: `${BASE_URL}/#/stone-paper-scissor`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/StonePaperScissor' },
     { sequence: '7', title: 'Password-Generator', imageLight: passwordLightImage, imageDark: passwordDarkImage, projectPath: `${BASE_URL}/#/password-generator`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/PasswordGenerator' },
+    { sequence: '8', title: 'Random Jokes', imageLight: jokesLightImage, imageDark: jokesDarkImage, projectPath: `${BASE_URL}/#/random-jokes`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/RandomJokes' },
 ];
