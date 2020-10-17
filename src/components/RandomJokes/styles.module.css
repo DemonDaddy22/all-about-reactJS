@@ -26,8 +26,23 @@
     transition: color 0.5s ease-in-out;
 }
 
+.btnWrapper {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto 2rem;
+    composes: animateFadeGrow from global;
+}
+
+.scrollToTopBtn {
+    margin-left: 1rem !important;
+}
+
 @media (min-width: 900px) {
     .tabsRoot {
+        width: 80%;
+    }
+    .btnWrapper {
         width: 80%;
     }
 }
