@@ -12,13 +12,13 @@ const JokeCard = React.memo(({ joke, className, handleCopyJoke, handleLikeJoke }
     return <div className={`${classes.jokeContainer} ${className}`}>
         {joke?.joke && <div className={classes.joke}>{joke.joke}</div>}
         <div className={classes.buttonsWrapper}>
-            <div className={classes.button} onClick={() => handleCopyJoke(joke?.joke)}>
-                <FileCopyOutlinedIcon fontSize='small' />
-            </div>
             <div className={`${classes.button} ${jokeLiked && classes.likedJoke}`} onClick={() => handleLikeJoke(joke?.id)}>
                 {jokeLiked ?
                     <FavoriteRoundedIcon fontSize='small' /> :
                     <FavoriteBorderRoundedIcon fontSize='small' />}
+            </div>
+            <div className={classes.button} onClick={() => handleCopyJoke(joke?.joke)}>
+                <FileCopyOutlinedIcon fontSize='small' />
             </div>
         </div>
     </div>
