@@ -4,7 +4,6 @@
 ![Commit Activity](https://img.shields.io/github/commit-activity/w/demondaddy22/all-about-reactJS?color=%2300bfff&style=for-the-badge)
 ![Last Commit](https://img.shields.io/github/last-commit/demondaddy22/all-about-reactJS?color=%23abd100&style=for-the-badge)
 ![Repo Size](https://img.shields.io/github/repo-size/demondaddy22/all-about-reactJS?color=%23ff47b6&style=for-the-badge)
-<br>
 ![Open Issues](https://img.shields.io/github/issues-raw/demondaddy22/all-about-reactJS?color=%239e6eff&style=for-the-badge)
 ![Pull Requests](https://img.shields.io/github/issues-pr-raw/demondaddy22/all-about-reactJS?color=%2302b09f&style=for-the-badge)
 ![Workflow Status](https://img.shields.io/github/workflow/status/demondaddy22/all-about-reactJS/ReactProjectsCI?style=for-the-badge)
@@ -30,6 +29,10 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 6. **Stone-Paper-Scissor &nbsp;✂**: A responsive [Stone-Paper-Scissor](https://demondaddy22.github.io/all-about-reactJS/#/stone-paper-scissor) game built using React Hooks. The score is persisted using the browser's localStorage.
 
 7. **Password Generator &nbsp;🔐**: A responsive [password generator](https://demondaddy22.github.io/all-about-reactJS/#/password-generator) that allows the user to generate a password of specified length containing a random sequence of lowercase, uppercase, numeric or special characters. The user can also click on the generated password to copy it to the clipboard.
+
+8. **Random Jokes &nbsp;😹**: A responsive [random jokes](https://demondaddy22.github.io/all-about-reactJS/#/random-jokes) app which renders random jokes fetched using the [icanhazdadjoke API](https://icanhazdadjoke.com/). User can like and copy the joke, and the liked jokes can also be easily accessed from a dedicated *Liked Jokes* section.
+
+9. **Hover Board**: *Coming soon!*
 
 <br>
 
