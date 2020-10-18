@@ -10,6 +10,7 @@ import GitHubProfileViewer from '../components/GitHubProfileViewer';
 import StonePaperScissor from '../components/StonePaperScissor';
 import PasswordGenerator from '../components/PasswordGenerator';
 import RandomJokes from '../components/RandomJokes';
+import HoverBoard from '../components/HoverBoard';
 
 export default class Routes extends React.Component {
 
@@ -33,6 +34,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/password-generator' component={PasswordGenerator} />
                 
                 <Route exact path='/random-jokes' component={RandomJokes} />
+                
+                <Route exact path='/hoverboard' component={HoverBoard} />
 
                 <Redirect to='/' from='*' />
             </Switch>
