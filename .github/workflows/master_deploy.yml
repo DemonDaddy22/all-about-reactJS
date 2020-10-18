@@ -1,4 +1,4 @@
-name: ReactProjectsCI
+name: AllAboutReactJSCI
 on:
     push:
         branches:
