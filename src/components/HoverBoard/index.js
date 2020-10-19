@@ -11,7 +11,7 @@ export default class HoverBoard extends React.Component {
     render = () => {
 
         let cells = [];
-        for (let i = 0; i < BOARD_SIZE; i++) cells.push(<BoardCell />);
+        for (let i = 0; i < BOARD_SIZE; i++) cells.push(<BoardCell key={`cell-${i}`} />);
 
         return <Page>
             <div className={classes.boardWrapper}>
