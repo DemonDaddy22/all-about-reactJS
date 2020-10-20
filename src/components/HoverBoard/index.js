@@ -12,17 +12,14 @@ export default class HoverBoard extends React.Component {
 
     componentDidMount = () => {
         window.addEventListener('resize', this.handleWindowResize);
-        this.setBoardSize(window.innerWidth || document.body.clientWidth);
+        this.setBoardSize(this.getDeviceWidth());
     }
 
     componentWillUnmount = () => {
         window.removeEventListener('resize', this.handleWindowResize);
     }
 
-    handleWindowResize = () => {
-        const deviceWidth = window.innerWidth || document.body.clientWidth;
-        this.setBoardSize(deviceWidth);
-    }
+    handleWindowResize = () => this.setBoardSize(this.getDeviceWidth());
 
     setBoardSize = width => this.setState({ boardSize: this.getBoardSize(width) });
 
@@ -32,16 +29,20 @@ export default class HoverBoard extends React.Component {
         return 200;
     }
 
-    updateComponent = (refresher = null) => refresher && this.setState({ refresher });
+    getDeviceWidth = () => window.innerWidth || document.body.clientWidth;
 
-    // try adding onClick on each cell and ripple out the colour in 2-1-2-1-2-1-2-1 way
+    updateComponent = (refresher = null) => refresher && this.setState({ refresher });
 
     render = () => {
         let cells = [];
+        const deviceWidth = this.getDeviceWidth();
         for (let i = 0; i < this.state.boardSize; i++) cells.push(<BoardCell key={`cell-${i}`} />);
 
         return <Page shouldComponentUpdate={this.updateComponent}>
             <div className={classes.boardWrapper}>
+                {deviceWidth < 768 && <div className={classes.infoText}>
+                    If you are viewing this on mobile phone or tablet device, then hovering over the cell won't be possible.
+                </div>}
                 <div className={classes.board}>
                     {cells}
                 </div>

@@ -23,16 +23,20 @@ const getColor = () => {
 export default class BoardCell extends React.Component {
 
     state = {
-        isHovering: false
+        isHovering: false,
+        isClicked: false,
+        color: null
     }
 
-    toggleHovering = hover => this.setState({ isHovering: hover });
+    toggleHovering = hover => !this.state.isClicked && this.setState({ isHovering: hover, color: getColor() });
+
+    toggleClicked = () => this.setState({ isClicked: !this.state.isClicked });
 
     render = () => {
-        const color = getColor();
+        const { color } = this.state;
         const style = { backgroundColor: this.state.isHovering ? color : 'var(--card-bg)', boxShadow: this.state.isHovering ? `0 0 2px ${color}, 0 0 8px ${color}` : '0 0 2px var(--tag-color)' };
 
         return <div onMouseEnter={() => this.toggleHovering(true)} onMouseLeave={() => this.toggleHovering(false)}
-            className={classes.cell} style={style}></div>
+            onClick={() => this.toggleClicked()} className={classes.cell} style={style}></div>
     }
 }

@@ -1,15 +1,24 @@
 .boardWrapper {
+    margin: 2rem 0;
     min-height: inherit;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .board {
-    margin: 5rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 0.25rem;
+}
+
+.infoText {
+    width: 60%;
+    margin: 0 auto 2rem;
+    word-break: break-word;
+    color: var(--text-obscure);
+    transition: color 0.5s ease-in-out;
 }
 
 @media (min-width: 768px) {
