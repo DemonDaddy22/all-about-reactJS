@@ -1,5 +1,5 @@
 import React from 'react';
-import { BLUE_400, BLUE_600, GREEN_400, GREEN_600, ORANGE_400, ORANGE_600, PURPLE_400, PURPLE_600, RED_400, RED_600, YELLOW_400, YELLOW_600 } from '../../../../resources/colors';
+import { BLUE_400, BLUE_600, GREEN_400, GREEN_600, INDIGO_400, INDIGO_600, ORANGE_400, ORANGE_600, PURPLE_400, PURPLE_600, RED_400, RED_600, TEAL_400, TEAL_600, YELLOW_400, YELLOW_600 } from '../../../../resources/colors';
 import { themed } from '../../../../utils/theme';
 
 import classes from './styles.module.css';
@@ -10,7 +10,9 @@ const COLORS = Object.freeze({
     BLUE: themed(BLUE_600, BLUE_400),
     GREEN: themed(GREEN_600, GREEN_400),
     ORANGE: themed(ORANGE_600, ORANGE_400),
-    YELLOW: themed(YELLOW_600, YELLOW_400)
+    YELLOW: themed(YELLOW_600, YELLOW_400),
+    TEAL: themed(TEAL_600, TEAL_400),
+    INDIGO: themed(INDIGO_600, INDIGO_400)
 });
 
 const getColor = () => {
