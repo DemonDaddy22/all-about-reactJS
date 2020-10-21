@@ -32,7 +32,9 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 
 8. **Random Jokes &nbsp;😹**: A responsive [random jokes](https://demondaddy22.github.io/all-about-reactJS/#/random-jokes) app which renders random jokes fetched using the [icanhazdadjoke API](https://icanhazdadjoke.com/). User can like and copy the joke, and the liked jokes can also be easily accessed from a dedicated *Liked Jokes* section.
 
-9. **Hover Board**: *Coming soon!*
+9. **Hover Board &nbsp;🚥**: A responsive [hover board](https://demondaddy22.github.io/all-about-reactJS/#/hoverboard) which consists of several small square-shaped cells, where each square lights up whenever it is hovered upon. The user can also click any square to lock the color of that cell and click again to unlock it.
+
+10. **Key Code Sequence &nbsp;⌨**: *Coming soon!*
 
 <br>
 
