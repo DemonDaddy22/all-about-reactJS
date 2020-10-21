@@ -11,6 +11,7 @@ import StonePaperScissor from '../components/StonePaperScissor';
 import PasswordGenerator from '../components/PasswordGenerator';
 import RandomJokes from '../components/RandomJokes';
 import HoverBoard from '../components/HoverBoard';
+import KeyCodeSequence from '../components/KeyCodeSequence';
 
 export default class Routes extends React.Component {
 
@@ -36,6 +37,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/random-jokes' component={RandomJokes} />
                 
                 <Route exact path='/hoverboard' component={HoverBoard} />
+                
+                <Route exact path='/keycode-sequence' component={KeyCodeSequence} />
 
                 <Redirect to='/' from='*' />
             </Switch>
