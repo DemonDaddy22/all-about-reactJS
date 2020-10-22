@@ -2,6 +2,7 @@ import React from 'react';
 
 import classes from './styles.module.css';
 import Page from '../../ui-components/Page';
+import CodeCard from './components/CodeCard';
 
 export default class KeyCodeSequence extends React.Component {
 
@@ -33,7 +34,9 @@ export default class KeyCodeSequence extends React.Component {
             <div className={classes.sequenceWrapper}>
                 {!this.state.eventInfo ?
                     <div className={classes.noData}>Press a key to get details of the pressed key</div> :
-                    <></>}
+                    <div className={classes.sequenceContainer}>
+                        <CodeCard eventInfo={this.state.eventInfo} />    
+                    </div>}
             </div>
         </Page>;
     }
