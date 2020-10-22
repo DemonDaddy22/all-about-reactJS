@@ -1,0 +1,28 @@
+.sequenceWrapper {
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noData {
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .noData {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .noData {
+        font-size: 2.5rem;
+    }
+}
