@@ -35,7 +35,7 @@ export default class KeyCodeSequence extends React.Component {
                 {!this.state.eventInfo ?
                     <div className={classes.noData}>Press a key to get details of the pressed key</div> :
                     <div className={classes.sequenceContainer}>
-                        <CodeCard eventInfo={this.state.eventInfo} />    
+                        <CodeCard title={'card'} subTitle={'(subtitle)'} info={'A'} />    
                     </div>}
             </div>
         </Page>;
