@@ -29,13 +29,17 @@ export default class KeyCodeSequence extends React.Component {
     // which - 75 (deprecated)
 
     render = () => {
+        const { eventInfo } = this.state;
 
         return <Page>
             <div className={classes.sequenceWrapper}>
-                {!this.state.eventInfo ?
+                {!eventInfo ?
                     <div className={classes.noData}>Press a key to get details of the pressed key</div> :
                     <div className={classes.sequenceContainer}>
-                        <CodeCard title={'card'} subTitle={'(subtitle)'} info={'A'} />    
+                        {eventInfo?.code && <CodeCard title='event.code' info={eventInfo.code} />}
+                        {eventInfo?.key && <CodeCard title='event.key' info={eventInfo.key} />}
+                        {eventInfo?.keyCode && <CodeCard title='event.keyCode' info={eventInfo.keyCode} />}
+                        {eventInfo?.which && <CodeCard title='event.which' subTitle={'(deprecated)'} info={eventInfo.which} />}
                     </div>}
             </div>
         </Page>;

@@ -5,6 +5,12 @@
     justify-content: center;
 }
 
+.sequenceContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+
 .noData {
     max-width: 90%;
     margin: 0 auto;
@@ -18,6 +24,9 @@
 @media (min-width: 768px) {
     .noData {
         font-size: 2rem;
+    }
+    .sequenceContainer {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
