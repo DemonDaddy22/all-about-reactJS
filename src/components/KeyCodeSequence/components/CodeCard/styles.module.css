@@ -1,5 +1,5 @@
 .cardWrapper {
-    min-width: 15rem;
+    min-width: 20rem;
     font-weight: 600;
     border-radius: 6px;
     box-shadow: var(--card-shadow);
