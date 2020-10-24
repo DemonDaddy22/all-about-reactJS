@@ -12,6 +12,7 @@ import PasswordGenerator from '../components/PasswordGenerator';
 import RandomJokes from '../components/RandomJokes';
 import HoverBoard from '../components/HoverBoard';
 import KeyCodeSequence from '../components/KeyCodeSequence';
+import RandomQuotes from '../components/RandomQuotes';
 
 export default class Routes extends React.Component {
 
@@ -39,6 +40,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/hoverboard' component={HoverBoard} />
                 
                 <Route exact path='/keycode-sequence' component={KeyCodeSequence} />
+                
+                <Route exact path='/random-quotes' component={RandomQuotes} />
 
                 <Redirect to='/' from='*' />
             </Switch>
