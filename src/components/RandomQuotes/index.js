@@ -1,6 +1,7 @@
+import { Collapse } from '@material-ui/core';
 import React from 'react';
 import Page from '../../ui-components/Page';
-import { getPathValue, handleError } from '../../utils';
+import { copyTextToClipboard, getPathValue, handleError } from '../../utils';
 import QuoteCard from './components/QuoteCard';
 
 import classes from './styles.module.css';
@@ -37,7 +38,13 @@ export default class RandomQuotes extends React.Component {
         quotes: prevState.quotes.map(quote => id && quote._id === id ? { ...quote, visible } : quote)
     }), callback);
 
+    handleCopyQuote = quote => quote && copyTextToClipboard(quote);
+
     render = () => <Page>
-        {this.state.quotes.map((quote, index) => <QuoteCard key={`quote-${getPathValue(quote, '_id', index)}`} quote={quote.content} />)}
+        <div className={classes.quotesContainer}>
+            {this.state.quotes.map((quote, index) => <Collapse className={classes.collapseWrapper} key={`quote-${getPathValue(quote, '_id', index)}`} in={quote.visible} timeout={'auto'} mountOnEnter unmountOnExit>
+                <QuoteCard quote={quote.content} className={classes.quoteWrapper} handleCopyQuote={this.handleCopyQuote} />
+            </Collapse>)}
+        </div>
     </Page>
 }

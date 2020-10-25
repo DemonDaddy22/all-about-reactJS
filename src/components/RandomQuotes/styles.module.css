@@ -1,0 +1,29 @@
+.quotesContainer {
+    width: 90%;
+    margin: 5rem auto;
+}
+
+.quotesContainer>.collapseWrapper .quoteWrapper {
+    border: 1px solid var(--border-color);
+    border-top: 0;
+    color: var(--text);
+    background-color: var(--card-bg);
+    transition: transform 0.25s ease-in-out, color 0.5s ease-in-out, background-color 0.5s ease-in-out, border 0.5s ease-in-out, border-radius 0.25s ease-in-out, filter 0.25s ease-in-out;
+}
+
+.quotesContainer>.collapseWrapper:first-of-type .quoteWrapper {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-top: 1px solid var(--border-color);
+}
+
+.quotesContainer>.collapseWrapper:last-of-type .quoteWrapper {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+@media (min-width: 768px) {
+    .quotesContainer {
+        width: 80%;
+    }
+}

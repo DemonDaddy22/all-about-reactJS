@@ -1,0 +1,16 @@
+.quoteCard {
+    cursor: pointer;
+    display: flex;
+    padding: 1rem;
+}
+
+.quoteCard:hover {
+    border-radius: 6px;
+    transform: scale(1.01);
+    filter: contrast(95%);
+}
+
+.quote {
+    flex: 1;
+    margin-right: 4px;
+}
