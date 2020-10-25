@@ -1,6 +1,5 @@
 .quoteCard {
     cursor: pointer;
-    display: flex;
     padding: 1rem;
 }
 
@@ -8,6 +7,17 @@
     border-radius: 6px;
     transform: scale(1.01);
     filter: contrast(95%);
+}
+
+.quoteWrapper {
+    display: flex;
+}
+
+.author {
+    margin-top: 4px;
+    font-size: 0.9rem;
+    color: var(--text-obscurer);
+    transition: color 0.5s ease-in-out;
 }
 
 .quote {

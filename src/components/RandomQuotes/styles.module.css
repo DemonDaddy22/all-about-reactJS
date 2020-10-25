@@ -22,6 +22,33 @@
     border-bottom-right-radius: 6px;
 }
 
+.loader {
+    opacity: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.25s ease-in-out;
+}
+
+.hideLoader {
+    opacity: 0;
+}
+
+.noData {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    font-weight: 100;
+    font-size: 1.5rem;
+    letter-spacing: 0.4px;
+    word-break: break-word;
+    color: var(--text-obscure);
+    transition: color 0.5s ease-in-out;
+}
+
 @media (min-width: 768px) {
     .quotesContainer {
         width: 80%;

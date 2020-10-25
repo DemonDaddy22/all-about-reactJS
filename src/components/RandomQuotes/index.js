@@ -1,7 +1,8 @@
 import { Collapse } from '@material-ui/core';
 import React from 'react';
 import Page from '../../ui-components/Page';
-import { copyTextToClipboard, getPathValue, handleError } from '../../utils';
+import SpinnerLoader from '../../ui-components/SpinnerLoader';
+import { copyTextToClipboard, getPathValue, handleError, isEmptyList } from '../../utils';
 import QuoteCard from './components/QuoteCard';
 
 import classes from './styles.module.css';
@@ -17,7 +18,6 @@ export default class RandomQuotes extends React.Component {
 
     componentDidMount = () => this.fetchQuotes(this.state.page);
 
-    // get list of quotes
     // add infinite scrolling after 10 quotes
 
     fetchQuotes = (page, limit = 10) => this.setState({ loader: true }, () => fetch(`https://api.quotable.io/quotes?limit=${limit}&skip=${page}`)
@@ -41,10 +41,12 @@ export default class RandomQuotes extends React.Component {
     handleCopyQuote = quote => quote && copyTextToClipboard(quote);
 
     render = () => <Page>
-        <div className={classes.quotesContainer}>
-            {this.state.quotes.map((quote, index) => <Collapse className={classes.collapseWrapper} key={`quote-${getPathValue(quote, '_id', index)}`} in={quote.visible} timeout={'auto'} mountOnEnter unmountOnExit>
-                <QuoteCard quote={quote.content} className={classes.quoteWrapper} handleCopyQuote={this.handleCopyQuote} />
-            </Collapse>)}
-        </div>
+        <div className={`${classes.loader} ${!this.state.loader && classes.hideLoader}`}><SpinnerLoader /></div>
+        {!this.state.loader && isEmptyList(this.state.quotes) ? <div className={classes.noData}>No quotes could be fetched right now, please try again later</div>
+            : <div className={classes.quotesContainer}>
+                {this.state.quotes.map((quote, index) => <Collapse className={classes.collapseWrapper} key={`quote-${getPathValue(quote, '_id', index)}`} in={quote.visible} timeout={'auto'} mountOnEnter unmountOnExit>
+                    <QuoteCard quote={quote.content} author={quote.author} className={classes.quoteWrapper} handleCopyQuote={this.handleCopyQuote} />
+                </Collapse>)}
+            </div>}
     </Page>
 }
