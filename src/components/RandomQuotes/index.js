@@ -28,7 +28,7 @@ export default class RandomQuotes extends React.Component {
     }
 
     handleScroll = () => {
-        if (this.state.hasMoreQuotes && window.pageYOffset + window.innerHeight === this.bottomRef.offsetTop) {
+        if (!this.state.loader && this.state.hasMoreQuotes && window.pageYOffset + window.innerHeight === this.bottomRef.offsetTop) {
             this.fetchQuotes(this.state.page);
         }
     }
@@ -37,7 +37,7 @@ export default class RandomQuotes extends React.Component {
         this.bottomRef = element;
     }
 
-    fetchQuotes = (page, limit = 10) => this.setState({ loader: true }, () => fetch(`https://api.quotable.io/quotes?limit=${limit}&skip=${(page + 1) * limit}`)
+    fetchQuotes = (page, limit = 10) => this.setState({ loader: true }, () => fetch(`https://api.quotable.io/quotes?limit=${limit}&skip=${page * limit}`)
         .then(handleError)
         .then(res => res.json())
         .then(data => this.setState(prevState => ({
