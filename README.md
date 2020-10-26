@@ -36,7 +36,9 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 
 10. **Key Code Sequence &nbsp;⌨**: A response [key code sequence](https://demondaddy22.github.io/all-about-reactJS/#/keycode-sequence) generator which displays the code, key, keycode, which *(deprecated)* of the pressed key.
 
-11. **Random Quotes &nbsp;💭** : *Coming soon!*
+11. **Random Quotes &nbsp;💭**: A responsive [random quotes](https://demondaddy22.github.io/all-about-reactJS/#/random-quotes) app which renders random jokes fetched using the [api.quotable.io API](https://github.com/lukePeavey/quotable). This app also makes use of *infinite scrolling* to fetch more quotes whenever a user scrolls to the bottom of the page.
+
+12. **Carousel &nbsp;🎠**: *Coming soon!*
 
 <br>
 
