@@ -9,22 +9,39 @@ import classes from './styles.module.css';
 
 export default class RandomQuotes extends React.Component {
 
+    bottomRef = null;
+
     state = {
         loader: false,
         quotes: [],
         page: 0,
-        totalCount: 0
+        hasMoreQuotes: false
     }
 
-    componentDidMount = () => this.fetchQuotes(this.state.page);
+    componentDidMount = () => {
+        this.fetchQuotes(this.state.page);
+        window.addEventListener('scroll', this.handleScroll);
+    }
 
-    // add infinite scrolling after 10 quotes
+    componentWillUnmount = () => {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
 
-    fetchQuotes = (page, limit = 10) => this.setState({ loader: true }, () => fetch(`https://api.quotable.io/quotes?limit=${limit}&skip=${page}`)
+    handleScroll = () => {
+        if (this.state.hasMoreQuotes && window.pageYOffset + window.innerHeight === this.bottomRef.offsetTop) {
+            this.fetchQuotes(this.state.page);
+        }
+    }
+
+    setCallbackRef = element => {
+        this.bottomRef = element;
+    }
+
+    fetchQuotes = (page, limit = 10) => this.setState({ loader: true }, () => fetch(`https://api.quotable.io/quotes?limit=${limit}&skip=${(page + 1) * limit}`)
         .then(handleError)
         .then(res => res.json())
         .then(data => this.setState(prevState => ({
-            loader: false, quotes: [...prevState.quotes, ...getPathValue(data, 'results', [])], page: prevState.page + 1, totalCount: getPathValue(data, 'totalCount', 0)
+            loader: false, quotes: [...prevState.quotes, ...getPathValue(data, 'results', [])], page: prevState.page + 1, hasMoreQuotes: [...prevState.quotes, ...getPathValue(data, 'results', [])].length < getPathValue(data, 'totalCount', 0)
         }), () => getPathValue(data, 'results', []).forEach((quote, index) => setTimeout(() => this.toggleQuoteVisibility(quote._id, true), index * 50))))
         .catch(error => this.setState({
             loader: false, snack: {
@@ -48,5 +65,6 @@ export default class RandomQuotes extends React.Component {
                     <QuoteCard quote={quote.content} author={quote.author} className={classes.quoteWrapper} handleCopyQuote={this.handleCopyQuote} />
                 </Collapse>)}
             </div>}
+        <div ref={this.setCallbackRef}></div>
     </Page>
 }
