@@ -13,6 +13,7 @@ import RandomJokes from '../components/RandomJokes';
 import HoverBoard from '../components/HoverBoard';
 import KeyCodeSequence from '../components/KeyCodeSequence';
 import RandomQuotes from '../components/RandomQuotes';
+import Carousel from '../components/Carousel';
 
 export default class Routes extends React.Component {
 
@@ -42,6 +43,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/keycode-sequence' component={KeyCodeSequence} />
                 
                 <Route exact path='/random-quotes' component={RandomQuotes} />
+                
+                <Route exact path='/carousel' component={Carousel} />
 
                 <Redirect to='/' from='*' />
             </Switch>
