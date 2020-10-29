@@ -7,9 +7,15 @@
 }
 
 .carouselContainer {
+    overflow: hidden;
+    display: flex;
     width: 100%;
     height: 60vh;
     border: 1px solid #fff;
+}
+
+.slide {
+    transition: transform 0.3s ease-in-out;
 }
 
 @media (min-width: 768px) {

@@ -14,16 +14,16 @@ const images = ['https://images.unsplash.com/photo-1500964757637-c85e8a162699?ix
 export default class Carousel extends React.Component {
 
     state = {
-        index: 0
+        translateX: 0
     }
 
     handleBtnClick = direction => {
-        let newIndex;
-        const incrementer = direction === 'left' ? -1 : 1;
-        if (direction === 'left' && this.state.index === 0) newIndex = images.length - 1;
-        else if (direction === 'right' && this.state.index === images.length - 1) newIndex = 0;
-        else newIndex = this.state.index + incrementer;
-        this.setState({ index: newIndex });
+        let translateX;
+        const incrementer = direction === 'left' ? 100 : -100;
+        if (direction === 'left' && this.state.translateX === 0) translateX = -100 * (images.length - 1);
+        else if (direction === 'right' && this.state.translateX === -100 * (images.length - 1)) translateX = 0;
+        else translateX = this.state.translateX + incrementer;
+        this.setState({ translateX });
     }
 
     render = () => <Page>
@@ -31,7 +31,7 @@ export default class Carousel extends React.Component {
         <Button onClick={() => this.handleBtnClick('left')} labelStyles={{ display: 'inline-flex', padding: 0 }}>Left</Button>
         <Button onClick={() => this.handleBtnClick('right')} labelStyles={{ display: 'inline-flex', padding: 0 }}>Right</Button>
             <div className={classes.carouselContainer}>
-                <CarouselCard img={images[this.state.index]} />
+                {images.map((image, index) => <CarouselCard key={index} img={image} className={classes.slide} style={{ transform: `translateX(${this.state.translateX}%)`}} />)}
             </div>
         </div>
     </Page>
