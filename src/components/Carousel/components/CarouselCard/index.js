@@ -2,9 +2,9 @@ import React from 'react';
 
 import classes from './styles.module.css';
 
-const CarouselCard = React.memo(({ }) => {
+const CarouselCard = React.memo(({ img }) => {
 
-    return <div>CarouselCard</div>;
+    return <img className={classes.img} src={img} alt='carousel'></img>;
 });
 
 export default CarouselCard;
