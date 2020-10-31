@@ -1,4 +1,4 @@
-.carouselWrapper {
+.wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,21 +6,56 @@
     min-height: inherit;
 }
 
+.carouselWrapper {
+    position: relative;
+    width: 90%;
+    height: 60vh;
+    border: 1px solid #fff;
+}
+
 .carouselContainer {
     overflow: hidden;
     display: flex;
     width: 100%;
-    height: 60vh;
-    border: 1px solid #fff;
+    height: 100%;
 }
 
 .slide {
     transition: transform 0.3s ease-in-out;
 }
 
+.slideControl {
+    z-index: 100;
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 0.25rem;
+    border-radius: 10%;
+    transform: translateY(-50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: background-color ease-in-out 0.15s;
+}
+
+.slideControl:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.leftControl {
+    left: 10px;
+}
+
+.rightControl {
+    right: 10px;
+}
+
 @media (min-width: 768px) {
-    .carouselContainer {
+    .carouselWrapper {
         width: 80%;
+    }
+    .carouselContainer {
+        width: 100%;
         border-radius: 6px;
     }
 } 

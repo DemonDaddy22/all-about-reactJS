@@ -4,6 +4,8 @@ import classes from './styles.module.css';
 import Page from '../../ui-components/Page';
 import CarouselCard from './components/CarouselCard';
 import Button from '../../ui-components/Button';
+import ChevronLeftRoundedIcon from '@material-ui/icons/ChevronLeftRounded';
+import ChevronRightRoundedIcon from '@material-ui/icons/ChevronRightRounded';
 
 const images = ['https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1978&q=80',
     'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
@@ -27,11 +29,13 @@ export default class Carousel extends React.Component {
     }
 
     render = () => <Page>
-        <div className={classes.carouselWrapper}>
-        <Button onClick={() => this.handleBtnClick('left')} labelStyles={{ display: 'inline-flex', padding: 0 }}>Left</Button>
-        <Button onClick={() => this.handleBtnClick('right')} labelStyles={{ display: 'inline-flex', padding: 0 }}>Right</Button>
-            <div className={classes.carouselContainer}>
-                {images.map((image, index) => <CarouselCard key={index} img={image} className={classes.slide} style={{ transform: `translateX(${this.state.translateX}%)`}} />)}
+        <div className={classes.wrapper}>
+            <div className={classes.carouselWrapper}>
+                <div className={`${classes.slideControl} ${classes.leftControl}`} onClick={() => this.handleBtnClick('left')}><ChevronLeftRoundedIcon fontSize='large' /></div>
+                <div className={`${classes.slideControl} ${classes.rightControl}`} onClick={() => this.handleBtnClick('right')}><ChevronRightRoundedIcon fontSize='large' /></div>
+                <div className={classes.carouselContainer}>
+                    {images.map((image, index) => <CarouselCard key={index} img={image} className={classes.slide} style={{ transform: `translateX(${this.state.translateX}%)` }} />)}
+                </div>
             </div>
         </div>
     </Page>
