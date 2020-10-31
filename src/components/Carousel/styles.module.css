@@ -50,12 +50,39 @@
     right: 10px;
 }
 
+.roundButtonsWrapper {
+    left: 50%;
+    width: 60%;
+    z-index: 100;
+    bottom: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    justify-content: center;
+    transform: translateX(-50%);
+}
+
+.roundButton {
+    box-sizing: border-box;
+    height: 1rem;
+    width: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 4px 4px 0 0;
+    border: 2px solid #fff;
+    transition: background-color ease-in-out 0.15s;
+}
+
+.activeButton {
+    cursor: auto;
+    background-color: #fff;
+}
+
 @media (min-width: 768px) {
     .carouselWrapper {
         width: 80%;
     }
     .carouselContainer {
         width: 100%;
-        border-radius: 6px;
     }
 } 

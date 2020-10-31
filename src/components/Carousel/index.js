@@ -16,7 +16,8 @@ const images = ['https://images.unsplash.com/photo-1500964757637-c85e8a162699?ix
 export default class Carousel extends React.Component {
 
     state = {
-        translateX: 0
+        translateX: 0,
+        index: 0
     }
 
     handleBtnClick = direction => {
@@ -25,7 +26,11 @@ export default class Carousel extends React.Component {
         if (direction === 'left' && this.state.translateX === 0) translateX = -100 * (images.length - 1);
         else if (direction === 'right' && this.state.translateX === -100 * (images.length - 1)) translateX = 0;
         else translateX = this.state.translateX + incrementer;
-        this.setState({ translateX });
+        this.setState({ translateX, index: Math.floor(Math.abs(translateX/100)) });
+    }
+
+    handleRoundBtnClick = index => {
+        this.setState({ index, translateX: index * (-100) });
     }
 
     render = () => <Page>
@@ -35,6 +40,9 @@ export default class Carousel extends React.Component {
                 <div className={`${classes.slideControl} ${classes.rightControl}`} onClick={() => this.handleBtnClick('right')}><ChevronRightRoundedIcon fontSize='large' /></div>
                 <div className={classes.carouselContainer}>
                     {images.map((image, index) => <CarouselCard key={index} img={image} className={classes.slide} style={{ transform: `translateX(${this.state.translateX}%)` }} />)}
+                </div>
+                <div className={classes.roundButtonsWrapper}>
+                    {images.map((image, index) => <div className={`${classes.roundButton} ${this.state.index === index && classes.activeButton}`} onClick={() => this.handleRoundBtnClick(index)}></div>)}
                 </div>
             </div>
         </div>
