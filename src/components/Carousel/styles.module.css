@@ -10,14 +10,16 @@
     position: relative;
     width: 90%;
     height: 60vh;
-    border: 1px solid #fff;
 }
 
 .carouselContainer {
-    overflow: hidden;
-    display: flex;
     width: 100%;
     height: 100%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: var(--card-shadow-hover);
+    transition: box-shadow 0.5s ease-in-out;
 }
 
 .slide {
