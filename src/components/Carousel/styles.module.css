@@ -9,7 +9,7 @@
 .carouselWrapper {
     position: relative;
     width: 90%;
-    height: 60vh;
+    height: 40vh;
 }
 
 .carouselContainer {
@@ -83,6 +83,7 @@
 @media (min-width: 768px) {
     .carouselWrapper {
         width: 80%;
+        height: 60vh;
     }
     .carouselContainer {
         width: 100%;
