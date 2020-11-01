@@ -20,6 +20,8 @@ import keycodeDarkImage from '../../images/keycode_dark.jpg';
 import keycodeLightImage from '../../images/keycode_light.jpg';
 import quotesDarkImage from '../../images/quotes_dark.jpg';
 import quotesLightImage from '../../images/quotes_light.jpg';
+import carouselDarkImage from '../../images/carousel_dark.jpg';
+import carouselLightImage from '../../images/carousel_light.jpg';
 import { BASE_URL } from '../../resources/constants';
 
 export const projects = [
@@ -34,4 +36,5 @@ export const projects = [
     { sequence: '9', title: 'Hover Board', imageLight: hoverboardLightImage, imageDark: hoverboardDarkImage, projectPath: `${BASE_URL}/#/hoverboard`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/HoverBoard' },
     { sequence: '10', title: 'Key Code Sequence', imageLight: keycodeLightImage, imageDark: keycodeDarkImage, projectPath: `${BASE_URL}/#/keycode-sequence`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/KeyCodeSequence' },
     { sequence: '11', title: 'Random Quotes', imageLight: quotesLightImage, imageDark: quotesDarkImage, projectPath: `${BASE_URL}/#/random-quotes`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/RandomQuotes' },
+    { sequence: '12', title: 'Image Carousel', imageLight: carouselLightImage, imageDark: carouselDarkImage, projectPath: `${BASE_URL}/#/carousel`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/Carousel' },
 ];
