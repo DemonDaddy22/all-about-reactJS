@@ -14,6 +14,7 @@ import HoverBoard from '../components/HoverBoard';
 import KeyCodeSequence from '../components/KeyCodeSequence';
 import RandomQuotes from '../components/RandomQuotes';
 import Carousel from '../components/Carousel';
+import MealGenerator from '../components/MealGenerator';
 
 export default class Routes extends React.Component {
 
@@ -45,6 +46,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/random-quotes' component={RandomQuotes} />
                 
                 <Route exact path='/carousel' component={Carousel} />
+                
+                <Route exact path='/meal-generator' component={MealGenerator} />
 
                 <Redirect to='/' from='*' />
             </Switch>
