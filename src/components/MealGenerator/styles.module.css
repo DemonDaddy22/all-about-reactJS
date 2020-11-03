@@ -1,0 +1,76 @@
+.title {
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    margin-top: 4rem;
+    text-align: center;
+    color: var(--text-prominent);
+    transition: color 0.5s ease-in-out;
+}
+
+.subtitle {
+    font-weight: 100;
+    text-align: center;
+    letter-spacing: -0.2px;
+    color: var(--text-obscure);
+    transition: color 0.5s ease-in-out;
+}
+
+.container {
+    width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.secondarySection {
+    display: flex;
+    flex-direction: column;
+}
+
+.mealImage {
+    width: 100%;
+}
+
+.tagsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+.mealTag {
+    color: #FFF;
+    font-weight: 600;
+    margin: 0.5rem 0.5rem 0 0;
+    padding: 0.5rem 1rem;
+    border-radius: 32px;
+    box-shadow: var(--card-shadow);
+    background-color: var(--secondary-theme-color);
+    transition: background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.sourceButtonsWrapper {
+    margin-top: 1rem;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 4rem;
+        margin-top: 3rem;
+    }
+    .subtitle {
+        font-size: 1.25rem;
+    }
+    .container {
+        width: 80%;
+        margin: 4rem auto;
+        flex-direction: row;
+    }
+    .tagsWrapper {
+        margin-top: 1rem;
+    }
+}

@@ -2,7 +2,10 @@ import React from 'react';
 
 import classes from './styles.module.css';
 import Page from '../../ui-components/Page';
-import { getPathValue, handleError, isEmptyList, isEmptyObject, isEmptyString } from '../../utils';
+import { getPathValue, handleError, isEmptyObject, isEmptyString } from '../../utils';
+import Iconbutton from '../../ui-components/Button/Iconbutton';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import FastfoodRoundedIcon from '@material-ui/icons/FastfoodRounded';
 
 export default class MealGenerator extends React.Component {
 
@@ -18,11 +21,10 @@ export default class MealGenerator extends React.Component {
     fetchMealData = () => this.setState({ loader: true }, () => fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         .then(handleError)
         .then(res => res.json())
-        .then(data => this.setState({ loader: false, mealData: data?.meals, snack: null }, () => {
-            console.log(data.meals);
-            console.log(this.getIngredients(data.meals[0]));
-            console.log(this.getMeasurements(data.meals[0]));
-            console.log(this.getTags(data.meals[0]));
+        .then(data => this.setState({
+            loader: false, mealData: data['meals'][0],
+            ingredients: this.getIngredients(data['meals'][0]), measurements: this.getMeasurements(data['meals'][0]),
+            tags: this.getTags(data['meals'][0]), snack: null
         }))
         .catch(error => this.setState({
             loader: false, mealData: null, snack: {
@@ -62,10 +64,28 @@ export default class MealGenerator extends React.Component {
         return tags;
     }
 
+    handleButtonClick = url => !isEmptyString(url) && window.open(url);
+
     render = () => {
+        const { loader, mealData, tags } = this.state;
 
         return <Page>
-            Meal Generator
+            {!loader && mealData && <>
+                <div className={classes.title}>Munch Time</div>
+                <div className={classes.subtitle}><em>Something new. Something <span style={{ fontWeight: 600, color: 'var(--secondary-theme-color)' }}>delish</span>.</em></div>
+                <div className={classes.container}>
+                    <div className={classes.secondarySection}>
+                        {mealData?.strMealThumb && <img src={mealData.strMealThumb} alt='meal-preview' className={classes.mealImage} />}
+                        {tags && <div className={classes.tagsWrapper}>
+                            {tags.map((tag, index) => !isEmptyString(tag) && <div key={`tag-${index}`} className={classes.mealTag}>{tag}</div>)}
+                        </div>}
+                        {(mealData?.strYoutube || mealData?.strSource) && <div className={classes.sourceButtonsWrapper}>
+                            {mealData?.strYoutube && <Iconbutton iconColor='inherit' onClick={() => this.handleButtonClick(mealData.strYoutube)} icon={<YouTubeIcon fontSize='large' />} style={{ marginRight: 2 }}></Iconbutton>}
+                            {mealData?.strSource && <Iconbutton iconColor='inherit' onClick={() => this.handleButtonClick(mealData.strSource)} icon={<FastfoodRoundedIcon fontSize='large' />} ></Iconbutton>}
+                        </div>}
+                    </div>
+                </div>
+            </>}
         </Page>
     }
 }
