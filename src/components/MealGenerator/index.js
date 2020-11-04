@@ -67,7 +67,7 @@ export default class MealGenerator extends React.Component {
     handleButtonClick = url => !isEmptyString(url) && window.open(url);
 
     render = () => {
-        const { loader, mealData, tags } = this.state;
+        const { loader, mealData, tags, ingredients, measurements } = this.state;
 
         return <Page>
             {!loader && mealData && <>
@@ -79,10 +79,25 @@ export default class MealGenerator extends React.Component {
                         {tags && <div className={classes.tagsWrapper}>
                             {tags.map((tag, index) => !isEmptyString(tag) && <div key={`tag-${index}`} className={classes.mealTag}>{tag}</div>)}
                         </div>}
-                        {(mealData?.strYoutube || mealData?.strSource) && <div className={classes.sourceButtonsWrapper}>
-                            {mealData?.strYoutube && <Iconbutton iconColor='inherit' onClick={() => this.handleButtonClick(mealData.strYoutube)} icon={<YouTubeIcon fontSize='large' />} style={{ marginRight: 2 }}></Iconbutton>}
-                            {mealData?.strSource && <Iconbutton iconColor='inherit' onClick={() => this.handleButtonClick(mealData.strSource)} icon={<FastfoodRoundedIcon fontSize='large' />} ></Iconbutton>}
-                        </div>}
+                    </div>
+                    {/* add primary section, and move icons along side recipe title */}
+                    <div className={classes.primarySection}>
+                        <div className={classes.mealTitleWrapper}>
+                            {mealData?.strMeal && <div className={classes.mealTitle}>{mealData.strMeal}</div>}
+                            {(mealData?.strYoutube || mealData?.strSource) && <div className={classes.sourceButtonsWrapper}>
+                                {mealData?.strYoutube && <Iconbutton iconColor='inherit' onClick={() => this.handleButtonClick(mealData.strYoutube)} icon={<YouTubeIcon fontSize='medium' />} style={{ marginRight: 2 }}></Iconbutton>}
+                                {mealData?.strSource && <Iconbutton iconColor='inherit' onClick={() => this.handleButtonClick(mealData.strSource)} icon={<FastfoodRoundedIcon fontSize='medium' />} ></Iconbutton>}
+                            </div>}
+                        </div>
+                        {mealData?.strMeal && <div className={classes.divider}></div>}
+                        {ingredients && measurements && <>
+                            <div className={classes.ingredientsTitle}>Ingredients</div>
+                            <div className={classes.ingredients}>
+                                {Object.keys(ingredients).map((entry, index) => <div key={`ingredient-${index + 1}`} className={classes.ingredient}>
+                                    {index + 1}. <div className={classes.ingredientName}><strong>{ingredients[entry]}</strong></div> - <div className={classes.measurement}><em>{getPathValue(measurements, entry, 'according to taste')}</em></div>
+                                </div>)}
+                            </div>
+                        </>}
                     </div>
                 </div>
             </>}

@@ -24,8 +24,7 @@
 }
 
 .secondarySection {
-    display: flex;
-    flex-direction: column;
+    flex: 1;
 }
 
 .mealImage {
@@ -52,7 +51,59 @@
 }
 
 .sourceButtonsWrapper {
+    margin-top: -0.5rem;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+.mealTitleWrapper {
+    display: flex;
+}
+
+.primarySection {
+    margin-top: 1.5rem;
+}
+
+.mealTitle {
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-prominent);
+    transition: color 0.5s ease-in-out;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    margin: 0.5rem 0;
+    background-color: var(--tag-color);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.ingredientsTitle {
     margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+.ingredients {
+    margin: 1rem 0;
+}
+
+.ingredient {
+    display: flex;
+    align-items: baseline;
+    font-size: 0.85rem;
+    line-height: 2rem;
+    color: var(--secondary-theme-color);
+    transition: color 0.5s ease-in-out;
+}
+
+.ingredientName, .measurement {
+    margin: 0 4px;
+    font-size: 1rem;
     color: var(--text);
     transition: color 0.5s ease-in-out;
 }
@@ -72,5 +123,19 @@
     }
     .tagsWrapper {
         margin-top: 1rem;
+    }
+    .primarySection {
+        flex: 2;
+        margin-top: 0;
+        padding-left: 2.5rem;
+    }
+    .mealTitle {
+        font-size: 2rem;
+    }
+    .divider {
+        margin: 0.5rem 0;
+    }
+    .ingredientsTitle {
+        margin-top: 2rem;
     }
 }
