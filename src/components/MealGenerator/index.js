@@ -98,6 +98,10 @@ export default class MealGenerator extends React.Component {
                                 </div>)}
                             </div>
                         </>}
+                        {mealData?.strInstructions && <>
+                            <div className={classes.instructionsTitle}>Instructions</div>
+                            <div className={classes.instructions}>{mealData.strInstructions}</div>
+                        </>}
                     </div>
                 </div>
             </>}

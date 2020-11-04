@@ -80,7 +80,7 @@
     transition: background-color 0.5s ease-in-out;
 }
 
-.ingredientsTitle {
+.ingredientsTitle, .instructionsTitle {
     margin-top: 1rem;
     font-weight: 600;
     font-size: 1.25rem;
@@ -104,6 +104,13 @@
 .ingredientName, .measurement {
     margin: 0 4px;
     font-size: 1rem;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+.instructions {
+    margin: 1rem 0;
+    line-height: 1.5rem;
     color: var(--text);
     transition: color 0.5s ease-in-out;
 }
@@ -135,7 +142,7 @@
     .divider {
         margin: 0.5rem 0;
     }
-    .ingredientsTitle {
+    .ingredientsTitle, .instructionsTitle {
         margin-top: 2rem;
     }
 }
