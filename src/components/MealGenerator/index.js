@@ -6,6 +6,8 @@ import { getPathValue, handleError, isEmptyObject, isEmptyString } from '../../u
 import Iconbutton from '../../ui-components/Button/Iconbutton';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import FastfoodRoundedIcon from '@material-ui/icons/FastfoodRounded';
+import SpinnerLoader from '../../ui-components/SpinnerLoader';
+import Button from '../../ui-components/Button';
 
 export default class MealGenerator extends React.Component {
 
@@ -70,9 +72,14 @@ export default class MealGenerator extends React.Component {
         const { loader, mealData, tags, ingredients, measurements } = this.state;
 
         return <Page>
-            {!loader && mealData && <>
+            <div className={`${classes.loader} ${!this.state.loader && classes.hideLoader}`}><SpinnerLoader /></div>
+            {mealData && <>
                 <div className={classes.title}>Munch Time</div>
                 <div className={classes.subtitle}><em>Something new. Something <span style={{ fontWeight: 600, color: 'var(--secondary-theme-color)' }}>delish</span>.</em></div>
+                <div className={classes.buttonWrapper}>
+                    <Button variant='outlined' borderColor='var(--secondary-theme-color)' labelColor='var(--secondary-theme-color)' backgroundColor='var(--secondary-theme-color)'
+                        onClick={() => this.fetchMealData()} labelStyles={{ display: 'inline-flex', padding: '0 1rem' }}>Get Random Meal</Button>
+                </div>
                 <div className={classes.container}>
                     <div className={classes.secondarySection}>
                         {mealData?.strMealThumb && <img src={mealData.strMealThumb} alt='meal-preview' className={classes.mealImage} />}
@@ -85,8 +92,8 @@ export default class MealGenerator extends React.Component {
                         <div className={classes.mealTitleWrapper}>
                             {mealData?.strMeal && <div className={classes.mealTitle}>{mealData.strMeal}</div>}
                             {(mealData?.strYoutube || mealData?.strSource) && <div className={classes.sourceButtonsWrapper}>
-                                {mealData?.strYoutube && <Iconbutton iconColor='inherit' onClick={() => this.handleButtonClick(mealData.strYoutube)} icon={<YouTubeIcon fontSize='medium' />} style={{ marginRight: 2 }}></Iconbutton>}
-                                {mealData?.strSource && <Iconbutton iconColor='inherit' onClick={() => this.handleButtonClick(mealData.strSource)} icon={<FastfoodRoundedIcon fontSize='medium' />} ></Iconbutton>}
+                                {mealData?.strYoutube && <Iconbutton iconColor='inherit' onClick={() => this.handleButtonClick(mealData.strYoutube)} icon={<YouTubeIcon fontSize='default' />} style={{ marginRight: 2 }}></Iconbutton>}
+                                {mealData?.strSource && <Iconbutton iconColor='inherit' onClick={() => this.handleButtonClick(mealData.strSource)} icon={<FastfoodRoundedIcon fontSize='default' />} ></Iconbutton>}
                             </div>}
                         </div>
                         {mealData?.strMeal && <div className={classes.divider}></div>}
@@ -105,6 +112,7 @@ export default class MealGenerator extends React.Component {
                     </div>
                 </div>
             </>}
+            {!loader && !mealData && <div className={classes.noData}>Something went wrong, please refresh the page!</div>}
         </Page>
     }
 }
