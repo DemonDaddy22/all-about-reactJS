@@ -38,9 +38,11 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 
 11. **Random Quotes &nbsp;💭**: A responsive [random quotes](https://demondaddy22.github.io/all-about-reactJS/#/random-quotes) app which renders random jokes fetched using the [api.quotable.io API](https://github.com/lukePeavey/quotable). This app also makes use of *infinite scrolling* to fetch more quotes whenever a user scrolls to the bottom of the page.
 
-12. **Carousel &nbsp;🎠**: A simple and response [image carousel](https://demondaddy22.github.io/all-about-reactJS/#/carousel) which creates a controlled slideshow of images. The users can move between the images using the control buttons provided. *An advanced and modern looking version of the carousel will be added in the future.*
+12. **Carousel &nbsp;🎠**: A simple and responsive [image carousel](https://demondaddy22.github.io/all-about-reactJS/#/carousel) which creates a controlled slideshow of images. The users can move between the images using the control buttons provided. *An advanced and modern looking version of the carousel will be added in the future.*
 
-13. **Meal Generator &nbsp;🍲**: *Coming soon!*
+13. **Meal Generator &nbsp;🍲**: A responsive [random meal generator](https://demondaddy22.github.io/all-about-reactJS/#/meal-generator) which uses [Themealdb.com API](https://www.themealdb.com/api.php) to fetch random meal recipes. Each fetched recipe not only contains a list of ingredients and instructions, but also links to YouTube video and source of the post.
+
+14. **Bill Generator &nbsp;💰**: *Coming soon!*
 
 <br>
 
