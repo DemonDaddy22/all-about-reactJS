@@ -22,6 +22,8 @@ import quotesDarkImage from '../../images/quotes_dark.jpg';
 import quotesLightImage from '../../images/quotes_light.jpg';
 import carouselDarkImage from '../../images/carousel_dark.jpg';
 import carouselLightImage from '../../images/carousel_light.jpg';
+import mealDarkImage from '../../images/meal_dark.jpg';
+import mealLightImage from '../../images/meal_light.jpg';
 import { BASE_URL } from '../../resources/constants';
 
 export const projects = [
@@ -37,4 +39,5 @@ export const projects = [
     { sequence: '10', title: 'Key Code Sequence', imageLight: keycodeLightImage, imageDark: keycodeDarkImage, projectPath: `${BASE_URL}/#/keycode-sequence`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/KeyCodeSequence' },
     { sequence: '11', title: 'Random Quotes', imageLight: quotesLightImage, imageDark: quotesDarkImage, projectPath: `${BASE_URL}/#/random-quotes`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/RandomQuotes' },
     { sequence: '12', title: 'Image Carousel', imageLight: carouselLightImage, imageDark: carouselDarkImage, projectPath: `${BASE_URL}/#/carousel`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/Carousel' },
+    { sequence: '13', title: 'Meal Generator', imageLight: mealLightImage, imageDark: mealDarkImage, projectPath: `${BASE_URL}/#/meal-generator`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/MealGenerator' },
 ];
