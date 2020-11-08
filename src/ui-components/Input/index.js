@@ -27,6 +27,9 @@ const styles = {
         '& .Mui-focused:before': {
             borderColor: 'var(--theme-color)',
         },
+        '& .MuiFormHelperText-root': {
+            color: '#FFF'
+        }
     })
 };
 
