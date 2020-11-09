@@ -28,7 +28,7 @@ const styles = {
             borderColor: 'var(--theme-color)',
         },
         '& .MuiFormHelperText-root': {
-            color: '#FFF'
+            color: 'var(--text-obscurer)'
         }
     })
 };

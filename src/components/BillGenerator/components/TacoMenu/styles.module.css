@@ -33,14 +33,15 @@
     gap: 1rem;
 }
 
+.adornmentLabel {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-obscurer);
+    transition: color 0.5s ease-in-out;
+}
+
 @media (min-width: 900px) {
     .categoryContent {
         grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (min-width: 1200px) {
-    .categoryContent {
-        grid-template-columns: 1fr 1fr 1fr;
     }
 }
