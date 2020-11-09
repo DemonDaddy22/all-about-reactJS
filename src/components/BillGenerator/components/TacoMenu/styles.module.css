@@ -57,6 +57,12 @@
     transition: color 0.5s ease-in-out;
 }
 
+.addOnPrice {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--text-obscurer);
+}
+
 @media (min-width: 900px) {
     .categoryContent {
         grid-template-columns: 1fr 1fr;
