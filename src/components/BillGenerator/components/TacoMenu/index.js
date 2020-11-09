@@ -2,6 +2,8 @@ import React from 'react';
 
 import classes from './styles.module.css';
 import Input from '../../../../ui-components/Input';
+import CustomSwitch from '../../../../ui-components/Switch';
+import Label from '../../../../ui-components/Label';
 import { InputAdornment } from '@material-ui/core';
 
 const TacoMenu = React.memo(({ }) => {
@@ -31,6 +33,40 @@ const TacoMenu = React.memo(({ }) => {
                     rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }} InputProps={{
                         endAdornment: <InputAdornment position='end'><div className={classes.adornmentLabel}>$3.99</div></InputAdornment>,
                     }} />
+            </div>
+        </div>
+        <div className={classes.categoryContainer}>
+            <div className={classes.categoryTitle}>Sides</div>
+            <div className={classes.categoryContent}>
+                <Input id='veg-quesadilla' type='number' onChange={() => { }} value={0} variant='outlined' fullWidth
+                    label='Veg Quesadilla' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }} InputProps={{
+                        endAdornment: <InputAdornment position='end'><div className={classes.adornmentLabel}>$1.99</div></InputAdornment>,
+                    }} />
+                <Input id='chicken-quesadilla' type='number' onChange={() => { }} value={0} variant='outlined' fullWidth
+                    label='Chicken Quesadilla' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }} InputProps={{
+                        endAdornment: <InputAdornment position='end'><div className={classes.adornmentLabel}>$2.49</div></InputAdornment>,
+                    }} />
+                <Input id='mexican-fries' type='number' onChange={() => { }} value={0} variant='outlined' fullWidth
+                    label='Mexican Fries' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }} InputProps={{
+                        endAdornment: <InputAdornment position='end'><div className={classes.adornmentLabel}>$2.49</div></InputAdornment>,
+                    }} />
+                <Input id='soda' type='number' onChange={() => { }} value={0} variant='outlined' fullWidth
+                    label='Soda' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }} InputProps={{
+                        endAdornment: <InputAdornment position='end'><div className={classes.adornmentLabel}>$1.49</div></InputAdornment>,
+                    }} />
+            </div>
+        </div>
+        <div className={classes.categoryContainer}>
+            <div className={classes.categoryTitle}>Add-ons</div>
+            <div className={classes.categoryContent}>
+                <div className={classes.addOnContainer}>
+                    <Label label='Extra Cheese' className={classes.addOn} />
+                    <CustomSwitch onChange={() => { }} checked={false} containerStyle={{ marginRight: 0 }} />
+                </div>
+                <div className={classes.addOnContainer}>
+                    <Label label='Extra Cheese' className={classes.addOn} />
+                    <CustomSwitch onChange={() => { }} checked={false} containerStyle={{ marginRight: 0 }} />
+                </div>
             </div>
         </div>
     </>;

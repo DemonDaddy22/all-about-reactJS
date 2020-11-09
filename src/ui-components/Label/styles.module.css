@@ -1,4 +1,4 @@
 .label {
-    color: #171717;
-    font-size: 16px;
+    color: var(--text);
+    font-size: 1rem;
 }
