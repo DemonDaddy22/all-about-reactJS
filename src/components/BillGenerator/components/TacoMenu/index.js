@@ -58,7 +58,7 @@ const TacoMenu = React.memo(({ }) => {
         </div>
         <div className={classes.categoryContainer}>
             <div className={classes.categoryTitle}>Add-ons</div>
-            <div className={classes.categoryContent}>
+            <div className={classes.categoryContent} style={{ marginTop: '0.5rem' }}>
                 <div className={classes.addOnContainer}>
                     <Label label='Extra Cheese' className={classes.addOn} />
                     <CustomSwitch onChange={() => { }} checked={false} containerStyle={{ marginRight: 0 }} />

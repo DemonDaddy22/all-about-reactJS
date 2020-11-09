@@ -17,6 +17,8 @@ export default class BillGenerator extends React.Component {
                     <TacoMenu />
                 </div>
                 <div className={classes.billContainer}>
+                    <div className={classes.leftCircle}></div>
+                    <div className={classes.rightCircle}></div>
                     <Bill />
                 </div>
             </div>

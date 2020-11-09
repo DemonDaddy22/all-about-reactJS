@@ -24,8 +24,10 @@
 }
 
 .menuContainer, .billContainer {
+    position: relative;
     padding: 0.5rem;
     border-radius: 4px;
+    box-sizing: border-box;
     box-shadow: var(--card-shadow);
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -34,6 +36,33 @@
 
 .menuContainer {
     margin-bottom: 2rem;
+}
+
+.billContainer {
+    min-height: 15rem;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background-color: var(--page-bg);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.leftCircle {
+    left: -0.8rem;
+    box-shadow: inset -2px 0px 0px 1px rgba(125, 125, 125, 0.1), inset -2px 0px 0px 0px rgba(125, 125, 125, 0.08), inset -2px 0px 1px 0px rgba(125, 125, 125, 0.06);
+    composes: circle;
+}
+
+.rightCircle {
+    right: -0.8rem;
+    box-shadow: inset 2px 0px 0px 1px rgba(125, 125, 125, 0.1), inset 2px 0px 0px 0px rgba(125, 125, 125, 0.08), inset 2px 0px 1px 0px rgba(125, 125, 125, 0.06);
+    composes: circle;
 }
 
 @media (min-width: 768px) {

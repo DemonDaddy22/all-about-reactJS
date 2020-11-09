@@ -1,0 +1,24 @@
+.title {
+    font-weight: 100;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--theme-color);
+    transition: color 0.5s ease-in-out;
+}
+
+.noData {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 90%;
+    font-weight: 100;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.4px;
+    word-break: break-word;
+    transform: translate(-50%, -50%);
+    color: var(--text-obscure);
+    transition: color 0.5s ease-in-out;
+}
