@@ -26,9 +26,17 @@ export default class BillGenerator extends React.Component {
         }
     }
 
-    handleTacoChange = (e, taco) => this.setState(prevState => ({ tacos: { ...prevState.tacos, [taco]: { price: prevState.tacos.price, count: e.target.value } } }));
+    handleTacoChange = (e, taco) => {
+        const count = parseInt(e.target.value);
+        if (count < 0) return;
+        this.setState(prevState => ({ tacos: { ...prevState.tacos, [taco]: { ...prevState['tacos'][taco], count } } }));
+    }
 
-    handleSideChange = (e, side) => this.setState(prevState => ({ sides: { ...prevState.sides, [side]: { price: prevState.sides.price, count: e.target.value } } }));
+    handleSideChange = (e, side) => {
+        const count = parseInt(e.target.value);
+        if (count < 0) return;
+        this.setState(prevState => ({ sides: { ...prevState.sides, [side]: { ...prevState['sides'][side], count } } }));
+    }
 
     handleAddOnChange = (e, addOn) => this.setState(prevState => ({ addOns: { ...prevState.addOns, [addOn]: !prevState['addOns'][addOn] } }));
 
