@@ -23,8 +23,8 @@
     transition: color 0.5s ease-in-out;
 }
 
-.billContainer {
-    margin: 1rem 0.5rem;
+.billWrapper {
+    margin: 2rem 1rem;
 }
 
 .cartItemWrapper {
@@ -44,8 +44,8 @@
 
 .quantity {
     flex: 1;
-    font-size: 0.85rem;
-    color: var(--text-obscure);
+    font-size: 0.9rem;
+    color: var(--text-obscurer);
     transition: color ease-in-out 0.5s;
 }
 
@@ -55,10 +55,48 @@
     transition: color ease-in-out 0.5s;
 }
 
+.divider {
+    margin: 1rem auto;
+    border-top: 1px dashed var(--text-obscurer);
+    transition: border-top ease-in-out 0.5s;
+}
+
+.amountWrapper {
+    display: flex;
+}
+
+.amountText {
+    flex: 1;
+    composes: item;
+}
+
+.totalAmountContainer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.totalAmountWrapper {
+    display: flex;
+    color: #FFF;
+    font-size: 1.25rem;
+    padding: 0.75rem 1rem;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: var(--theme-color);
+    transition: background-color ease-in-out 0.5s;
+}
+
+.totalAmountText {
+    flex: 1;
+}
+
+.totalAmount {
+    font-weight: 600;
+}
+
 @media (min-width: 768px) {
-    .billContainer {
-        margin: 2rem 1rem;
-    }
     .cartItemWrapper {
         margin-bottom: 0.5rem;
     }
