@@ -5,8 +5,16 @@ import Input from '../../../../ui-components/Input';
 import CustomSwitch from '../../../../ui-components/Switch';
 import Label from '../../../../ui-components/Label';
 import { InputAdornment } from '@material-ui/core';
+import { getPathValue, isEmptyObject } from '../../../../utils';
 
 const TacoMenu = React.memo(({ tacos, sides, addOns, handleTacoChange, handleSideChange, handleAddOnChange }) => {
+
+    const checkAddOnsVisibility = tacos => {
+        if (isEmptyObject(tacos)) return false;
+        const tacosPresent = Object.keys(tacos).some(taco => getPathValue(tacos[taco], 'count', 0) > 0);
+        return tacosPresent;
+    }
+
     return <>
         <div className={classes.menuTitle}>Menu</div>
         <div className={classes.divider}></div>
@@ -38,37 +46,37 @@ const TacoMenu = React.memo(({ tacos, sides, addOns, handleTacoChange, handleSid
         <div className={classes.categoryContainer}>
             <div className={classes.categoryTitle}>Sides</div>
             <div className={classes.categoryContent}>
-                <Input id='veg-quesadilla' type='number' onChange={() => { }} value={0} variant='outlined' fullWidth
+                <Input id='veg-quesadilla' type='number' onChange={e => handleSideChange(e, 'vegQuesadilla')} value={sides.vegQuesadilla.count} variant='outlined' fullWidth
                     label='Veg Quesadilla' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }} InputProps={{
                         endAdornment: <InputAdornment position='end'><div className={classes.adornmentLabel}>$1.99</div></InputAdornment>,
                     }} />
-                <Input id='chicken-quesadilla' type='number' onChange={() => { }} value={0} variant='outlined' fullWidth
+                <Input id='chicken-quesadilla' type='number' onChange={e => handleSideChange(e, 'chickenQuesadilla')} value={sides.chickenQuesadilla.count} variant='outlined' fullWidth
                     label='Chicken Quesadilla' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }} InputProps={{
                         endAdornment: <InputAdornment position='end'><div className={classes.adornmentLabel}>$2.49</div></InputAdornment>,
                     }} />
-                <Input id='mexican-fries' type='number' onChange={() => { }} value={0} variant='outlined' fullWidth
+                <Input id='mexican-fries' type='number' onChange={e => handleSideChange(e, 'fries')} value={sides.fries.count} variant='outlined' fullWidth
                     label='Mexican Fries' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }} InputProps={{
                         endAdornment: <InputAdornment position='end'><div className={classes.adornmentLabel}>$2.49</div></InputAdornment>,
                     }} />
-                <Input id='soda' type='number' onChange={() => { }} value={0} variant='outlined' fullWidth
+                <Input id='soda' type='number' onChange={e => handleSideChange(e, 'soda')} value={sides.soda.count} variant='outlined' fullWidth
                     label='Soda' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }} InputProps={{
                         endAdornment: <InputAdornment position='end'><div className={classes.adornmentLabel}>$1.49</div></InputAdornment>,
                     }} />
             </div>
         </div>
-        <div className={classes.categoryContainer}>
+        {checkAddOnsVisibility(tacos) && <div className={classes.categoryContainer}>
             <div className={classes.categoryTitle}>Add-ons <span className={classes.addOnPrice}>(each for $0.99)</span></div>
             <div className={classes.categoryContent} style={{ marginTop: '0.5rem' }}>
                 <div className={classes.addOnContainer}>
                     <Label label='Extra Cheese' className={classes.addOn} />
-                    <CustomSwitch onChange={() => { }} checked={true} containerStyle={{ marginRight: 0 }} />
+                    <CustomSwitch onChange={e => handleAddOnChange(e, 'cheese')} checked={addOns.cheese} containerStyle={{ marginRight: 0 }} />
                 </div>
                 <div className={classes.addOnContainer}>
                     <Label label='Extra Beans' className={classes.addOn} />
-                    <CustomSwitch onChange={() => { }} checked={false} containerStyle={{ marginRight: 0 }} />
+                    <CustomSwitch onChange={e => handleAddOnChange(e, 'beans')} checked={addOns.beans} containerStyle={{ marginRight: 0 }} />
                 </div>
             </div>
-        </div>
+        </div>}
     </>;
 });
 

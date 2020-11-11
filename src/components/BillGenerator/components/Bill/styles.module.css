@@ -22,3 +22,44 @@
     color: var(--text-obscure);
     transition: color 0.5s ease-in-out;
 }
+
+.billContainer {
+    margin: 1rem 0.5rem;
+}
+
+.cartItemWrapper {
+    margin-bottom: 0.25rem;
+    display: flex;
+}
+
+.cartItemWrapper:last-child {
+    margin-bottom: 0;
+}
+
+.item {
+    margin-right: 4px;
+    color: var(--text);
+    transition: color ease-in-out 0.5s;
+}
+
+.quantity {
+    flex: 1;
+    font-size: 0.85rem;
+    color: var(--text-obscure);
+    transition: color ease-in-out 0.5s;
+}
+
+.price {
+    font-weight: 600;
+    color: var(--text-prominent);
+    transition: color ease-in-out 0.5s;
+}
+
+@media (min-width: 768px) {
+    .billContainer {
+        margin: 2rem 1rem;
+    }
+    .cartItemWrapper {
+        margin-bottom: 0.5rem;
+    }
+}

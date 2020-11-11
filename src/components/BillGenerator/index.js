@@ -9,16 +9,16 @@ export default class BillGenerator extends React.Component {
 
     state = {
         tacos: {
-            beans: { price: 2.99, count: 0 },
-            chicken: { price: 3.49, count: 0 },
-            fish: { price: 3.49, count: 0 },
-            pork: { price: 3.99, count: 0 }
+            beans: { name: '3 Beans Taco', price: 2.99, count: 0 },
+            chicken: { name: 'Grilled Chicken Breast', price: 3.49, count: 0 },
+            fish: { name: 'Crispy Fish Taco', price: 3.49, count: 0 },
+            pork: { name: 'Pulled Pork Taco', price: 3.99, count: 0 }
         },
         sides: {
-            vegQuesadilla: { price: 1.99, count: 0 },
-            chickenQuesadilla: { price: 2.49, count: 0 },
-            fries: { price: 2.49, count: 0 },
-            soda: { price: 2.49, count: 0 }
+            vegQuesadilla: { name: 'Veg Quesadilla', price: 1.99, count: 0 },
+            chickenQuesadilla: { name: 'Chicken Quesadilla', price: 2.49, count: 0 },
+            fries: { name: 'Mexican Fries', price: 2.49, count: 0 },
+            soda: { name: 'Soda', price: 2.49, count: 0 }
         },
         addOns: {
             cheese: false,
