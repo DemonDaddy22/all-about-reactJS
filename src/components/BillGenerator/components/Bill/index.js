@@ -43,8 +43,7 @@ export default class Bill extends React.Component {
         return <>
             <div className={classes.title}>Order Summary</div>
             {this.state.isCartEmpty ? <div className={classes.noData}>You haven't selected any items yet :(</div> :
-                <>
-                {/* convert to column flex box and remove absolute positioning on total amount */}
+                <div className={classes.contentWrapper}>
                     <div className={classes.billWrapper}>
                         {!isEmptyObject(tacos) && Object.keys(tacos).map((taco, index) => getPathValue(tacos[taco], 'count', 0) > 0 && <div key={`cart-taco-${index}`} className={classes.cartItemWrapper}>
                             <div className={classes.item}>{getPathValue(tacos[taco], 'name', '')}</div>
@@ -74,13 +73,11 @@ export default class Bill extends React.Component {
                             <div className={classes.price}>${(0.1 * this.getTotal(tacos, sides, addOns)).toFixed(2)}</div>
                         </div>
                     </div>
-                    <div className={classes.totalAmountContainer}>
-                        <div className={classes.totalAmountWrapper}>
-                            <div className={classes.totalAmountText}>Amount Payable</div>
-                            <div className={classes.totalAmount}>${(1.1 * this.getTotal(tacos, sides, addOns)).toFixed(2)}</div>
-                        </div>
+                    <div className={classes.totalAmountWrapper}>
+                        <div className={classes.totalAmountText}>Amount Payable</div>
+                        <div className={classes.totalAmount}>${(1.1 * this.getTotal(tacos, sides, addOns)).toFixed(2)}</div>
                     </div>
-                </>
+                </div>
             }
         </>;
     }

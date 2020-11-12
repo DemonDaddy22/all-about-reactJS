@@ -39,7 +39,10 @@
 }
 
 .billContainer {
+    padding: 0;
     min-height: 15rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .circle {
@@ -76,11 +79,12 @@
     .container {
         flex-direction: row;
     }
-    .menuContainer, .billContainer {
+    .billContainer {
         flex: 1;
-        padding: 0.75rem;
     }
     .menuContainer {
+        flex: 1;
+        padding: 0.75rem;
         margin-bottom: 0;
         margin-right: 1rem;
     }
@@ -90,12 +94,12 @@
     .container {
         margin-top: 4rem;
     }
-    .menuContainer, .billContainer {
+    .billContainer {
         flex: 2;
-        padding: 1rem;
     }
     .menuContainer {
         flex: 3;
+        padding: 1rem;
         margin-right: 1.5rem;
     }
 }
