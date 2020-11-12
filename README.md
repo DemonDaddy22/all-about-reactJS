@@ -42,7 +42,9 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 
 13. **Meal Generator &nbsp;🍲**: A responsive [random meal generator](https://demondaddy22.github.io/all-about-reactJS/#/meal-generator) which uses [Themealdb.com API](https://www.themealdb.com/api.php) to fetch random meal recipes. Each fetched recipe not only contains a list of ingredients and instructions, but also links to YouTube video and source of the post.
 
-14. **Bill Generator &nbsp;💰**: *Coming soon!*
+14. **Bill Generator &nbsp;💰**: A responsive [bill generator](https://demondaddy22.github.io/all-about-reactJS/#/bill-generator) which displays an arbitrary taco menu, and a user can select different quantities of tacos, sides and add-ons. Based upon the items selected, the bill gets generated dynamically.
+
+15. **Form with Validations &nbsp;☑**: *Coming soon!*
 
 <br>
 
