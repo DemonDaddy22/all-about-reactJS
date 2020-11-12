@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/all-about-reactJS/static/css/main.d83614e0.chunk.css",
-    "main.js": "/all-about-reactJS/static/js/main.9eb87a1b.chunk.js",
-    "main.js.map": "/all-about-reactJS/static/js/main.9eb87a1b.chunk.js.map",
+    "main.css": "/all-about-reactJS/static/css/main.4d4b9eab.chunk.css",
+    "main.js": "/all-about-reactJS/static/js/main.844b2051.chunk.js",
+    "main.js.map": "/all-about-reactJS/static/js/main.844b2051.chunk.js.map",
     "runtime-main.js": "/all-about-reactJS/static/js/runtime-main.51916d60.js",
     "runtime-main.js.map": "/all-about-reactJS/static/js/runtime-main.51916d60.js.map",
-    "static/js/2.97336d6d.chunk.js": "/all-about-reactJS/static/js/2.97336d6d.chunk.js",
-    "static/js/2.97336d6d.chunk.js.map": "/all-about-reactJS/static/js/2.97336d6d.chunk.js.map",
+    "static/js/2.304a98b2.chunk.js": "/all-about-reactJS/static/js/2.304a98b2.chunk.js",
+    "static/js/2.304a98b2.chunk.js.map": "/all-about-reactJS/static/js/2.304a98b2.chunk.js.map",
     "index.html": "/all-about-reactJS/index.html",
-    "precache-manifest.8b44213fd962ecc177217d1d7f92feb6.js": "/all-about-reactJS/precache-manifest.8b44213fd962ecc177217d1d7f92feb6.js",
+    "precache-manifest.b5103176cb52dbbacd8dec2bb7ccf490.js": "/all-about-reactJS/precache-manifest.b5103176cb52dbbacd8dec2bb7ccf490.js",
     "service-worker.js": "/all-about-reactJS/service-worker.js",
-    "static/css/main.d83614e0.chunk.css.map": "/all-about-reactJS/static/css/main.d83614e0.chunk.css.map",
-    "static/js/2.97336d6d.chunk.js.LICENSE.txt": "/all-about-reactJS/static/js/2.97336d6d.chunk.js.LICENSE.txt",
+    "static/css/main.4d4b9eab.chunk.css.map": "/all-about-reactJS/static/css/main.4d4b9eab.chunk.css.map",
+    "static/js/2.304a98b2.chunk.js.LICENSE.txt": "/all-about-reactJS/static/js/2.304a98b2.chunk.js.LICENSE.txt",
     "static/media/carousel_dark.jpg": "/all-about-reactJS/static/media/carousel_dark.2c9c3eef.jpg",
     "static/media/carousel_light.jpg": "/all-about-reactJS/static/media/carousel_light.bed50c43.jpg",
     "static/media/jokes_dark.jpg": "/all-about-reactJS/static/media/jokes_dark.10c4a42b.jpg",
@@ -25,8 +25,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.51916d60.js",
-    "static/js/2.97336d6d.chunk.js",
-    "static/css/main.d83614e0.chunk.css",
-    "static/js/main.9eb87a1b.chunk.js"
+    "static/js/2.304a98b2.chunk.js",
+    "static/css/main.4d4b9eab.chunk.css",
+    "static/js/main.844b2051.chunk.js"
   ]
 }
