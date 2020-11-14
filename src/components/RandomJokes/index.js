@@ -8,6 +8,7 @@ import Button from '../../ui-components/Button';
 import { Tab, Tabs } from '@material-ui/core';
 import AllJokes from './components/AllJokes';
 import LikedJokes from './components/LikedJokes';
+import SnackBar from '../../ui-components/SnackBar';
 
 export default class RandomJokes extends React.Component {
 

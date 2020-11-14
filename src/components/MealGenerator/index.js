@@ -8,6 +8,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import FastfoodRoundedIcon from '@material-ui/icons/FastfoodRounded';
 import SpinnerLoader from '../../ui-components/SpinnerLoader';
 import Button from '../../ui-components/Button';
+import SnackBar from '../../ui-components/SnackBar';
 
 export default class MealGenerator extends React.Component {
 

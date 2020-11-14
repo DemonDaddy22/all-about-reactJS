@@ -1,11 +1,12 @@
-import { Collapse } from '@material-ui/core';
 import React from 'react';
+
+import classes from './styles.module.css';
+import { Collapse } from '@material-ui/core';
 import Page from '../../ui-components/Page';
 import SpinnerLoader from '../../ui-components/SpinnerLoader';
 import { copyTextToClipboard, getPathValue, handleError, isEmptyList } from '../../utils';
 import QuoteCard from './components/QuoteCard';
-
-import classes from './styles.module.css';
+import SnackBar from '../../ui-components/SnackBar';
 
 export default class RandomQuotes extends React.Component {
 
