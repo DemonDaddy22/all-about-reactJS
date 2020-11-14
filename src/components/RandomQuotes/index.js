@@ -57,6 +57,8 @@ export default class RandomQuotes extends React.Component {
 
     handleCopyQuote = quote => quote && copyTextToClipboard(quote);
 
+    handleSnackClose = () => this.setState({ snack: { ...this.state.snack, open: false } });
+
     render = () => <Page>
         <div className={`${classes.loader} ${!this.state.loader && classes.hideLoader}`}><SpinnerLoader /></div>
         {!this.state.loader && isEmptyList(this.state.quotes) ? <div className={classes.noData}>No quotes could be fetched right now, please try again later</div>
@@ -66,5 +68,6 @@ export default class RandomQuotes extends React.Component {
                 </Collapse>)}
             </div>}
         <div ref={this.setCallbackRef}></div>
+        {this.state?.snack?.message && <SnackBar message={this.state.snack.message} severity={this.state.snack.severity} handleClose={this.handleSnackClose} open={this.state.snack.open} />}
     </Page>
 }

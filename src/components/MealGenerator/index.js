@@ -68,6 +68,8 @@ export default class MealGenerator extends React.Component {
 
     handleButtonClick = url => !isEmptyString(url) && window.open(url);
 
+    handleSnackClose = () => this.setState({ snack: { ...this.state.snack, open: false } });
+
     render = () => {
         const { loader, mealData, tags, ingredients, measurements } = this.state;
 
@@ -87,7 +89,6 @@ export default class MealGenerator extends React.Component {
                             {tags.map((tag, index) => !isEmptyString(tag) && <div key={`tag-${index}`} className={classes.mealTag}>{tag}</div>)}
                         </div>}
                     </div>
-                    {/* add primary section, and move icons along side recipe title */}
                     <div className={classes.primarySection}>
                         <div className={classes.mealTitleWrapper}>
                             {mealData?.strMeal && <div className={classes.mealTitle}>{mealData.strMeal}</div>}
@@ -113,6 +114,7 @@ export default class MealGenerator extends React.Component {
                 </div>
             </>}
             {!loader && !mealData && <div className={classes.noData}>Something went wrong, please refresh the page!</div>}
+            {this.state?.snack?.message && <SnackBar message={this.state.snack.message} severity={this.state.snack.severity} handleClose={this.handleSnackClose} open={this.state.snack.open} />}
         </Page>
     }
 }
