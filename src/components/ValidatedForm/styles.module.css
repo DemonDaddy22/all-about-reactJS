@@ -30,7 +30,10 @@
 }
 
 .formComponents {
+    margin-top: 1rem;
     display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -38,14 +41,26 @@
         width: 75%;
         padding: 0.75rem;
     }
+    .formComponents {
+        margin-top: 1.5rem;
+    }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
     .formContainer {
         width: 60%;
         padding: 1rem;
     }
+    .formComponents {
+        margin-top: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
     .heading {
         font-size: 2rem;
+    }
+    .formComponents {
+        grid-template-columns: 1fr 1fr;
     }
 }

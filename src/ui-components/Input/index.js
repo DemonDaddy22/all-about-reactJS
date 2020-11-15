@@ -16,6 +16,7 @@ const styles = {
         },
         '& .MuiOutlinedInput-notchedOutline': {
             boxShadow: 'var(--shadow)',
+            borderColor: 'var(--text-obscurer)',
             transition: 'box-shadow 0.5s ease-in-out, border-color 0.25s ease-in-out'
         },
         '&:hover .MuiOutlinedInput-notchedOutline': {
