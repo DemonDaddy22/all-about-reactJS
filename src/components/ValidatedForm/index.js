@@ -38,17 +38,32 @@ export default class ValidatedForm extends React.Component {
 
     handlePasswordChange = e => {
         const value = e.target.value;
-        this.setState({ password: value, passwordError: isEmptyString(value), passwordErrorText: isEmptyString(value) ? 'Field cannot be empty' : '' });
+
+        const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        const passwordError = isEmptyString(value) || !re.test(value);
+        const passwordErrorText = isEmptyString(value) ? 'Field cannot be empty' : !re.test(value) ? 'Password must be atleast 8 characters long, and should contain atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character' : '';
+
+        this.setState({ password: value, passwordError, passwordErrorText });
     }
 
     handleContactChange = e => {
         const value = e.target.value;
-        this.setState({ contact: value, contactError: isEmptyString(value), contactErrorText: isEmptyString(value) ? 'Field cannot be empty' : '' });
+
+        const re = /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/;
+        const contactError = isEmptyString(value) || !re.test(value);
+        const contactErrorText = isEmptyString(value) ? 'Field cannot be empty' : !re.test(value) ? 'Enter a valid contact number' : '';
+
+        this.setState({ contact: value, contactError, contactErrorText });
     }
 
     handleEmailChange = e => {
         const value = e.target.value;
-        this.setState({ email: value, emailError: isEmptyString(value), emailErrorText: isEmptyString(value) ? 'Field cannot be empty' : '' });
+
+        const re = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        const emailError = isEmptyString(value) || !re.test(value);
+        const emailErrorText = isEmptyString(value) ? 'Field cannot be empty' : !re.test(value) ? 'Enter a valid email' : '';
+
+        this.setState({ email: value, emailError, emailErrorText });
     }
 
     handleAddressChange = e => {
