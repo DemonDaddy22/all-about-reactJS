@@ -10,6 +10,7 @@
     width: 90%;
     padding: 0.5rem;
     border-radius: 6px;
+    box-sizing: border-box;
     box-shadow: var(--shadow-opposite);
     border: 1px solid var(--component-border);
     transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
@@ -36,6 +37,34 @@
     gap: 1rem;
 }
 
+.fname {
+    grid-area: fname;
+}
+
+.lname {
+    grid-area: lname;
+}
+
+.username {
+    grid-area: username;
+}
+
+.password {
+    grid-area: password;
+}
+
+.contact {
+    grid-area: contact;
+}
+
+.email {
+    grid-area: email;
+}
+
+.address {
+    grid-area: addressField;
+}
+
 @media (min-width: 768px) {
     .formContainer {
         width: 75%;
@@ -48,11 +77,18 @@
 
 @media (min-width: 900px) {
     .formContainer {
-        width: 60%;
+        width: 80%;
         padding: 1rem;
     }
     .formComponents {
         margin-top: 2rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        'fname lname'
+        'username password'
+        'contact email'
+        'addressField addressField';
     }
 }
 
@@ -60,7 +96,7 @@
     .heading {
         font-size: 2rem;
     }
-    .formComponents {
-        grid-template-columns: 1fr 1fr;
+    .formContainer {
+        width: 60%;
     }
 }

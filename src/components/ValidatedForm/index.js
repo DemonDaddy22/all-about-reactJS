@@ -80,25 +80,25 @@ export default class ValidatedForm extends React.Component {
                     <div className={classes.heading}>Register Here</div>
                     <div className={classes.info}>This is just a template form, none of the information you fill, will be stored anywhere.</div>
                     <div className={classes.formComponents}>
-                        <Input autoComplete='off' id='fname' label='First name' onChange={this.handleFirstNameChange}
+                        <Input autoComplete='off' id='fname' label='First name' onChange={this.handleFirstNameChange} className={classes.fname}
                             value={fname} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }}
                             error={this.state.fnameError} helperText={this.state?.fnameErrorText} helpertextcolor={themed(RED_700, RED_500)} />
-                        <Input autoComplete='off' id='lname' label='Last name' onChange={this.handleLastNameChange}
+                        <Input autoComplete='off' id='lname' label='Last name' onChange={this.handleLastNameChange} className={classes.lname}
                             value={lname} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }}
                             error={this.state.lnameError} helperText={this.state?.lnameErrorText} helpertextcolor={themed(RED_700, RED_500)} />
-                        <Input autoComplete='off' id='username' label='Username' onChange={this.handleUsernameChange}
+                        <Input autoComplete='off' id='username' label='Username' onChange={this.handleUsernameChange} className={classes.username}
                             value={username} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }}
                             error={this.state.usernameError} helperText={this.state?.usernameErrorText} helpertextcolor={themed(RED_700, RED_500)} />
-                        <Input autoComplete='off' id='password' type='password' label='Password' onChange={this.handlePasswordChange}
+                        <Input autoComplete='off' id='password' type='password' label='Password' onChange={this.handlePasswordChange} className={classes.password}
                             value={password} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }}
                             error={this.state.passwordError} helperText={this.state?.passwordErrorText} helpertextcolor={themed(RED_700, RED_500)} />
-                        <Input autoComplete='off' id='contact' label='Contact Number' onChange={this.handleContactChange}
+                        <Input autoComplete='off' id='contact' label='Contact Number' onChange={this.handleContactChange} className={classes.contact}
                             value={contact} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }}
                             error={this.state.contactError} helperText={this.state?.contactErrorText} helpertextcolor={themed(RED_700, RED_500)} />
-                        <Input autoComplete='off' id='email' label='Email' onChange={this.handleEmailChange}
+                        <Input autoComplete='off' id='email' label='Email' onChange={this.handleEmailChange} className={classes.email}
                             value={email} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }}
                             error={this.state.emailError} helperText={this.state?.emailErrorText} helpertextcolor={themed(RED_700, RED_500)} />
-                        <Input autoComplete='off' id='address' label='Address' onChange={this.handleAddressChange}
+                        <Input autoComplete='off' id='address' label='Address' onChange={this.handleAddressChange} className={classes.address}
                             value={address} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }}
                             error={this.state.addressError} helperText={this.state?.addressErrorText} helpertextcolor={themed(RED_700, RED_500)} />
                         {/* create number input age, create a radio group component for gender selection */}
