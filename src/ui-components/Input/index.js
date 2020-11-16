@@ -29,7 +29,7 @@ const styles = {
             borderColor: 'var(--theme-color)',
         },
         '& .MuiFormHelperText-root': {
-            color: 'var(--text-obscurer)'
+            color: props?.helpertextcolor ? props.helpertextcolor : 'var(--text-obscurer)'
         }
     })
 };
