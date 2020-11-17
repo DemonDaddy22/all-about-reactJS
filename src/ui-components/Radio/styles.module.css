@@ -1,0 +1,4 @@
+.label {
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}

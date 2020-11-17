@@ -35,6 +35,15 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+    grid-template-areas: 
+        'fname'
+        'lname'
+        'username'
+        'password'
+        'contact'
+        'email'
+        'addressField'
+        'group';
 }
 
 .fname {
@@ -65,6 +74,10 @@
     grid-area: addressField;
 }
 
+.group {
+    grid-area: group;
+}
+
 @media (min-width: 768px) {
     .formContainer {
         width: 75%;
@@ -87,7 +100,8 @@
         'fname lname'
         'username password'
         'contact email'
-        'addressField addressField';
+        'addressField addressField'
+        'group group';
     }
 }
 
