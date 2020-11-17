@@ -6,6 +6,13 @@ import Input from '../../ui-components/Input';
 import { isEmptyString } from '../../utils';
 import { themed } from '../../utils/theme';
 import { RED_500, RED_700 } from '../../resources/colors';
+import RadioGroup from './components/RadioGroup';
+
+const radioOptions = [
+    { id: 1, label: 'M' },
+    { id: 2, label: 'F' },
+    { id: 3, label: 'Other' },
+];
 
 export default class ValidatedForm extends React.Component {
 
@@ -16,7 +23,8 @@ export default class ValidatedForm extends React.Component {
         password: '',
         contact: '',
         email: '',
-        address: ''
+        address: '',
+        selectedOption: radioOptions[0]
     }
 
     updateComponent = (refresher = null) => refresher && this.setState({ refresher });
@@ -71,8 +79,10 @@ export default class ValidatedForm extends React.Component {
         this.setState({ address: value, addressError: isEmptyString(value), addressErrorText: isEmptyString(value) ? 'Field cannot be empty' : '' });
     }
 
+    handleRadioChange = option => option && this.setState({ selectedOption: option });
+
     render = () => {
-        const { fname, lname, username, password, contact, email, address } = this.state;
+        const { fname, lname, username, password, contact, email, address, selectedOption } = this.state;
 
         return <Page shouldComponentUpdate={this.updateComponent}>
             <div className={classes.formWrapper}>
@@ -101,6 +111,7 @@ export default class ValidatedForm extends React.Component {
                         <Input autoComplete='off' id='address' label='Address' onChange={this.handleAddressChange} className={classes.address}
                             value={address} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }}
                             error={this.state.addressError} helperText={this.state?.addressErrorText} helpertextcolor={themed(RED_700, RED_500)} />
+                        <RadioGroup className={classes.group} header='Gender' options={radioOptions} selectedOption={selectedOption} onChange={this.handleRadioChange} />
                         {/* create number input age, create a radio group component for gender selection */}
                     </div>
                 </div>

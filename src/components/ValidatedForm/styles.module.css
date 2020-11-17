@@ -83,7 +83,6 @@
     .formComponents {
         margin-top: 2rem;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
         'fname lname'
         'username password'

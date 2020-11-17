@@ -1,0 +1,23 @@
+.radioGroupWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+.radioGroup {
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .radioGroupWrapper {
+        flex-direction: row;
+    }
+    .header {
+        margin-right: 0.4rem;
+    }
+}
