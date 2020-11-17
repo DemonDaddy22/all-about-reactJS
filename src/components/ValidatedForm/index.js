@@ -24,6 +24,7 @@ export default class ValidatedForm extends React.Component {
         contact: '',
         email: '',
         address: '',
+        age: 18,
         selectedOption: radioOptions[0]
     }
 
@@ -79,10 +80,15 @@ export default class ValidatedForm extends React.Component {
         this.setState({ address: value, addressError: isEmptyString(value), addressErrorText: isEmptyString(value) ? 'Field cannot be empty' : '' });
     }
 
+    handleAgeChange = e => {
+        const value = e.target.value;
+        this.setState({ age: value > 12 ? value : this.state.age, ageError: value < 13, ageErrorText: value < 13 ? 'You need to be 13 years or above' : '' });
+    }
+
     handleRadioChange = option => option && this.setState({ selectedOption: option });
 
     render = () => {
-        const { fname, lname, username, password, contact, email, address, selectedOption } = this.state;
+        const { fname, lname, username, password, contact, email, address, age, selectedOption } = this.state;
 
         return <Page shouldComponentUpdate={this.updateComponent}>
             <div className={classes.formWrapper}>
@@ -112,7 +118,10 @@ export default class ValidatedForm extends React.Component {
                             value={address} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }}
                             error={this.state.addressError} helperText={this.state?.addressErrorText} helpertextcolor={themed(RED_700, RED_500)} />
                         <RadioGroup className={classes.group} header='Gender' options={radioOptions} selectedOption={selectedOption} onChange={this.handleRadioChange} />
-                        {/* create number input age, create a radio group component for gender selection */}
+                        <Input autoComplete='off' id='age' label='Age' type='number' onChange={this.handleAgeChange} className={classes.age}
+                            value={age} variant='outlined' rootInputStyles={{ color: 'var(--text)', borderRadius: 'inherit' }}
+                            error={this.state.ageError} helperText={this.state?.ageErrorText} helpertextcolor={themed(RED_700, RED_500)} />
+                        <RadioGroup className={classes.group} header='Gender' options={radioOptions} selectedOption={selectedOption} onChange={this.handleRadioChange} />
                     </div>
                 </div>
             </div>

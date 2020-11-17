@@ -43,6 +43,7 @@
         'contact'
         'email'
         'addressField'
+        'age'
         'group';
 }
 
@@ -74,6 +75,10 @@
     grid-area: addressField;
 }
 
+.age {
+    grid-area: age;
+}
+
 .group {
     grid-area: group;
 }
@@ -101,7 +106,7 @@
         'username password'
         'contact email'
         'addressField addressField'
-        'group group';
+        'age group';
     }
 }
 
