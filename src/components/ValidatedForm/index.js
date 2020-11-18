@@ -3,6 +3,8 @@ import React from 'react';
 import classes from './styles.module.css';
 import Page from '../../ui-components/Page';
 import Input from '../../ui-components/Input';
+import Button from '../../ui-components/Button';
+import SnackBar from '../../ui-components/SnackBar';
 import { isEmptyString } from '../../utils';
 import { themed } from '../../utils/theme';
 import { RED_500, RED_700 } from '../../resources/colors';
@@ -25,7 +27,8 @@ export default class ValidatedForm extends React.Component {
         email: '',
         address: '',
         age: 18,
-        selectedOption: radioOptions[0]
+        selectedOption: radioOptions[0],
+        snack: null
     }
 
     updateComponent = (refresher = null) => refresher && this.setState({ refresher });
@@ -48,9 +51,9 @@ export default class ValidatedForm extends React.Component {
     handlePasswordChange = e => {
         const value = e.target.value;
 
-        const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        const re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
         const passwordError = isEmptyString(value) || !re.test(value);
-        const passwordErrorText = isEmptyString(value) ? 'Field cannot be empty' : !re.test(value) ? 'Password must be atleast 8 characters long, and should contain atleast 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character' : '';
+        const passwordErrorText = isEmptyString(value) ? 'Field cannot be empty' : !re.test(value) ? 'Password must be atleast 8 characters long, and should contain atleast 1 letter, 1 number and 1 special character' : '';
 
         this.setState({ password: value, passwordError, passwordErrorText });
     }
@@ -58,7 +61,7 @@ export default class ValidatedForm extends React.Component {
     handleContactChange = e => {
         const value = e.target.value;
 
-        const re = /^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$/;
+        const re = /^(\(?\+?[0-9]*\)?)?[0-9_\- ()]*$/;
         const contactError = isEmptyString(value) || !re.test(value);
         const contactErrorText = isEmptyString(value) ? 'Field cannot be empty' : !re.test(value) ? 'Enter a valid contact number' : '';
 
@@ -68,7 +71,7 @@ export default class ValidatedForm extends React.Component {
     handleEmailChange = e => {
         const value = e.target.value;
 
-        const re = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        const re = /^([a-zA-Z0-9_\-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         const emailError = isEmptyString(value) || !re.test(value);
         const emailErrorText = isEmptyString(value) ? 'Field cannot be empty' : !re.test(value) ? 'Enter a valid email' : '';
 
@@ -86,6 +89,30 @@ export default class ValidatedForm extends React.Component {
     }
 
     handleRadioChange = option => option && this.setState({ selectedOption: option });
+
+    handleSnackClose = () => this.setState({ snack: { ...this.state.snack, open: false } });
+
+    handleSubmit = () => {
+        const { fname, lname, username, password, contact, email, address } = this.state;
+        if (isEmptyString(fname) || isEmptyString(lname) || isEmptyString(username) || isEmptyString(password) ||
+            isEmptyString(contact) || isEmptyString(email) || isEmptyString(address)) {
+            this.setState({
+                snack: {
+                    open: true,
+                    severity: 'info',
+                    message: 'Please fill out all the details'
+                }
+            });
+        } else this.setState({
+            snack: {
+                open: true,
+                severity: 'success',
+                message: 'Your information passes all validation checks'
+            }
+        }, this.resetFields);
+    }
+
+    resetFields = () => this.setState({ fname: '', lname: '', username: '', password: '', contact: '', email: '', address: '', age: 18, selectedOption: radioOptions[0] });
 
     render = () => {
         const { fname, lname, username, password, contact, email, address, age, selectedOption } = this.state;
@@ -123,8 +150,10 @@ export default class ValidatedForm extends React.Component {
                             error={this.state.ageError} helperText={this.state?.ageErrorText} helpertextcolor={themed(RED_700, RED_500)} />
                         <RadioGroup className={classes.group} header='Gender' options={radioOptions} selectedOption={selectedOption} onChange={this.handleRadioChange} />
                     </div>
+                    <Button className={classes.submitButton} onClick={() => this.handleSubmit()} labelStyles={{ display: 'inline-flex', padding: 0 }}>Sign Up</Button>
                 </div>
             </div>
+            {this.state?.snack?.message && <SnackBar message={this.state.snack.message} severity={this.state.snack.severity} handleClose={this.handleSnackClose} open={this.state.snack.open} />}
         </Page>;
     }
 }

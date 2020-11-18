@@ -9,11 +9,13 @@
 .formContainer {
     width: 90%;
     padding: 0.5rem;
+    margin: 5rem 0;
     border-radius: 6px;
     box-sizing: border-box;
+    background-color: var(--card-bg);
     box-shadow: var(--shadow-opposite);
     border: 1px solid var(--component-border);
-    transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
 .heading {
@@ -45,6 +47,11 @@
         'addressField'
         'age'
         'group';
+}
+
+.submitButton {
+    margin-top: 1rem !important;
+    min-width: 12rem !important;
 }
 
 .fname {
@@ -96,6 +103,7 @@
 @media (min-width: 900px) {
     .formContainer {
         width: 80%;
+        margin: 0;
         padding: 1rem;
     }
     .formComponents {
@@ -108,6 +116,9 @@
         'addressField addressField'
         'age group';
     }
+    .submitButton {
+        margin-top: 1.5rem !important;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -116,5 +127,8 @@
     }
     .formContainer {
         width: 60%;
+    }
+    .submitButton {
+        margin-top: 2rem !important;
     }
 }
