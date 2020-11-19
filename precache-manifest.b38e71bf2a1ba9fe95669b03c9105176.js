@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "23658ad08b0e460606dc7ce902dc2340",
+    "revision": "195e7179fb341b8d47ea7a70c646f6b0",
     "url": "/all-about-reactJS/index.html"
   },
   {
-    "revision": "8a4cfc5ecf6b9062adc7",
-    "url": "/all-about-reactJS/static/css/main.b903aad8.chunk.css"
+    "revision": "8ef9ac221887a405fdc2",
+    "url": "/all-about-reactJS/static/css/main.a81b94d5.chunk.css"
   },
   {
-    "revision": "72cfc0e3136a64f7e472",
-    "url": "/all-about-reactJS/static/js/2.48990301.chunk.js"
+    "revision": "c5b89339ee262463f0d7",
+    "url": "/all-about-reactJS/static/js/2.65a7f6e4.chunk.js"
   },
   {
     "revision": "6397acf4c5cafcd591a770ce33fc3e2f",
-    "url": "/all-about-reactJS/static/js/2.48990301.chunk.js.LICENSE.txt"
+    "url": "/all-about-reactJS/static/js/2.65a7f6e4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8a4cfc5ecf6b9062adc7",
-    "url": "/all-about-reactJS/static/js/main.a589ecfc.chunk.js"
+    "revision": "8ef9ac221887a405fdc2",
+    "url": "/all-about-reactJS/static/js/main.68ef9125.chunk.js"
   },
   {
     "revision": "fe99af2c7e9f85a99da4",
@@ -30,6 +30,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "bed50c437690a6b0a91aded73efcd59c",
     "url": "/all-about-reactJS/static/media/carousel_light.bed50c43.jpg"
+  },
+  {
+    "revision": "b30d606f046100eb9550b1f3b2beccc5",
+    "url": "/all-about-reactJS/static/media/form_light.b30d606f.jpg"
   },
   {
     "revision": "10c4a42ba9b08574e195c9409db3e51e",

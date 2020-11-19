@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/all-about-reactJS/static/css/main.b903aad8.chunk.css",
-    "main.js": "/all-about-reactJS/static/js/main.a589ecfc.chunk.js",
-    "main.js.map": "/all-about-reactJS/static/js/main.a589ecfc.chunk.js.map",
+    "main.css": "/all-about-reactJS/static/css/main.a81b94d5.chunk.css",
+    "main.js": "/all-about-reactJS/static/js/main.68ef9125.chunk.js",
+    "main.js.map": "/all-about-reactJS/static/js/main.68ef9125.chunk.js.map",
     "runtime-main.js": "/all-about-reactJS/static/js/runtime-main.51916d60.js",
     "runtime-main.js.map": "/all-about-reactJS/static/js/runtime-main.51916d60.js.map",
-    "static/js/2.48990301.chunk.js": "/all-about-reactJS/static/js/2.48990301.chunk.js",
-    "static/js/2.48990301.chunk.js.map": "/all-about-reactJS/static/js/2.48990301.chunk.js.map",
+    "static/js/2.65a7f6e4.chunk.js": "/all-about-reactJS/static/js/2.65a7f6e4.chunk.js",
+    "static/js/2.65a7f6e4.chunk.js.map": "/all-about-reactJS/static/js/2.65a7f6e4.chunk.js.map",
     "index.html": "/all-about-reactJS/index.html",
-    "precache-manifest.5003808c87959016da54bd83deb6d24b.js": "/all-about-reactJS/precache-manifest.5003808c87959016da54bd83deb6d24b.js",
+    "precache-manifest.b38e71bf2a1ba9fe95669b03c9105176.js": "/all-about-reactJS/precache-manifest.b38e71bf2a1ba9fe95669b03c9105176.js",
     "service-worker.js": "/all-about-reactJS/service-worker.js",
-    "static/css/main.b903aad8.chunk.css.map": "/all-about-reactJS/static/css/main.b903aad8.chunk.css.map",
-    "static/js/2.48990301.chunk.js.LICENSE.txt": "/all-about-reactJS/static/js/2.48990301.chunk.js.LICENSE.txt",
+    "static/css/main.a81b94d5.chunk.css.map": "/all-about-reactJS/static/css/main.a81b94d5.chunk.css.map",
+    "static/js/2.65a7f6e4.chunk.js.LICENSE.txt": "/all-about-reactJS/static/js/2.65a7f6e4.chunk.js.LICENSE.txt",
     "static/media/carousel_dark.jpg": "/all-about-reactJS/static/media/carousel_dark.2c9c3eef.jpg",
     "static/media/carousel_light.jpg": "/all-about-reactJS/static/media/carousel_light.bed50c43.jpg",
+    "static/media/form_light.jpg": "/all-about-reactJS/static/media/form_light.b30d606f.jpg",
     "static/media/jokes_dark.jpg": "/all-about-reactJS/static/media/jokes_dark.10c4a42b.jpg",
     "static/media/jokes_light.jpg": "/all-about-reactJS/static/media/jokes_light.8af3e5db.jpg",
     "static/media/meal_dark.jpg": "/all-about-reactJS/static/media/meal_dark.a0a18e6f.jpg",
@@ -25,8 +26,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.51916d60.js",
-    "static/js/2.48990301.chunk.js",
-    "static/css/main.b903aad8.chunk.css",
-    "static/js/main.a589ecfc.chunk.js"
+    "static/js/2.65a7f6e4.chunk.js",
+    "static/css/main.a81b94d5.chunk.css",
+    "static/js/main.68ef9125.chunk.js"
   ]
 }
