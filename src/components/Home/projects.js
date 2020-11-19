@@ -26,6 +26,8 @@ import mealDarkImage from '../../images/meal_dark.jpg';
 import mealLightImage from '../../images/meal_light.jpg';
 import billDarkImage from '../../images/bill_dark.jpg';
 import billLightImage from '../../images/bill_light.jpg';
+import formDarkImage from '../../images/form_dark.jpg';
+import formLightImage from '../../images/form_light.jpg';
 import { BASE_URL } from '../../resources/constants';
 
 export const projects = [
@@ -43,4 +45,5 @@ export const projects = [
     { sequence: '12', title: 'Image Carousel', imageLight: carouselLightImage, imageDark: carouselDarkImage, projectPath: `${BASE_URL}/#/carousel`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/Carousel' },
     { sequence: '13', title: 'Meal Generator', imageLight: mealLightImage, imageDark: mealDarkImage, projectPath: `${BASE_URL}/#/meal-generator`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/MealGenerator' },
     { sequence: '14', title: 'Bill Generator', imageLight: billLightImage, imageDark: billDarkImage, projectPath: `${BASE_URL}/#/bill-generator`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/BillGenerator' },
+    { sequence: '15', title: 'Validated Form', imageLight: formLightImage, imageDark: formDarkImage, projectPath: `${BASE_URL}/#/form`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/ValidatedForm' },
 ];
