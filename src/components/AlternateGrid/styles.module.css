@@ -1,0 +1,21 @@
+.title {
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: -0.25px;
+    color: var(--text-prominent);
+    transition: color 0.5s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .title {
+        font-size: 4rem;
+    }
+}
