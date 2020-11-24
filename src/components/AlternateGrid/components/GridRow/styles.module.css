@@ -3,6 +3,42 @@
     flex-direction: column;
 }
 
+.infoContainer {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.model {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: -0.25px;
+    color: var(--theme-color);
+    transition: color 0.5s ease-in-out;
+}
+
+.specification {
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: -0.25px;
+    color: var(--text-prominent);
+    transition: color 0.5s ease-in-out;
+}
+
+.value {
+    letter-spacing: 0.25px;
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
 @media (min-width: 768px) {
     .row {
         flex-direction: row;

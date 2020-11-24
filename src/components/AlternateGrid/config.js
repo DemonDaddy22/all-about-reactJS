@@ -13,7 +13,7 @@ export const data = [
     },
     {
         id: 3505666498,
-        model: 'Huracán Evo Spyder',
+        model: 'Aventador SVJ',
         specifications: {
             'Max Power': '566 kW (770 CV) at 8.500 rpm',
             'Top Speed': '>350 km/h',
