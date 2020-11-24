@@ -9,7 +9,7 @@ export const data = [
             'Engine': 'V10 90° IDS, 40 valves',
             'Displacement': '5,204 cm³'
         },
-        image: 'https://cdn.motor1.com/images/mgl/GNEGJ/s1/lamborghini-huracan-evo-spyder.jpg'
+        image: 'https://images.hgmsites.net/hug/lamborghini-huracan-evo-rear-wheel-drive-spyder_100746276_h.jpg'
     },
     {
         id: 3505666498,
@@ -33,7 +33,7 @@ export const data = [
             'Max Engine Speed': '6,800 rpm',
             'Displacement': '3,996 cm³'
         },
-        image: 'https://autodius.com/wp-content/uploads/2020/06/lamborghini-urus-pearl-capsule-suv.jpg'
+        image: 'https://cdn.motor1.com/images/mgl/7JXYo/s1/urus.jpg'
     },
     {
         id: 3508196498,
@@ -43,10 +43,9 @@ export const data = [
             'Top Speed': '>350 km/h (217 mph)',
             'Acceleration': '<2.8s (0-100 km/h)',
             'Engine': 'V12, 60°, MPI',
-            'Displacement': '6,498 cm³',
-            'Cylinders': 12
+            'Displacement': '6,498 cm³'
         },
-        image: 'https://www.carpixel.net/w/6674327ded4f5ec3d442bf41edca12cb/lamborghini-sian-fkp-37-car-wallpaper-94960.jpg'
+        image: 'https://cdnb.artstation.com/p/assets/images/images/021/633/263/large/russ-schwenkler-lamborghini-sian-01.jpg?1572395705'
     },
     {
         id: 120105204,
@@ -69,6 +68,6 @@ export const data = [
             'Engine': 'V10, 90°, MPI + DSI',
             'Displacement': '5,204 cm³'
         },
-        image: 'https://cimg2.ibsrv.net/ibimg/hgm/1920x1080-1/100/770/lamborghini-huracan-sto_100770366.jpg'
+        image: 'https://www.automobilemag.com/uploads/sites/11/2020/11/2021-Lamborghini-Huracan-STO-1a.jpg'
     }
 ];

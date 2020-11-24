@@ -1,5 +1,5 @@
 import React from 'react';
-import { isEmptyObject } from '../../../../utils';
+import { getPathValue, isEmptyObject } from '../../../../utils';
 import GridCell from '../GridCell';
 
 import classes from './styles.module.css';
@@ -14,7 +14,9 @@ const GridRow = React.memo(({ row, firstOrderClass, secondOrderClass }) => <div 
             </div>)}
         </div>
     </GridCell>
-    <GridCell className={secondOrderClass}>Cell 2</GridCell>
+    <GridCell className={secondOrderClass}>
+        <img src={getPathValue(row, 'image', '')} alt='Lamborghini' className={classes.image} />
+    </GridCell>
 </div>);
 
 export default GridRow;

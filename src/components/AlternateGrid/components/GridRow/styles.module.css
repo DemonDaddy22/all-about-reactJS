@@ -1,6 +1,8 @@
 .row {
     display: flex;
     flex-direction: column;
+    background-color: var(--card-bg);
+    transition: background-color 0.5s ease-in-out;
 }
 
 .infoContainer {
@@ -39,10 +41,13 @@
     transition: color 0.5s ease-in-out;
 }
 
+.image {
+    height: 100%;
+    width: 100%;
+}
+
 @media (min-width: 768px) {
     .row {
         flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
     }
 }

@@ -9,7 +9,7 @@
 }
 
 .container {
-    margin: 2rem 0;
+    margin-top: 2rem;
 }
 
 .firstOrder, .secondOrder {
@@ -21,12 +21,8 @@
         font-size: 3rem;
     }
     .container {
-        width: 80%;
+        width: 90%;
         margin: 3rem auto;
-        border-radius: 4px;
-        box-shadow: var(--shadow-opposite);
-        border: 1px solid var(--border-color);
-        transition: box-shadow 0.5s ease-in-out, border 0.5s ease-in-out;
     }
     .firstOrder {
         order: 1;
@@ -36,14 +32,11 @@
     }
 }
 
-@media (min-width: 900px) {
-    .container {
-        width: 60%;
-    }
-}
-
 @media (min-width: 1200px) {
     .title {
         font-size: 4rem;
+    }
+    .container {
+        width: 75%;
     }
 }
