@@ -1,5 +1,5 @@
 .title {
-    margin-top: 2rem;
+    margin-top: 3rem;
     font-size: 2rem;
     font-weight: 600;
     text-align: center;
@@ -8,9 +8,27 @@
     transition: color 0.5s ease-in-out;
 }
 
+.container {
+    margin: 2rem 0;
+}
+
 @media (min-width: 768px) {
     .title {
         font-size: 3rem;
+    }
+    .container {
+        width: 80%;
+        margin: 3rem auto;
+        border-radius: 4px;
+        box-shadow: var(--shadow-opposite);
+        border: 1px solid var(--border-color);
+        transition: box-shadow 0.5s ease-in-out, border 0.5s ease-in-out;
+    }
+}
+
+@media (min-width: 900px) {
+    .container {
+        width: 60%;
     }
 }
 

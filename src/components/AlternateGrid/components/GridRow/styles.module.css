@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

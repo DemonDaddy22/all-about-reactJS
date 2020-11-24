@@ -6,6 +6,7 @@ import { data } from './config';
 import GridRow from './components/GridRow';
 import { themed } from '../../utils/theme';
 import { GREEN_400, GREEN_600 } from '../../resources/colors';
+import { getPathValue } from '../../utils';
 
 export default class AlternateGrid extends React.Component {
 
@@ -16,7 +17,7 @@ export default class AlternateGrid extends React.Component {
         return <Page shouldComponentUpdate={this.updateComponent}>
             <div className={classes.title}><span style={{ color: themed(GREEN_600, GREEN_400) }}>Lambo</span>Love</div>
             <div className={classes.container}>
-                {data.map((row, index) => <GridRow row={row} />)}
+                {data.map((row, index) => <GridRow key={`row-${getPathValue(row, 'id', index)}`} row={row} />)}
             </div>
         </Page>;
     }
