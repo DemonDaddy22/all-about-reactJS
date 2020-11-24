@@ -60,7 +60,7 @@ export const data = [
         image: 'https://www.britishgt.com/timthumb.php?w=1400&src=%2Fimages%2Fcars%2F18-01.jpg'
     },
     {
-        id: 3256405204,
+        id: 3106405204,
         model: 'Huracán STO',
         specifications: {
             'Max Power': '470/640 at 8000 rpm',

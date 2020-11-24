@@ -17,7 +17,8 @@ export default class AlternateGrid extends React.Component {
         return <Page shouldComponentUpdate={this.updateComponent}>
             <div className={classes.title}><span style={{ color: themed(GREEN_600, GREEN_400) }}>Lambo</span>Love</div>
             <div className={classes.container}>
-                {data.map((row, index) => <GridRow key={`row-${getPathValue(row, 'id', index)}`} row={row} />)}
+                {data.map((row, index) => <GridRow key={`row-${getPathValue(row, 'id', index)}`} row={row}
+                    firstOrderClass={index % 2 === 0 ? classes.firstOrder : classes.secondOrder} secondOrderClass={index % 2 === 0 ? classes.secondOrder : classes.firstOrder} />)}
             </div>
         </Page>;
     }

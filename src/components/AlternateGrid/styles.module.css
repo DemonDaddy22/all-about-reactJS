@@ -12,6 +12,10 @@
     margin: 2rem 0;
 }
 
+.firstOrder, .secondOrder {
+    order: inherit;
+}
+
 @media (min-width: 768px) {
     .title {
         font-size: 3rem;
@@ -23,6 +27,12 @@
         box-shadow: var(--shadow-opposite);
         border: 1px solid var(--border-color);
         transition: box-shadow 0.5s ease-in-out, border 0.5s ease-in-out;
+    }
+    .firstOrder {
+        order: 1;
+    }
+    .secondOrder {
+        order: 2;
     }
 }
 
