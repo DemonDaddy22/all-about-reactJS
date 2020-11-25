@@ -46,7 +46,9 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 
 15. **Form with Validations &nbsp;☑**: A responsive [form with validations](https://demondaddy22.github.io/all-about-reactJS/#/form) which validates user's input responses. *It is just a template form which doesn't store any information entered by the users*.
 
-16. **Alternate Grid &nbsp;💢**: *Coming soon!*
+16. **Alternate Grid &nbsp;💢**: A responsive [alternate grid](https://demondaddy22.github.io/all-about-reactJS/#/grid) which displays an alternate ordered grid where one of the cells, in every row, contains some text information, and the other cell contains an image.
+
+17. **Pokédex &nbsp;📱**: *Coming soon!* 
 
 <br>
 
