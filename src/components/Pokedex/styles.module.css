@@ -1,0 +1,50 @@
+.title {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: rgb(255, 236, 62);
+    text-shadow: 3px 3px rgb(41, 45, 255), -3px -3px rgb(41, 45, 255);
+}
+
+.inputWrapper {
+    width: 90%;
+    padding: 1rem;
+    margin: 1rem auto;
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+}
+
+.label {
+    color: var(--text-obscure);
+    transition: color 0.5s ease-in-out;
+}
+
+.pokemonTitle {
+    composes: title;
+    margin: 0 4px;
+    font-size: 1.25rem !important;
+    text-shadow: 1.75px 1.75px rgb(41, 45, 255), -1.75px -1.75px rgb(41, 45, 255);
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    .inputWrapper {
+        width: 60%;
+        margin: 2rem auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .title {
+        font-size: 3rem;
+    }
+    .inputWrapper {
+        width: 50%;
+    }
+}

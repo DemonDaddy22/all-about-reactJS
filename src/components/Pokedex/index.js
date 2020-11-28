@@ -14,7 +14,10 @@ export default class Pokedex extends React.Component {
     render = () => {
 
         return <Page shouldComponentUpdate={this.updateComponent}>
-            Pokedex
+            <div className={classes.title}>Pokédex</div>
+            <div className={classes.inputWrapper}>
+                <div className={classes.label}>Search <span className={classes.pokemonTitle}>Pokémon</span> by</div>
+            </div>
         </Page>
     }
 }

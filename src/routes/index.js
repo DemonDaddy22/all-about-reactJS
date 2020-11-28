@@ -18,6 +18,7 @@ import MealGenerator from '../components/MealGenerator';
 import BillGenerator from '../components/BillGenerator';
 import ValidatedForm from '../components/ValidatedForm';
 import AlternateGrid from '../components/AlternateGrid';
+import Pokedex from '../components/Pokedex';
 
 export default class Routes extends React.Component {
 
@@ -57,6 +58,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/form' component={ValidatedForm} />
                 
                 <Route exact path='/grid' component={AlternateGrid} />
+                
+                <Route exact path='/pokedex' component={Pokedex} />
 
                 <Redirect to='/' from='*' />
             </Switch>
