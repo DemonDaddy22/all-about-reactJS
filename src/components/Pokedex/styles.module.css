@@ -8,8 +8,8 @@
     text-shadow: 3px 3px rgb(41, 45, 255), -3px -3px rgb(41, 45, 255);
 }
 
-.inputWrapper {
-    width: 90%;
+.inputContainer {
+    width: 80%;
     padding: 1rem;
     margin: 1rem auto;
     border-radius: 4px;
@@ -30,13 +30,34 @@
     text-shadow: 1.75px 1.75px rgb(41, 45, 255), -1.75px -1.75px rgb(41, 45, 255);
 }
 
+.inputWrapper {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.searchInput {
+    flex: 1;
+}
+
+.searchInput:first-child {
+    margin-bottom: 1rem;
+}
+
 @media (min-width: 768px) {
     .title {
         font-size: 2.5rem;
     }
-    .inputWrapper {
+    .inputContainer {
         width: 60%;
         margin: 2rem auto;
+    }
+    .inputWrapper {
+        flex-direction: row;
+    }
+    .searchInput:first-child {
+        margin-bottom: 0;
+        margin-right: 1rem;
     }
 }
 
@@ -44,7 +65,7 @@
     .title {
         font-size: 3rem;
     }
-    .inputWrapper {
+    .inputContainer {
         width: 50%;
     }
 }
