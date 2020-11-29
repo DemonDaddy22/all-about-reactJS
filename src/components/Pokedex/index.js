@@ -10,6 +10,7 @@ import { getPathValue, handleError, isEmptyObject, isEmptyString } from '../../u
 import { themed } from '../../utils/theme';
 import { RED_500, RED_700 } from '../../resources/colors';
 import SnackBar from '../../ui-components/SnackBar';
+import { POKEMON_API_BASE } from '../../resources/constants';
 
 export default class Pokedex extends React.Component {
 
@@ -23,7 +24,7 @@ export default class Pokedex extends React.Component {
 
     updateComponent = (refresher = null) => refresher && this.setState({ refresher });
 
-    fetchPokemonData = pokemon => this.setState({ loader: true }, () => fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+    fetchPokemonData = pokemon => this.setState({ loader: true }, () => fetch(`${POKEMON_API_BASE}${pokemon}`)
         .then(handleError)
         .then(res => res.json())
         .then(data => this.setState({ loader: false, pokemonData: data, snack: null }))
