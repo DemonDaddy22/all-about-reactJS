@@ -20,6 +20,7 @@ module.exports = {
         "comma-dangle": 0,
         "react/jsx-uses-vars": 1,
         "no-unused-vars": 1,
+        "no-undef": 1,
         "no-unexpected-multiline": 1,
         "no-debugger": 1,
         "no-alert": 0,
@@ -42,6 +43,7 @@ module.exports = {
                 "allowTemplateLiterals": true,
             },
         ],
+        "eqeqeq": 1,
     },
     "settings": {
         "react": {
