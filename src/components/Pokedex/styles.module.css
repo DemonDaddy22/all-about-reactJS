@@ -4,11 +4,11 @@
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: -1px;
-    color: rgb(255, 236, 62);
-    text-shadow: 3px 3px rgb(41, 45, 255), -3px -3px rgb(41, 45, 255);
+    color: rgb(247, 231, 18);
+    text-shadow: 3px 0px rgb(41, 45, 255), 0px 3px rgb(41, 45, 255), -3px 0px rgb(41, 45, 255), 0px -3px rgb(41, 45, 255);
 }
 
-.inputContainer {
+.inputContainer, .pokedexContainer {
     width: 80%;
     padding: 1rem;
     margin: 1rem auto;
@@ -27,7 +27,7 @@
     composes: title;
     margin: 0 4px;
     font-size: 1.25rem !important;
-    text-shadow: 1.75px 1.75px rgb(41, 45, 255), -1.75px -1.75px rgb(41, 45, 255);
+    text-shadow: 1.5px 0px rgb(41, 45, 255), 0px 1.5px rgb(41, 45, 255), -1.5px 0px rgb(41, 45, 255), 0px -1.5px rgb(41, 45, 255);
 }
 
 .inputWrapper {
@@ -44,11 +44,54 @@
     margin-bottom: 1rem;
 }
 
+.imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: var(--text-obscurer);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+}
+
+.name {
+    margin: 1rem 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: -0.25px;
+    text-transform: capitalize;
+    color: var(--text-prominent);
+    transition: color 0.5s ease-in-out;
+}
+
+.infoWrapper {
+    display: flex;
+}
+
+.infoLabel {
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: -0.25px;
+    color: var(--text-obscure);
+    transition: color 0.5s ease-in-out;
+}
+
+.infoValue {
+    font-size: 1.2rem;
+    color: var(--text-prominent);
+    transition: color 0.5s ease-in-out;
+}
+
+.indexWrapper, .xpWrapper {
+    flex: 1;
+}
+
 @media (min-width: 768px) {
     .title {
         font-size: 2.5rem;
     }
-    .inputContainer {
+    .inputContainer, .pokedexContainer {
         width: 60%;
         margin: 2rem auto;
     }
@@ -65,7 +108,10 @@
     .title {
         font-size: 3rem;
     }
-    .inputContainer {
+    .inputContainer, .pokedexContainer {
         width: 50%;
+    }
+    .name {
+        font-size: 2rem;
     }
 }

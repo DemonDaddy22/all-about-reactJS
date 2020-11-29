@@ -6,16 +6,17 @@ import DoneOutlineRoundedIcon from '@material-ui/icons/DoneOutlineRounded';
 import { InputAdornment } from '@material-ui/core';
 import Input from '../../ui-components/Input';
 import Iconbutton from '../../ui-components/Button/Iconbutton';
-import { handleError, isEmptyString } from '../../utils';
+import { getPathValue, handleError, isEmptyObject, isEmptyString } from '../../utils';
 import { themed } from '../../utils/theme';
 import { RED_500, RED_700 } from '../../resources/colors';
+import SnackBar from '../../ui-components/SnackBar';
 
 export default class Pokedex extends React.Component {
 
     state = {
         loader: true,
         index: 1,
-        name: 'Bulbasaur',
+        name: 'Pikachu',
         pokemonData: null,
         error: null
     }
@@ -27,9 +28,9 @@ export default class Pokedex extends React.Component {
         .then(res => res.json())
         .then(data => this.setState({ loader: false, pokemonData: data, snack: null }))
         .catch(error => this.setState({
-            loader: false, pokemonData: null, snack: {
+            loader: false, snack: {
                 open: true,
-                message: error.message,
+                message: error.message || 'No Pokémon found',
                 severity: 'error'
             }
         })));
@@ -49,16 +50,20 @@ export default class Pokedex extends React.Component {
     handleNameSubmit = () => {
         const name = this.state.name;
         if (isEmptyString(name)) this.setState({ error: { ...this.state.error, name: { error: true, label: 'Name cannot be empty' } } });
-        else this.setState({ error: { ...this.state.error, name: { error: false, label: '' } } }, () => this.fetchPokemonData(name));
+        else this.setState({ error: { ...this.state.error, name: { error: false, label: '' } } }, () => this.fetchPokemonData(name.toLowerCase()));
     }
 
+    handleSnackClose = () => this.setState({ snack: { ...this.state.snack, open: false } });
+
+    getPokemonAvatar = data => isEmptyObject(data) ? '' : getPathValue(data, 'sprites.other.dream_world.front_default') || getPathValue(data, 'sprites.front_default', '');
+
     render = () => {
-        const { index, name, error } = this.state;
+        const { index, name, error, snack, pokemonData } = this.state;
 
         return <Page shouldComponentUpdate={this.updateComponent}>
             <div className={classes.title}>Pokédex</div>
             <div className={classes.inputContainer}>
-                <div className={classes.label}>Search <span className={classes.pokemonTitle}>Pokémon</span> by</div>
+                <div className={classes.label}>Search <span className={classes.pokemonTitle}>Pokémon</span> by index or name</div>
                 <div className={classes.inputWrapper}>
                     <div className={classes.searchInput}>
                         <Input autoComplete='off' id='index' type='number' label='Index' onChange={e => this.handleValueChange(e, 'index')}
@@ -80,6 +85,23 @@ export default class Pokedex extends React.Component {
                     </div>
                 </div>
             </div>
+            {pokemonData && <div className={classes.pokedexContainer}>
+                {pokemonData?.sprites && !isEmptyObject(pokemonData.sprites) && <div className={classes.imageContainer}>
+                    <img src={this.getPokemonAvatar(pokemonData)} alt='pokemon-sprite'></img>
+                </div>}
+                {pokemonData?.name && <div className={classes.name}>{pokemonData.name}</div>}
+                <div className={classes.infoWrapper}>
+                    {pokemonData?.id && <div className={classes.indexWrapper}>
+                        <div className={classes.infoLabel}>Index</div>
+                        <div className={classes.infoValue}>{pokemonData.id}</div>
+                    </div>}
+                    {pokemonData?.base_experience && <div className={classes.xpWrapper}>
+                        <div className={classes.infoLabel}>Base XP</div>
+                        <div className={classes.infoValue}>{pokemonData.base_experience}</div>
+                    </div>}
+                </div>
+            </div>}
+            {snack?.message && <SnackBar message={snack.message} severity={snack.severity} handleClose={this.handleSnackClose} open={snack.open} />}
         </Page>
     }
 }
