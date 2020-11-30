@@ -8,7 +8,7 @@ import Input from '../../ui-components/Input';
 import Iconbutton from '../../ui-components/Button/Iconbutton';
 import { getPathValue, handleError, isEmptyList, isEmptyObject, isEmptyString } from '../../utils';
 import { themed } from '../../utils/theme';
-import { RED_500, RED_700 } from '../../resources/colors';
+import { RED_500, RED_700, WHITE_TRANSPARENT_50 } from '../../resources/colors';
 import SnackBar from '../../ui-components/SnackBar';
 import { POKEMON_API_BASE, POKEMON_TYPES } from '../../resources/constants';
 
@@ -62,6 +62,20 @@ export default class Pokedex extends React.Component {
         ({ backgroundColor: POKEMON_TYPES[type.toLowerCase()]['bgColor'], color: POKEMON_TYPES[type.toLowerCase()]['color'] }) :
         ({ backgroundColor: '#da9443', color: '#FFF' });
 
+    getImageBackround = types => {
+        if (isEmptyList(types)) return null;
+
+        let background = `linear-gradient(90deg, `;
+        types.forEach((type, index) => {
+            const color = type?.type?.name.toLowerCase() in POKEMON_TYPES ? POKEMON_TYPES[type.type.name.toLowerCase()]['bgColor'] : WHITE_TRANSPARENT_50;
+            background = `${background} ${color} ${(index / types.length) * 100}%, ${color} ${((index + 1) / types.length) * 100}%`;
+            if (index !== types.length - 1) background = `${background}, `;
+        });
+        background = `${background})`;
+        
+        return background;
+    }
+
     render = () => {
         const { index, name, error, snack, pokemonData } = this.state;
 
@@ -91,7 +105,7 @@ export default class Pokedex extends React.Component {
                 </div>
             </div>
             {pokemonData && <div className={classes.pokedexContainer}>
-                {pokemonData?.sprites && !isEmptyObject(pokemonData.sprites) && <div className={classes.imageContainer}>
+                {pokemonData?.sprites && !isEmptyObject(pokemonData.sprites) && <div className={classes.imageContainer} style={{ background: this.getImageBackround(pokemonData.types)}}>
                     <img src={this.getPokemonAvatar(pokemonData)} alt='pokemon-sprite' className={classes.sprite}></img>
                 </div>}
                 {pokemonData?.name && <div className={classes.name}>{pokemonData.name}</div>}

@@ -50,9 +50,6 @@
     justify-content: center;
     padding: 1rem;
     border-radius: 4px;
-    background-color: var(--text-obscurer);
-    border: 1px solid var(--border-color);
-    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
 }
 
 .sprite {
