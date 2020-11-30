@@ -139,12 +139,20 @@
 }
 
 .statBar {
-    width: 100%;
+    display: flex;
+    flex-basis: 100%;
+    position: relative;
     height: 1.25rem;
     margin-top: 0.25rem;
     border-radius: 4px;
     background-color: var(--text-obscurer);
     transition: background-color 0.5s ease-in-out;
+}
+
+.statBarFilled {
+    flex-basis: 0;
+    border-radius: inherit;
+    transition: flex-basis 0.5s ease-in-out;
 }
 
 @media (min-width: 768px) {

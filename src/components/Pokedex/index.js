@@ -8,7 +8,7 @@ import Input from '../../ui-components/Input';
 import Iconbutton from '../../ui-components/Button/Iconbutton';
 import { getPathValue, handleError, isEmptyList, isEmptyObject, isEmptyString } from '../../utils';
 import { themed } from '../../utils/theme';
-import { RED_500, RED_700, WHITE_TRANSPARENT_50 } from '../../resources/colors';
+import { RED_500, RED_700, THEME_COLOR, WHITE_TRANSPARENT_50 } from '../../resources/colors';
 import SnackBar from '../../ui-components/SnackBar';
 import { POKEMON_API_BASE, POKEMON_TYPES } from '../../resources/constants';
 
@@ -76,6 +76,13 @@ export default class Pokedex extends React.Component {
         return background;
     }
 
+    getStatBarStyles = (stat, stats, types) => {
+        if (isEmptyObject(stat) || isEmptyList(stats)) return null;
+        const maxValue = stats.reduce((prev, curr) => prev.base_stat < curr.base_stat ? curr : prev).base_stat + 25;
+        const color = !isEmptyList(types) && types[0]?.type.name.toLowerCase() in POKEMON_TYPES ? POKEMON_TYPES[types[0].type.name.toLowerCase()]['bgColor'] : THEME_COLOR;
+        return { backgroundColor: color, flexBasis: `${(getPathValue(stat, 'base_stat', 0) / maxValue) * 100}%` };
+    }
+
     render = () => {
         const { index, name, error, snack, pokemonData } = this.state;
 
@@ -132,7 +139,9 @@ export default class Pokedex extends React.Component {
                     <div className={classes.statsContainer}>
                         {pokemonData.stats.map((stat, index) => stat?.stat?.name && <div key={`stats-${index}`} className={classes.statWrapper}>
                             <div className={classes.statLabel}>{stat.stat.name} {stat?.base_stat ? `(${stat.base_stat})` : ''}</div>
-                            <div className={`${classes.statBar} ${classes.statBarFilled}`}></div>
+                            <div className={classes.statBar}>
+                                <div style={this.getStatBarStyles(stat, pokemonData.stats, pokemonData.types)} className={classes.statBarFilled}></div>
+                            </div>
                         </div>)}
                     </div>
                 </div>}
