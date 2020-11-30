@@ -72,7 +72,7 @@ export default class Pokedex extends React.Component {
             if (index !== types.length - 1) background = `${background}, `;
         });
         background = `${background})`;
-        
+
         return background;
     }
 
@@ -105,7 +105,7 @@ export default class Pokedex extends React.Component {
                 </div>
             </div>
             {pokemonData && <div className={classes.pokedexContainer}>
-                {pokemonData?.sprites && !isEmptyObject(pokemonData.sprites) && <div className={classes.imageContainer} style={{ background: this.getImageBackround(pokemonData.types)}}>
+                {pokemonData?.sprites && !isEmptyObject(pokemonData.sprites) && <div className={classes.imageContainer} style={{ background: this.getImageBackround(pokemonData.types) }}>
                     <img src={this.getPokemonAvatar(pokemonData)} alt='pokemon-sprite' className={classes.sprite}></img>
                 </div>}
                 {pokemonData?.name && <div className={classes.name}>{pokemonData.name}</div>}
@@ -118,15 +118,24 @@ export default class Pokedex extends React.Component {
                         <div className={classes.infoLabel}>Base XP</div>
                         <div className={classes.infoValue}>{pokemonData.base_experience}</div>
                     </div>}
+                    {pokemonData?.types && !isEmptyList(pokemonData.types) && <div className={classes.typesWrapper}>
+                        <div className={classes.infoLabel}>Type</div>
+                        <div className={classes.typesContainer}>
+                            {pokemonData.types.map((type, index) => !isEmptyString(type?.type?.name) && <div key={`type-${index}`} className={classes.typeChip} style={this.getTypeChipStyles(type.type.name)}>
+                                {type.type.name}
+                            </div>)}
+                        </div>
+                    </div>}
                 </div>
-                {pokemonData?.types && !isEmptyList(pokemonData.types) && <>
-                    <div className={classes.typeLabel}>Type</div>
-                    <div className={classes.typesWrapper}>
-                        {pokemonData.types.map((type, index) => !isEmptyString(type?.type?.name) && <div key={`type-${index}`} className={classes.typeChip} style={this.getTypeChipStyles(type.type.name)}>
-                            {type.type.name}
+                {pokemonData?.stats && !isEmptyList(pokemonData.stats) && <div className={classes.statsWrapper}>
+                    <div className={classes.infoLabel}>Stats</div>
+                    <div className={classes.statsContainer}>
+                        {pokemonData.stats.map((stat, index) => stat?.stat?.name && <div key={`stats-${index}`} className={classes.statWrapper}>
+                            <div className={classes.statLabel}>{stat.stat.name} {stat?.base_stat ? `(${stat.base_stat})` : ''}</div>
+                            <div className={`${classes.statBar} ${classes.statBarFilled}`}></div>
                         </div>)}
                     </div>
-                </>}
+                </div>}
             </div>}
             {snack?.message && <SnackBar message={snack.message} severity={snack.severity} handleClose={this.handleSnackClose} open={snack.open} />}
         </Page>
