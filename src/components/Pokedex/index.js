@@ -6,11 +6,11 @@ import DoneOutlineRoundedIcon from '@material-ui/icons/DoneOutlineRounded';
 import { InputAdornment } from '@material-ui/core';
 import Input from '../../ui-components/Input';
 import Iconbutton from '../../ui-components/Button/Iconbutton';
-import { getPathValue, handleError, isEmptyObject, isEmptyString } from '../../utils';
+import { getPathValue, handleError, isEmptyList, isEmptyObject, isEmptyString } from '../../utils';
 import { themed } from '../../utils/theme';
 import { RED_500, RED_700 } from '../../resources/colors';
 import SnackBar from '../../ui-components/SnackBar';
-import { POKEMON_API_BASE } from '../../resources/constants';
+import { POKEMON_API_BASE, POKEMON_TYPES } from '../../resources/constants';
 
 export default class Pokedex extends React.Component {
 
@@ -58,6 +58,10 @@ export default class Pokedex extends React.Component {
 
     getPokemonAvatar = data => isEmptyObject(data) ? '' : getPathValue(data, 'sprites.other.dream_world.front_default') || getPathValue(data, 'sprites.front_default', '');
 
+    getTypeChipStyles = type => !isEmptyString(type) && type.toLowerCase() in POKEMON_TYPES ?
+        ({ backgroundColor: POKEMON_TYPES[type.toLowerCase()]['bgColor'], color: POKEMON_TYPES[type.toLowerCase()]['color'] }) :
+        ({ backgroundColor: '#da9443', color: '#FFF' });
+
     render = () => {
         const { index, name, error, snack, pokemonData } = this.state;
 
@@ -88,7 +92,7 @@ export default class Pokedex extends React.Component {
             </div>
             {pokemonData && <div className={classes.pokedexContainer}>
                 {pokemonData?.sprites && !isEmptyObject(pokemonData.sprites) && <div className={classes.imageContainer}>
-                    <img src={this.getPokemonAvatar(pokemonData)} alt='pokemon-sprite'></img>
+                    <img src={this.getPokemonAvatar(pokemonData)} alt='pokemon-sprite' className={classes.sprite}></img>
                 </div>}
                 {pokemonData?.name && <div className={classes.name}>{pokemonData.name}</div>}
                 <div className={classes.infoWrapper}>
@@ -101,6 +105,14 @@ export default class Pokedex extends React.Component {
                         <div className={classes.infoValue}>{pokemonData.base_experience}</div>
                     </div>}
                 </div>
+                {pokemonData?.types && !isEmptyList(pokemonData.types) && <>
+                    <div className={classes.typeLabel}>Type</div>
+                    <div className={classes.typesWrapper}>
+                        {pokemonData.types.map((type, index) => !isEmptyString(type?.type?.name) && <div key={`type-${index}`} className={classes.typeChip} style={this.getTypeChipStyles(type.type.name)}>
+                            {type.type.name}
+                        </div>)}
+                    </div>
+                </>}
             </div>}
             {snack?.message && <SnackBar message={snack.message} severity={snack.severity} handleClose={this.handleSnackClose} open={snack.open} />}
         </Page>
