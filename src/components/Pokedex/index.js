@@ -11,11 +11,12 @@ import { themed } from '../../utils/theme';
 import { RED_500, RED_700, THEME_COLOR, WHITE_TRANSPARENT_50 } from '../../resources/colors';
 import SnackBar from '../../ui-components/SnackBar';
 import { POKEMON_API_BASE, POKEMON_TYPES } from '../../resources/constants';
+import SpinnerLoader from '../../ui-components/SpinnerLoader';
 
 export default class Pokedex extends React.Component {
 
     state = {
-        loader: true,
+        loader: false,
         index: 1,
         name: 'Pikachu',
         pokemonData: null,
@@ -85,8 +86,9 @@ export default class Pokedex extends React.Component {
 
     render = () => {
         const { index, name, error, snack, pokemonData } = this.state;
-
+        
         return <Page shouldComponentUpdate={this.updateComponent}>
+            <div className={`${classes.loader} ${!this.state.loader && classes.hideLoader}`}><SpinnerLoader /></div>
             <div className={classes.title}>Pokédex</div>
             <div className={classes.inputContainer}>
                 <div className={classes.label}>Search <span className={classes.pokemonTitle}>Pokémon</span> by index or name</div>
