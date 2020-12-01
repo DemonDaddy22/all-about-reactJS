@@ -48,7 +48,9 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 
 16. **Alternate Grid &nbsp;💢**: A responsive [alternate grid](https://demondaddy22.github.io/all-about-reactJS/#/grid) which displays an alternate ordered grid where one of the cells, in every row, contains some text information, and the other cell contains an image.
 
-17. **Pokédex &nbsp;📱**: *Coming soon!* 
+17. **Pokédex &nbsp;📱**: A responsive [Pokédex](https://demondaddy22.github.io/all-about-reactJS/#/pokedex) which uses [Pokeapi](https://pokeapi.co/) and is inspired by [Pokedex.org](https://pokedex.org/#/). The user can search for the desired Pokémon using Pokémon's index or name and basic stats and info of the fetched Pokémon are then displayed.
+
+18. **Twitter UI clone &nbsp;**: *Coming soon!*
 
 <br>
 
