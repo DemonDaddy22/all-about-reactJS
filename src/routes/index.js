@@ -19,6 +19,7 @@ import BillGenerator from '../components/BillGenerator';
 import ValidatedForm from '../components/ValidatedForm';
 import AlternateGrid from '../components/AlternateGrid';
 import Pokedex from '../components/Pokedex';
+import TwitterUIClone from '../components/TwitterUIClone';
 
 export default class Routes extends React.Component {
 
@@ -60,6 +61,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/grid' component={AlternateGrid} />
                 
                 <Route exact path='/pokedex' component={Pokedex} />
+                
+                <Route exact path='/twitter-ui' component={TwitterUIClone} />
 
                 <Redirect to='/' from='*' />
             </Switch>
