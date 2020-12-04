@@ -1,0 +1,21 @@
+.container {
+    margin: 4rem 0;
+    border-top: 1px solid #37454d;
+    border-bottom: 1px solid #37454d;
+    transition: border 0.5s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+        margin: 5rem auto;
+        border: 1px solid #37454d;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 50%;
+        margin: 6rem auto;
+    }
+}
