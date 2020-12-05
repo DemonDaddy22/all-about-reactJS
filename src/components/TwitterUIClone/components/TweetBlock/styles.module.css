@@ -13,6 +13,7 @@
 }
 
 .column:last-child {
+    flex: 1;
     padding-left: 0;
 }
 
@@ -52,10 +53,19 @@
     transition: border 0.5s ease-in-out;
 }
 
-.username, .divider, .time {
-    font-weight: 500;
+.username, .divider, .time, .buttonGroup {
     font-size: 0.85rem;
     margin-right: 0.25rem;
     letter-spacing: -0.2px;
     transition: color 0.5s ease-in-out;
+}
+
+.buttonsWrapper {
+    display: flex;
+}
+
+.buttonGroup {
+    display: flex;
+    align-items: center;
+    flex: 1;
 }

@@ -6,7 +6,10 @@ import { withStyles } from '@material-ui/core';
 const styles = {
     root: props => ({
         color: props.iconColor ? props.iconColor : THEME_COLOR,
-        ...props.iconStyles
+        ...props.iconStyles,
+        '&:hover': {
+            color: props.iconhovercolor ? props.iconhovercolor : THEME_COLOR
+        }
     })
 }
 
