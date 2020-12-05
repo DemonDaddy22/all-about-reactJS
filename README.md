@@ -50,7 +50,9 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 
 17. **Pokédex &nbsp;📱**: A responsive [Pokédex](https://demondaddy22.github.io/all-about-reactJS/#/pokedex) which uses [Pokeapi](https://pokeapi.co/) and is inspired by [Pokedex.org](https://pokedex.org/#/). The user can search for the desired Pokémon using Pokémon's index or name and basic stats and info of the fetched Pokémon are then displayed.
 
-18. **Twitter UI clone &nbsp;**: *Coming soon!*
+18. **Twitter UI clone &nbsp;**: A responsive [Twitter UI Clone](https://demondaddy22.github.io/all-about-reactJS/#/twitter-ui) which clones the UI of Twitter feed to some extent. It's a simple UI clone of the feed, so none of the functionalities like liking, retweeting, etc. have been provided.
+
+19. **Voting Poll &nbsp;✍**: *Coming soon!*
 
 <br>
 
