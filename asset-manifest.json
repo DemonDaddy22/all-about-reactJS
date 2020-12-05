@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/all-about-reactJS/static/css/main.ddf83ab8.chunk.css",
-    "main.js": "/all-about-reactJS/static/js/main.732c5f9c.chunk.js",
-    "main.js.map": "/all-about-reactJS/static/js/main.732c5f9c.chunk.js.map",
+    "main.css": "/all-about-reactJS/static/css/main.d7c5e7e6.chunk.css",
+    "main.js": "/all-about-reactJS/static/js/main.31030b5f.chunk.js",
+    "main.js.map": "/all-about-reactJS/static/js/main.31030b5f.chunk.js.map",
     "runtime-main.js": "/all-about-reactJS/static/js/runtime-main.51916d60.js",
     "runtime-main.js.map": "/all-about-reactJS/static/js/runtime-main.51916d60.js.map",
-    "static/js/2.7ab7dc35.chunk.js": "/all-about-reactJS/static/js/2.7ab7dc35.chunk.js",
-    "static/js/2.7ab7dc35.chunk.js.map": "/all-about-reactJS/static/js/2.7ab7dc35.chunk.js.map",
+    "static/js/2.1503965d.chunk.js": "/all-about-reactJS/static/js/2.1503965d.chunk.js",
+    "static/js/2.1503965d.chunk.js.map": "/all-about-reactJS/static/js/2.1503965d.chunk.js.map",
     "index.html": "/all-about-reactJS/index.html",
-    "precache-manifest.c5070179d9d7c76f24bb35c807346ab8.js": "/all-about-reactJS/precache-manifest.c5070179d9d7c76f24bb35c807346ab8.js",
+    "precache-manifest.e09b6ec02e40d715024f9c690120c453.js": "/all-about-reactJS/precache-manifest.e09b6ec02e40d715024f9c690120c453.js",
     "service-worker.js": "/all-about-reactJS/service-worker.js",
-    "static/css/main.ddf83ab8.chunk.css.map": "/all-about-reactJS/static/css/main.ddf83ab8.chunk.css.map",
-    "static/js/2.7ab7dc35.chunk.js.LICENSE.txt": "/all-about-reactJS/static/js/2.7ab7dc35.chunk.js.LICENSE.txt",
+    "static/css/main.d7c5e7e6.chunk.css.map": "/all-about-reactJS/static/css/main.d7c5e7e6.chunk.css.map",
+    "static/js/2.1503965d.chunk.js.LICENSE.txt": "/all-about-reactJS/static/js/2.1503965d.chunk.js.LICENSE.txt",
     "static/media/carousel_dark.jpg": "/all-about-reactJS/static/media/carousel_dark.2c9c3eef.jpg",
     "static/media/carousel_light.jpg": "/all-about-reactJS/static/media/carousel_light.bed50c43.jpg",
     "static/media/form_light.jpg": "/all-about-reactJS/static/media/form_light.b30d606f.jpg",
@@ -24,12 +24,14 @@
     "static/media/pricing_dark.jpg": "/all-about-reactJS/static/media/pricing_dark.418b8f3b.jpg",
     "static/media/pricing_light.jpg": "/all-about-reactJS/static/media/pricing_light.79b6e38a.jpg",
     "static/media/profile_viewer_dark.jpg": "/all-about-reactJS/static/media/profile_viewer_dark.870443f3.jpg",
-    "static/media/profile_viewer_light.jpg": "/all-about-reactJS/static/media/profile_viewer_light.41ee8076.jpg"
+    "static/media/profile_viewer_light.jpg": "/all-about-reactJS/static/media/profile_viewer_light.41ee8076.jpg",
+    "static/media/twitter_dark.jpg": "/all-about-reactJS/static/media/twitter_dark.af2f5c97.jpg",
+    "static/media/twitter_light.jpg": "/all-about-reactJS/static/media/twitter_light.f43d8ae3.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.51916d60.js",
-    "static/js/2.7ab7dc35.chunk.js",
-    "static/css/main.ddf83ab8.chunk.css",
-    "static/js/main.732c5f9c.chunk.js"
+    "static/js/2.1503965d.chunk.js",
+    "static/css/main.d7c5e7e6.chunk.css",
+    "static/js/main.31030b5f.chunk.js"
   ]
 }
