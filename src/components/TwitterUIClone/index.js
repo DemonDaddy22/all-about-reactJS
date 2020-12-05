@@ -13,10 +13,10 @@ export default class TwitterUIClone extends React.Component {
     render = () => {
 
         return <Page shouldComponentUpdate={this.updateComponent}>
-            <div style={{ borderColor: themed('#546873', '#37454d') }} className={classes.container}>
+            <div style={{ borderColor: themed('#ebeef0', '#37454d') }} className={classes.container}>
                 {tweets.map((tweet, index) => <TweetBlock key={`tweet-${index}`} tweet={tweet}
-                    blockBackground={themed('#fff', '#15212b')} color={themed('#000', '#fff')}
-                    secondaryColor={themed('#546873', '#8899a6')} borderColor={themed('#546873', '#37454d')} />)}
+                    blockBackground={themed('#fff', '#15212b')} color={themed('#0f151b', '#fff')}
+                    secondaryColor={themed('#5b7083', '#8899a6')} borderColor={themed('#ebeef0', '#37454d')} />)}
             </div>
         </Page>;
     }

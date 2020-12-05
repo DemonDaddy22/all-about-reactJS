@@ -17,6 +17,8 @@ const TweetBlock = React.memo(({ tweet, blockBackground, color, secondaryColor, 
                 <div style={{ color: secondaryColor }} className={classes.divider}>·</div>
                 <div style={{ color: secondaryColor }} className={classes.time}>{getPathValue(tweet, 'post_time', '')}</div>
             </div>
+            <div style={{ color: color }} className={classes.content}>{getPathValue(tweet, 'content', '')}</div>
+            {tweet?.content_img && <img src={getPathValue(tweet, 'content_img')} alt='content' className={classes.contentImg} style={{ border: `1px solid ${borderColor}` }}></img>}
         </div>
     </div>);
 
