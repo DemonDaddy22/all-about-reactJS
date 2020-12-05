@@ -32,6 +32,8 @@ import gridDarkImage from '../../images/grid_dark.jpg';
 import gridLightImage from '../../images/grid_light.jpg';
 import pokedexDarkImage from '../../images/pokedex_dark.jpg';
 import pokedexLightImage from '../../images/pokedex_light.jpg';
+import twitterDarkImage from '../../images/twitter_dark.jpg';
+import twitterLightImage from '../../images/twitter_light.jpg';
 import { BASE_URL } from '../../resources/constants';
 
 export const projects = [
@@ -52,4 +54,5 @@ export const projects = [
     { sequence: '15', title: 'Validated Form', imageLight: formLightImage, imageDark: formDarkImage, projectPath: `${BASE_URL}/#/form`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/ValidatedForm' },
     { sequence: '16', title: 'Alternate Grid', imageLight: gridLightImage, imageDark: gridDarkImage, projectPath: `${BASE_URL}/#/grid`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/AlternateGrid' },
     { sequence: '17', title: 'Pokédex', imageLight: pokedexLightImage, imageDark: pokedexDarkImage, projectPath: `${BASE_URL}/#/pokedex`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/Pokedex' },
+    { sequence: '18', title: 'Twitter UI Clone', imageLight: twitterLightImage, imageDark: twitterDarkImage, projectPath: `${BASE_URL}/#/twitter-ui`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/TwitterUIClone' },
 ];
