@@ -20,6 +20,7 @@ import ValidatedForm from '../components/ValidatedForm';
 import AlternateGrid from '../components/AlternateGrid';
 import Pokedex from '../components/Pokedex';
 import TwitterUIClone from '../components/TwitterUIClone';
+import VotingPoll from '../components/VotingPoll';
 
 export default class Routes extends React.Component {
 
@@ -63,6 +64,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/pokedex' component={Pokedex} />
                 
                 <Route exact path='/twitter-ui' component={TwitterUIClone} />
+                
+                <Route exact path='/voting-poll' component={VotingPoll} />
 
                 <Redirect to='/' from='*' />
             </Switch>
