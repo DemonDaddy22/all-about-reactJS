@@ -1,5 +1,6 @@
 .container {
     height: 2.5rem;
+    cursor: pointer;
     display: flex;
     flex-basis: 100%;
     position: relative;
