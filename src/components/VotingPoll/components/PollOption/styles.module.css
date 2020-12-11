@@ -6,7 +6,7 @@
     position: relative;
     margin-top: 0.5rem;
     border-radius: inherit;
-    background-color: var(--text-obscurer);
+    background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     transition: border 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
@@ -17,7 +17,7 @@
 
 .filledBar {
     border-radius: inherit;
-    transition: background-color 0.5s ease-in-out, flex-basis 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out, flex-basis 0.5s ease-in-out, border 0.2s ease-in-out;
 }
 
 .content {
@@ -27,28 +27,29 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: color 0.5s ease-in-out;
 }
 
 .label {
     flex: 1;
-    font-size: 0.8rem;
-    color: var(--text-opposite);
-    transition: color 0.5s ease-in-out;
+    font-weight: 600;
+    letter-spacing: 0.2px;
 }
 
 .percentage {
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     letter-spacing: -0.2px;
-    color: var(--text-opposite);
-    transition: color 0.5s ease-in-out;
 }
 
 @media (min-width: 768px) {
     .container {
         height: 3rem;
     }
-    .label, .percentage {
+    .label {
+        font-size: 1.1rem;
+    }
+    .percentage {
         font-size: 1rem;
     }
 }
@@ -57,7 +58,10 @@
     .container {
         height: 4rem;
     }
-    .label, .percentage {
+    .label {
         font-size: 1.2rem;
+    }
+    .percentage {
+        font-size: 1.1rem;
     }
 }
