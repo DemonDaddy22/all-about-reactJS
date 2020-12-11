@@ -44,15 +44,17 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 
 14. **Bill Generator &nbsp;💰**: A responsive [bill generator](https://demondaddy22.github.io/all-about-reactJS/#/bill-generator) which displays an arbitrary taco menu, and a user can select different quantities of tacos, sides and add-ons. Based upon the items selected, the bill gets generated dynamically.
 
-15. **Form with Validations &nbsp;☑**: A responsive [form with validations](https://demondaddy22.github.io/all-about-reactJS/#/form) which validates user's input responses. *It is just a template form which doesn't store any information entered by the users*.
+15. **Form with Validations &nbsp;⛔**: A responsive [form with validations](https://demondaddy22.github.io/all-about-reactJS/#/form) which validates user's input responses. *It is just a template form which doesn't store any information entered by the users*.
 
 16. **Alternate Grid &nbsp;💢**: A responsive [alternate grid](https://demondaddy22.github.io/all-about-reactJS/#/grid) which displays an alternate ordered grid where one of the cells, in every row, contains some text information, and the other cell contains an image.
 
 17. **Pokédex &nbsp;📱**: A responsive [Pokédex](https://demondaddy22.github.io/all-about-reactJS/#/pokedex) which uses [Pokeapi](https://pokeapi.co/) and is inspired by [Pokedex.org](https://pokedex.org/#/). The user can search for the desired Pokémon using Pokémon's index or name and basic stats and info of the fetched Pokémon are then displayed.
 
-18. **Twitter UI clone &nbsp;**: A responsive [Twitter UI Clone](https://demondaddy22.github.io/all-about-reactJS/#/twitter-ui) which clones the UI of Twitter feed to some extent. It's a simple UI clone of the feed, so none of the functionalities like liking, retweeting, etc. have been provided.
+18. **Twitter UI clone &nbsp;🐦**: A responsive [Twitter UI Clone](https://demondaddy22.github.io/all-about-reactJS/#/twitter-ui) which clones the UI of Twitter feed to some extent. It's a simple UI clone of the feed, so none of the functionalities like liking, retweeting, etc. have been provided.
 
-19. **Voting Poll &nbsp;✍**: *Coming soon!*
+19. **Voting Poll &nbsp;✍**: A responsive [voting poll](https://demondaddy22.github.io/all-about-reactJS/#/twitter-ui) which lets user vote for an option from a set of options.
+
+20. **Chat App UI &nbsp;💬**: *Coming soon!*
 
 <br>
 
