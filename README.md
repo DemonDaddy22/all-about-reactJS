@@ -54,7 +54,7 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 
 19. **Voting Poll &nbsp;✍**: A responsive [voting poll](https://demondaddy22.github.io/all-about-reactJS/#/twitter-ui) which lets user vote for an option from a set of options.
 
-20. **Chat App UI &nbsp;💬**: *Coming soon!*
+20. **Skeleton Loader &nbsp;💬**: *Coming soon!*
 
 <br>
 

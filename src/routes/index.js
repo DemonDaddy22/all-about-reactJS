@@ -21,6 +21,7 @@ import AlternateGrid from '../components/AlternateGrid';
 import Pokedex from '../components/Pokedex';
 import TwitterUIClone from '../components/TwitterUIClone';
 import VotingPoll from '../components/VotingPoll';
+import SkeletonLoader from '../components/SkeletonLoader';
 
 export default class Routes extends React.Component {
 
@@ -66,6 +67,8 @@ export default class Routes extends React.Component {
                 <Route exact path='/twitter-ui' component={TwitterUIClone} />
                 
                 <Route exact path='/voting-poll' component={VotingPoll} />
+                
+                <Route exact path='/skeleton-loader' component={SkeletonLoader} />
 
                 <Redirect to='/' from='*' />
             </Switch>
