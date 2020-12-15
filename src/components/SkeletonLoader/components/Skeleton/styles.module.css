@@ -1,0 +1,58 @@
+.skeleton {
+    background-color: var(--skeleton-color);
+    transition: background-color 0.5s ease-in-out;
+}
+
+.skeletonText {
+    composes: skeleton;
+    width: 100%;
+    height: 0.75rem;
+    border-radius: 0.5rem;
+}
+
+.skeletonTitle {
+    composes: skeleton;
+    width: 40%;
+    height: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.skeletonImage {
+    composes: skeleton;
+    width: 100%;
+    height: 10rem;
+    border-radius: 0.5rem;
+}
+
+.skeletonAvatar {
+    composes: skeleton;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+    .skeletonText {
+        height: 1rem;
+    }
+    .skeletonTitle {
+        height: 2rem;
+    }
+    .skeletonImage {
+        height: 20rem;
+    }
+    .skeletonAvatar {
+        width: 12rem;
+        height: 12rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .skeletonImage {
+        height: 30rem;
+    }
+    .skeletonAvatar {
+        width: 15rem;
+        height: 15rem;
+    }
+}

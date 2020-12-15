@@ -29,6 +29,7 @@
     --ripple: #00000066;
     --tag-color: #e0e0e0;
     --border-bottom-color: rgba(224, 224, 224, 1);
+    --skeleton-color: #d1d1d1;
     --svg-color: invert(9%) sepia(3%) saturate(1524%) hue-rotate(189deg) brightness(101%) contrast(92%);
 }
 
@@ -63,6 +64,7 @@
     --ripple: #fff6;
     --tag-color: #3e3d3d;
     --border-bottom-color: rgba(81, 81, 81, 1);
+    --skeleton-color: #313131;
     --svg-color: invert(98%) sepia(10%) saturate(94%) hue-rotate(187deg) brightness(109%) contrast(81%);
 }
 
