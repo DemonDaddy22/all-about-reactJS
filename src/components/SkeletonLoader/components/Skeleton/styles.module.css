@@ -26,8 +26,8 @@
 
 .skeletonAvatar {
     composes: skeleton;
-    width: 10rem;
-    height: 10rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
 }
 
@@ -41,10 +41,6 @@
     .skeletonImage {
         height: 20rem;
     }
-    .skeletonAvatar {
-        width: 12rem;
-        height: 12rem;
-    }
 }
 
 @media (min-width: 1200px) {
@@ -52,7 +48,7 @@
         height: 30rem;
     }
     .skeletonAvatar {
-        width: 15rem;
-        height: 15rem;
+        width: 8rem;
+        height: 8rem;
     }
 }

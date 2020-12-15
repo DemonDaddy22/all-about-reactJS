@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classes from './styles.module.css';
 
@@ -9,10 +10,19 @@ export const SKELETON_TYPES = Object.freeze({
     AVATAR: 'skeletonAvatar'
 });
 
-const Skeleton = ({ type, style }) => {
-    const skeletonClass = `classes.${SKELETON_TYPES[type]}`;
+const Skeleton = React.memo(({ type, style }) => {
+    const skeletonClass = `${classes[type]}`;
 
     return <div style={style} className={skeletonClass} />;
-}
+});
 
 export default Skeleton;
+
+Skeleton.prototype = {
+    type: PropTypes.string.isRequired,
+    style: PropTypes.object
+}
+
+Skeleton.defaultProps = {
+    type: SKELETON_TYPES.TEXT
+}

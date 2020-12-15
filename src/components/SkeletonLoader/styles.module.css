@@ -1,0 +1,26 @@
+.contentWrapper {
+    margin-top: 3rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .contentWrapper {
+        padding: 1rem 2rem 2rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .contentWrapper {
+        padding: 1rem 3rem 3rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1500px) {
+    .contentWrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
