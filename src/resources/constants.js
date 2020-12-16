@@ -23,3 +23,5 @@ export const POKEMON_TYPES = Object.freeze({
     dark: { bgColor: '#654e40', color: '#FFF' },
     dragon: { bgColor: '#5e1cf6', color: '#FFF' },
 });
+export const PLACEHOLDER_POSTS_API = 'https://jsonplaceholder.typicode.com/posts';
+export const RANDOM_AVATAR_API = 'https://i.pravatar.cc'; // append image size at the end
