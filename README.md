@@ -54,7 +54,7 @@ I'll be working on 20 different ReactJS projects over the next 50 days. I would 
 
 19. **Voting Poll &nbsp;✍**: A responsive [voting poll](https://demondaddy22.github.io/all-about-reactJS/#/twitter-ui) which lets user vote for an option from a set of options.
 
-20. **Skeleton Loader &nbsp;💬**: A responsive [skeleton loader](https://demondaddy22.github.io/all-about-reactJS/#/skeleton-loader) which serves as a skeleton placeholder for the content.
+20. **Skeleton Loader &nbsp;💬**: A responsive [skeleton loader](https://demondaddy22.github.io/all-about-reactJS/#/skeleton-loader) which serves as a skeleton placeholder for the content. Used [JSON Placeholder API](https://jsonplaceholder.typicode.com/posts) and [UI Faces](https://uifaces.co/api-key) for fetching mock content.
 
 <br>
 
