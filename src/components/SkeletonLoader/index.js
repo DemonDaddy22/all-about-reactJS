@@ -69,16 +69,9 @@ export default class SkeletonLoader extends React.Component {
 
         return <Page>
             {loader ? <div className={classes.contentWrapper}>
-                <SkeletonWrapper />
-                <SkeletonWrapper />
-                <SkeletonWrapper />
-                <SkeletonWrapper />
-                <SkeletonWrapper />
-                <SkeletonWrapper />
-                <SkeletonWrapper />
-                <SkeletonWrapper />
+                {new Array(DATA_SET_SIZE).fill(null).map((_, index) => <SkeletonWrapper key={`skeleton-${index}`} />)}
             </div> : <div className={classes.postsWrapper}>
-                    {!isEmptyList(data) && data.map(post => <Post key={post.id} avatar={post.avatar} title={post.title} body={post.body} />)}
+                    {!isEmptyList(data) && data.map(post => <Post key={post.id} name={post.name} avatar={post.avatar} title={post.title} body={post.body} />)}
                 </div>}
         </Page>;
     }

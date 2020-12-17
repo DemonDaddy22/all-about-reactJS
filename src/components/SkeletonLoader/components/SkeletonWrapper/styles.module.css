@@ -32,9 +32,6 @@
 }
 
 @media (min-width: 1000px) {
-    .skeletonWrapper {
-        flex-direction: row;
-    }
     .col1, .col2 {
         padding: 1rem;
     }

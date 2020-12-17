@@ -1,0 +1,94 @@
+.animateFade {
+    opacity: 0;
+    animation: fade 0.25s ease-in-out forwards;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+}
+
+.col1 {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    composes: animateFade;
+}
+
+.col2 {
+    flex: 1;
+    padding: 0.5rem;
+    composes: animateFade;
+}
+
+.avatar {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+}
+
+.text {
+    color: var(--text);
+    transition: color 0.5s ease-in-out;
+}
+
+.name {
+    composes: text;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.title {
+    composes: text;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    color: var(--text-prominent);
+}
+
+.body {
+    composes: text;
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .post {
+        flex-direction: row;
+    }
+    .col1 {
+        min-width: 10rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .avatar {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
