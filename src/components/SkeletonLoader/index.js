@@ -6,6 +6,7 @@ import SkeletonWrapper from './components/SkeletonWrapper';
 import { handleError, isEmptyList } from '../../utils';
 import { PLACEHOLDER_POSTS_API, RANDOM_AVATAR_API } from '../../resources/constants';
 import Post from './components/Post';
+import SnackBar from '../../ui-components/SnackBar';
 
 const DATA_SET_SIZE = 12; // must be less than 30
 export default class SkeletonLoader extends React.Component {
@@ -64,6 +65,8 @@ export default class SkeletonLoader extends React.Component {
         }
     }
 
+    handleSnackClose = () => this.setState({ snack: { ...this.state.snack, open: false } });
+
     render = () => {
         const { data, loader, snack } = this.state;
 
@@ -73,6 +76,7 @@ export default class SkeletonLoader extends React.Component {
             </div> : <div className={classes.postsWrapper}>
                     {!isEmptyList(data) && data.map(post => <Post key={post.id} name={post.name} avatar={post.avatar} title={post.title} body={post.body} />)}
                 </div>}
+            {snack?.message && <SnackBar message={snack.message} severity={snack.severity} handleClose={this.handleSnackClose} open={snack.open} />}
         </Page>;
     }
 }

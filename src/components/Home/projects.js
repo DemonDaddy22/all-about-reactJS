@@ -36,6 +36,8 @@ import twitterDarkImage from '../../images/twitter_dark.jpg';
 import twitterLightImage from '../../images/twitter_light.jpg';
 import pollDarkImage from '../../images/poll_dark.jpg';
 import pollLightImage from '../../images/poll_light.jpg';
+import skeletonDarkImage from '../../images/skeleton_dark.jpg';
+import skeletonLightImage from '../../images/skeleton_light.jpg';
 import { BASE_URL } from '../../resources/constants';
 
 export const projects = [
@@ -58,4 +60,5 @@ export const projects = [
     { sequence: '17', title: 'Pokédex', imageLight: pokedexLightImage, imageDark: pokedexDarkImage, projectPath: `${BASE_URL}/#/pokedex`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/Pokedex' },
     { sequence: '18', title: 'Twitter UI Clone', imageLight: twitterLightImage, imageDark: twitterDarkImage, projectPath: `${BASE_URL}/#/twitter-ui`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/TwitterUIClone' },
     { sequence: '19', title: 'Voting Poll', imageLight: pollLightImage, imageDark: pollDarkImage, projectPath: `${BASE_URL}/#/voting-poll`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/VotingPoll' },
+    { sequence: '20', title: 'Skeleton Loader', imageLight: skeletonLightImage, imageDark: skeletonDarkImage, projectPath: `${BASE_URL}/#/skeleton-loader`, githubLink: 'https://github.com/DemonDaddy22/all-about-reactJS/tree/master/src/components/SkeletonLoader' },
 ];
