@@ -6,7 +6,8 @@ import Shimmer from '../Shimmer';
 
 const SkeletonWrapper = React.memo(() => <div className={classes.skeletonWrapper}>
     <div className={classes.col1}>
-        <Skeleton type={SKELETON_TYPES['AVATAR']} />
+        <Skeleton type={SKELETON_TYPES['AVATAR']} style={{ marginBottom: 8 }}/>
+        <Skeleton type={SKELETON_TYPES['TEXT']}/>
     </div>
     <div className={classes.col2}>
         <Skeleton type={SKELETON_TYPES['TITLE']} style={{ marginBottom: 8 }} />

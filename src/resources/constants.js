@@ -1,6 +1,7 @@
+/* eslint-disable eqeqeq */
 export const GITHUB_BASE = 'https://github.com/DemonDaddy22';
 // eslint-disable-next-line no-undef
-export const BASE_URL = process.env.NODE_ENV === 'production' ? '/all-about-reactJS' : '';
+export const BASE_URL = process.env.NODE_ENV == 'production' ? '/all-about-reactJS' : '';
 export const GITHUB_API_BASE = 'https://api.github.com';
 export const POKEMON_API_BASE = 'https://pokeapi.co/api/v2/pokemon/';
 export const POKEMON_TYPES = Object.freeze({
@@ -24,4 +25,4 @@ export const POKEMON_TYPES = Object.freeze({
     dragon: { bgColor: '#5e1cf6', color: '#FFF' },
 });
 export const PLACEHOLDER_POSTS_API = 'https://jsonplaceholder.typicode.com/posts';
-export const RANDOM_AVATAR_API = 'https://i.pravatar.cc'; // append image size at the end
+export const RANDOM_AVATAR_API = 'https://uifaces.co/api';
