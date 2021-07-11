@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/all-about-reactJS/static/css/main.f0cd9cc6.chunk.css",
-    "main.js": "/all-about-reactJS/static/js/main.bd173cc6.chunk.js",
-    "main.js.map": "/all-about-reactJS/static/js/main.bd173cc6.chunk.js.map",
+    "main.js": "/all-about-reactJS/static/js/main.d4446754.chunk.js",
+    "main.js.map": "/all-about-reactJS/static/js/main.d4446754.chunk.js.map",
     "runtime-main.js": "/all-about-reactJS/static/js/runtime-main.51916d60.js",
     "runtime-main.js.map": "/all-about-reactJS/static/js/runtime-main.51916d60.js.map",
-    "static/js/2.40af25d5.chunk.js": "/all-about-reactJS/static/js/2.40af25d5.chunk.js",
-    "static/js/2.40af25d5.chunk.js.map": "/all-about-reactJS/static/js/2.40af25d5.chunk.js.map",
+    "static/js/2.63750497.chunk.js": "/all-about-reactJS/static/js/2.63750497.chunk.js",
+    "static/js/2.63750497.chunk.js.map": "/all-about-reactJS/static/js/2.63750497.chunk.js.map",
     "index.html": "/all-about-reactJS/index.html",
-    "precache-manifest.ded68f8fd6cd331e33c713057af461c7.js": "/all-about-reactJS/precache-manifest.ded68f8fd6cd331e33c713057af461c7.js",
+    "precache-manifest.1b6c81d3e53ec3b5ee25f1a577b0b295.js": "/all-about-reactJS/precache-manifest.1b6c81d3e53ec3b5ee25f1a577b0b295.js",
     "service-worker.js": "/all-about-reactJS/service-worker.js",
     "static/css/main.f0cd9cc6.chunk.css.map": "/all-about-reactJS/static/css/main.f0cd9cc6.chunk.css.map",
-    "static/js/2.40af25d5.chunk.js.LICENSE.txt": "/all-about-reactJS/static/js/2.40af25d5.chunk.js.LICENSE.txt",
+    "static/js/2.63750497.chunk.js.LICENSE.txt": "/all-about-reactJS/static/js/2.63750497.chunk.js.LICENSE.txt",
     "static/media/carousel_dark.jpg": "/all-about-reactJS/static/media/carousel_dark.2c9c3eef.jpg",
     "static/media/carousel_light.jpg": "/all-about-reactJS/static/media/carousel_light.bed50c43.jpg",
     "static/media/form_light.jpg": "/all-about-reactJS/static/media/form_light.b30d606f.jpg",
@@ -30,8 +30,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.51916d60.js",
-    "static/js/2.40af25d5.chunk.js",
+    "static/js/2.63750497.chunk.js",
     "static/css/main.f0cd9cc6.chunk.css",
-    "static/js/main.bd173cc6.chunk.js"
+    "static/js/main.d4446754.chunk.js"
   ]
 }
