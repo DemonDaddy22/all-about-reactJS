@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/all-about-reactJS/static/css/main.9e91aec5.chunk.css",
+    "main.css": "/all-about-reactJS/static/css/main.f0cd9cc6.chunk.css",
     "main.js": "/all-about-reactJS/static/js/main.d4446754.chunk.js",
     "main.js.map": "/all-about-reactJS/static/js/main.d4446754.chunk.js.map",
     "runtime-main.js": "/all-about-reactJS/static/js/runtime-main.51916d60.js",
@@ -8,9 +8,9 @@
     "static/js/2.63750497.chunk.js": "/all-about-reactJS/static/js/2.63750497.chunk.js",
     "static/js/2.63750497.chunk.js.map": "/all-about-reactJS/static/js/2.63750497.chunk.js.map",
     "index.html": "/all-about-reactJS/index.html",
-    "precache-manifest.d040a6b89402ba4ef89939afdc67a2ce.js": "/all-about-reactJS/precache-manifest.d040a6b89402ba4ef89939afdc67a2ce.js",
+    "precache-manifest.1b6c81d3e53ec3b5ee25f1a577b0b295.js": "/all-about-reactJS/precache-manifest.1b6c81d3e53ec3b5ee25f1a577b0b295.js",
     "service-worker.js": "/all-about-reactJS/service-worker.js",
-    "static/css/main.9e91aec5.chunk.css.map": "/all-about-reactJS/static/css/main.9e91aec5.chunk.css.map",
+    "static/css/main.f0cd9cc6.chunk.css.map": "/all-about-reactJS/static/css/main.f0cd9cc6.chunk.css.map",
     "static/js/2.63750497.chunk.js.LICENSE.txt": "/all-about-reactJS/static/js/2.63750497.chunk.js.LICENSE.txt",
     "static/media/carousel_dark.jpg": "/all-about-reactJS/static/media/carousel_dark.2c9c3eef.jpg",
     "static/media/carousel_light.jpg": "/all-about-reactJS/static/media/carousel_light.bed50c43.jpg",
@@ -31,7 +31,7 @@
   "entrypoints": [
     "static/js/runtime-main.51916d60.js",
     "static/js/2.63750497.chunk.js",
-    "static/css/main.9e91aec5.chunk.css",
+    "static/css/main.f0cd9cc6.chunk.css",
     "static/js/main.d4446754.chunk.js"
   ]
 }
